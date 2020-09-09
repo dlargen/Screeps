@@ -3,7 +3,7 @@ var roleUpgrader = require('role.upgrader');
 var roleBuilder = require('role.builder');
 
 module.exports.loop = function () {
-    const extensions = Game.spawns['Spawn1'].room.find(FIND_MY_STRUCTURES, {
+    var extensions = Game.spawns['Spawn1'].room.find(FIND_MY_STRUCTURES, {
         filter: { structureType: STRUCTURE_EXTENSION }
     });
     if (extensions.length < 1) {
@@ -20,33 +20,38 @@ module.exports.loop = function () {
         Game.spawns['Spawn1'].room.createConstructionSite(spawnPosition.x , spawnPosition.y + 2, STRUCTURE_EXTENSION);
     }
     
-    const towers = Game.spawns['Spawn1'].room.find(FIND_MY_STRUCTURES, {
+    var towers = Game.spawns['Spawn1'].room.find(FIND_MY_STRUCTURES, {
         filter: { structureType: STRUCTURE_TOWER }
     });
+    console.log('Spawn has '+towers.length+' towers');
+    
     if (towers.length < 1) {
-        console.log('Spawn has '+towers.length+' towers');
+        //console.log('Spawn has '+towers.length+' towers');
         var spawnPosition = Game.spawns['Spawn1'].pos;
         spawnPosition.x -= 2;
-        console.log('New Position '+ spawnPosition);
+        //console.log('New Position '+ spawnPosition);
         Game.spawns['Spawn1'].room.createConstructionSite(spawnPosition.x, spawnPosition.y, STRUCTURE_TOWER);
     }
     
-    /*
-    var tower = Game.getObjectById('d51d384f8e9d9a936dd14b6a');
-    if(tower) {
-        var closestDamagedStructure = tower.pos.findClosestByRange(FIND_STRUCTURES, {
+    for (var id in towers) {
+        if (id >= 0) {
+            //console.log('tower id ' +id);
+            var tower = towers[id];
+            //console.log('tower pos ' +tower.pos);
+            var closestHostile = tower.pos.findClosestByRange(FIND_HOSTILE_CREEPS);
+            if(closestHostile) {
+                tower.attack(closestHostile);
+            }
+            
+            var closestDamagedStructure = tower.pos.findClosestByRange(FIND_STRUCTURES, {
             filter: (structure) => structure.hits < structure.hitsMax
-        });
-        if(closestDamagedStructure) {
-            tower.repair(closestDamagedStructure);
-        }
-
-        var closestHostile = tower.pos.findClosestByRange(FIND_HOSTILE_CREEPS);
-        if(closestHostile) {
-            tower.attack(closestHostile);
+            });
+            if(closestDamagedStructure) {
+                tower.repair(closestDamagedStructure);
+            }
         }
     }
-    */
+    
     
     for(var name in Memory.creeps) {
         if(!Game.creeps[name]) {
