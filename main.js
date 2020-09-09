@@ -13,6 +13,12 @@ module.exports.loop = function () {
         Game.spawns['Spawn1'].room.createConstructionSite(spawnPosition.x - 2 , spawnPosition.y + 2, STRUCTURE_EXTENSION);
     }
     
+    if (extensions.length = 1) {
+        //console.log('Spawn has '+extensions.length+' extensions');
+        var spawnPosition = Game.spawns['Spawn1'].pos;
+        console.log('New Position '+ spawnPosition);
+        Game.spawns['Spawn1'].room.createConstructionSite(spawnPosition.x , spawnPosition.y + 2, STRUCTURE_EXTENSION);
+    }
     
     /*
     var tower = Game.getObjectById('d51d384f8e9d9a936dd14b6a');
@@ -51,7 +57,7 @@ module.exports.loop = function () {
     var upgraders = _.filter(Game.creeps, (creep) => creep.memory.role == 'upgrader');
     //console.log('Upgraders: ' + harvesters.length);
 
-    if(upgraders.length < 2) {
+    if(upgraders.length < 1) {
         var newName = 'Upgrader' + Game.time;
         console.log('Spawning new harvester: ' + newName);
         Game.spawns['Spawn1'].spawnCreep([WORK,CARRY,MOVE,MOVE], newName, 
@@ -61,7 +67,7 @@ module.exports.loop = function () {
     var builders = _.filter(Game.creeps, (creep) => creep.memory.role == 'builder');
     //console.log('Builders: ' + builders.length);
 
-    if(builders.length < 2) {
+    if(builders.length < 3) {
         var newName = 'Builder' + Game.time;
         console.log('Spawning new builder: ' + newName);
         Game.spawns['Spawn1'].spawnCreep([WORK,CARRY,MOVE,MOVE], newName, 
