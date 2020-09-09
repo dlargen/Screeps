@@ -3,7 +3,7 @@ var roleUpgrader = require('role.upgrader');
 var roleBuilder = require('role.builder');
 
 module.exports.loop = function () {
-
+    /*
     var tower = Game.getObjectById('d51d384f8e9d9a936dd14b6a');
     if(tower) {
         var closestDamagedStructure = tower.pos.findClosestByRange(FIND_STRUCTURES, {
@@ -17,6 +17,43 @@ module.exports.loop = function () {
         if(closestHostile) {
             tower.attack(closestHostile);
         }
+    }
+    */
+    
+    for(var name in Memory.creeps) {
+        if(!Game.creeps[name]) {
+            delete Memory.creeps[name];
+            console.log('Clearing non-existing creep memory:', name);
+        }
+    }
+    
+    var harvesters = _.filter(Game.creeps, (creep) => creep.memory.role == 'harvester');
+    //console.log('Harvesters: ' + harvesters.length);
+
+    if(harvesters.length < 2) {
+        var newName = 'Harvester' + Game.time;
+        console.log('Spawning new harvester: ' + newName);
+        Game.spawns['Spawn1'].spawnCreep([WORK,CARRY,MOVE,MOVE], newName, 
+            {memory: {role: 'harvester'}});
+    }
+    
+    var upgraders = _.filter(Game.creeps, (creep) => creep.memory.role == 'upgrader');
+    //console.log('Upgraders: ' + harvesters.length);
+
+    if(upgraders.length < 4) {
+        var newName = 'Upgrader' + Game.time;
+        console.log('Spawning new harvester: ' + newName);
+        Game.spawns['Spawn1'].spawnCreep([WORK,CARRY,MOVE,MOVE], newName, 
+            {memory: {role: 'upgrader'}});
+    }
+    
+    if(Game.spawns['Spawn1'].spawning) { 
+        var spawningCreep = Game.creeps[Game.spawns['Spawn1'].spawning.name];
+        Game.spawns['Spawn1'].room.visual.text(
+            '🛠️' + spawningCreep.memory.role,
+            Game.spawns['Spawn1'].pos.x + 1, 
+            Game.spawns['Spawn1'].pos.y, 
+            {align: 'left', opacity: 0.8});
     }
 
     for(var name in Game.creeps) {
