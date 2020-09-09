@@ -16,8 +16,19 @@ module.exports.loop = function () {
     if (extensions.length = 1) {
         //console.log('Spawn has '+extensions.length+' extensions');
         var spawnPosition = Game.spawns['Spawn1'].pos;
-        console.log('New Position '+ spawnPosition);
+        //console.log('New Position '+ spawnPosition);
         Game.spawns['Spawn1'].room.createConstructionSite(spawnPosition.x , spawnPosition.y + 2, STRUCTURE_EXTENSION);
+    }
+    
+    const towers = Game.spawns['Spawn1'].room.find(FIND_MY_STRUCTURES, {
+        filter: { structureType: STRUCTURE_TOWER }
+    });
+    if (towers.length < 1) {
+        console.log('Spawn has '+towers.length+' towers');
+        var spawnPosition = Game.spawns['Spawn1'].pos;
+        spawnPosition.x -= 2;
+        console.log('New Position '+ spawnPosition);
+        Game.spawns['Spawn1'].room.createConstructionSite(spawnPosition.x, spawnPosition.y, STRUCTURE_TOWER);
     }
     
     /*
@@ -67,7 +78,7 @@ module.exports.loop = function () {
     var builders = _.filter(Game.creeps, (creep) => creep.memory.role == 'builder');
     //console.log('Builders: ' + builders.length);
 
-    if(builders.length < 3) {
+    if(builders.length < 2) {
         var newName = 'Builder' + Game.time;
         console.log('Spawning new builder: ' + newName);
         Game.spawns['Spawn1'].spawnCreep([WORK,CARRY,MOVE,MOVE], newName, 
