@@ -7,6 +7,13 @@ var upgraderQty = 4;
 
 
 module.exports.loop = function () {
+        
+    for(var name in Memory.creeps) {
+        if(!Game.creeps[name]) {
+            delete Memory.creeps[name];
+            console.log('Clearing non-existing creep memory:', name);
+        }
+    }
 
     var extensions = Game.spawns['Spawn1'].room.find(FIND_MY_STRUCTURES, {
         filter: { structureType: STRUCTURE_EXTENSION }
@@ -24,6 +31,7 @@ module.exports.loop = function () {
         //console.log('New Position '+ spawnPosition);
         Game.spawns['Spawn1'].room.createConstructionSite(spawnPosition.x , spawnPosition.y + 2, STRUCTURE_EXTENSION);
     }
+    /*
     
     var towers = Game.spawns['Spawn1'].room.find(FIND_MY_STRUCTURES, {
         filter: { structureType: STRUCTURE_TOWER }
@@ -33,7 +41,7 @@ module.exports.loop = function () {
     if (towers.length < 1) {
         //console.log('Spawn has '+towers.length+' towers');
         var spawnPosition = Game.spawns['Spawn1'].pos;
-        spawnPosition.x -= 2;
+        spawnPosition.x -= 4;
         //console.log('New Position '+ spawnPosition);
         Game.spawns['Spawn1'].room.createConstructionSite(spawnPosition.x, spawnPosition.y, STRUCTURE_TOWER);
     }
@@ -56,14 +64,7 @@ module.exports.loop = function () {
             }
         }
     }
-    
-    
-    for(var name in Memory.creeps) {
-        if(!Game.creeps[name]) {
-            delete Memory.creeps[name];
-            console.log('Clearing non-existing creep memory:', name);
-        }
-    }
+    */
     
     var harvesters = _.filter(Game.creeps, (creep) => creep.memory.role == 'harvester');
     //console.log('Harvesters: ' + harvesters.length);
