@@ -14,17 +14,29 @@ var roleHarvester = {
                     filter: (structure) => {
                         return (structure.structureType == STRUCTURE_EXTENSION || 
                             structure.structureType == STRUCTURE_SPAWN ||
+                            structure.structureType == STRUCTURE_CONTAINER ||
                             structure.structureType == STRUCTURE_TOWER) &&
                             structure.store.getFreeCapacity(RESOURCE_ENERGY) > 0;
                     }
             });
-            if(targets.length > 0) {
+            var containers = creep.room.find(FIND_STRUCTURES, {
+	            filter: (structure) => {
+		        return structure.structureType == STRUCTURE_CONTAINER && 
+			    structure.store[RESOURCE_ENERGY] < 2000}});
+            
+            if(targets.length > 0 || containers.length > 0) {
+                var target;
+                if (containers.length > 0)
+                    target = containers[0];
+                if (targets.length > 0)
+                    target = targets[0];
+                    
                 creep.say('XFER');
-                var returnValue = creep.transfer(targets[0], RESOURCE_ENERGY);
+                var returnValue = creep.transfer(target, RESOURCE_ENERGY);
                 //creep.say(returnValue);
                 //console.log(creep.name + ' ' + targets[0].name + ' ' + targets[0].pos);
                 //creep.say(targets[0].store.getFreeCapacity(RESOURCE_ENERGY));
-                creep.moveTo(targets[0], {visualizePathStyle: {stroke: '#ffffff'}});
+                creep.moveTo(target, {visualizePathStyle: {stroke: '#ffffff'}});
                 
             }
             else
