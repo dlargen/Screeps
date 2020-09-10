@@ -3,6 +3,7 @@ var roleHarvester = {
     /** @param {Creep} creep **/
     run: function(creep) {
 	    if(creep.store.getFreeCapacity() > 0) {
+	        creep.say('Harvest');
             var source = creep.pos.findClosestByRange(FIND_SOURCES_ACTIVE);
             if(creep.harvest(source) == ERR_NOT_IN_RANGE) {
                 creep.moveTo(source, {visualizePathStyle: {stroke: '#ffaa00'}});
@@ -18,9 +19,16 @@ var roleHarvester = {
                     }
             });
             if(targets.length > 0) {
-                if(creep.transfer(targets[0], RESOURCE_ENERGY) == ERR_NOT_IN_RANGE || ERR_FULL) {
-                    creep.moveTo(targets[0], {visualizePathStyle: {stroke: '#ffffff'}});
-                }
+                creep.say('XFER');
+                creep.transfer(targets[0], RESOURCE_ENERGY);
+                creep.moveTo(targets[0], {visualizePathStyle: {stroke: '#ffffff'}});
+                
+            }
+            else
+            {
+                creep.say('Rest');
+                var spawnPosition = Game.spawns['Spawn1'].pos;
+                creep.moveTo(spawnPosition, {visualizePathStyle: {stroke: '#ffffff'}});
             }
         }
 	}
