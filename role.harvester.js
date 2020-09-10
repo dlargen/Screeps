@@ -10,7 +10,7 @@ var roleHarvester = {
             }
         }
         else {
-            var targets = creep.room.find(FIND_STRUCTURES, {
+            var targets = creep.room.find(FIND_MY_STRUCTURES, {
                     filter: (structure) => {
                         return (structure.structureType == STRUCTURE_EXTENSION || 
                             structure.structureType == STRUCTURE_SPAWN ||
@@ -20,7 +20,10 @@ var roleHarvester = {
             });
             if(targets.length > 0) {
                 creep.say('XFER');
-                creep.transfer(targets[0], RESOURCE_ENERGY);
+                var returnValue = creep.transfer(targets[0], RESOURCE_ENERGY);
+                //creep.say(returnValue);
+                //console.log(creep.name + ' ' + targets[0].name + ' ' + targets[0].pos);
+                //creep.say(targets[0].store.getFreeCapacity(RESOURCE_ENERGY));
                 creep.moveTo(targets[0], {visualizePathStyle: {stroke: '#ffffff'}});
                 
             }
