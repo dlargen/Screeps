@@ -29,9 +29,9 @@ var roleHarvester = {
             }
             else
             {
-                creep.say('🛏️ Rest');
+                //creep.say('🛏️ Rest');
                 var spawnPosition = Game.spawns['Spawn1'].pos;
-                creep.moveTo(spawnPosition, {visualizePathStyle: {stroke: '#ffffff'}});
+                creep.moveTo(spawnPosition.x + 2, spawnPosition.y + 2, {visualizePathStyle: {stroke: '#ffffff'}});
             }
         }
 	}
