@@ -21,19 +21,19 @@ var roleUpgrader = {
 			var returnValue = creep.withdraw(container,RESOURCE_ENERGY);
 			
 			if (returnValue == ERR_NOT_IN_RANGE)
-			    creep.moveTo(container);
+			    creep.moveTo(container, {visualizePathStyle: {stroke: '#ffaa00'}});
 			else if(returnValue < 0)
 			{
                 var source = creep.pos.findClosestByRange(FIND_SOURCES_ACTIVE);
                 
                 if(creep.harvest(source) == ERR_NOT_IN_RANGE) {
-                    creep.moveTo(source);
+                    creep.moveTo(source, {visualizePathStyle: {stroke: '#ffaa00'}});
                 }
 			}
         }
         else {
             if(creep.upgradeController(creep.room.controller) == ERR_NOT_IN_RANGE) {
-                creep.moveTo(creep.room.controller);
+                creep.moveTo(creep.room.controller, {visualizePathStyle: {stroke: '#ffffff'}});
             }
         }
 	}
