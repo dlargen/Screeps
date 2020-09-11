@@ -12,7 +12,14 @@ var roleBuilder = {
 	        creep.say('🚧 build');
 	    }
 
-	    if(creep.memory.building) {
+	    if(!creep.memory.building) {
+	        //creep.say('🔄 harvest');
+	        var source = creep.pos.findClosestByRange(FIND_SOURCES_ACTIVE);
+            if(creep.harvest(source) == ERR_NOT_IN_RANGE) {
+                creep.moveTo(source, {visualizePathStyle: {stroke: '#ffaa00'}});
+            }
+	    }
+	    else {
 	        var targets = creep.room.find(FIND_CONSTRUCTION_SITES);
             if(targets.length) {
                 //creep.say('🚧 build');
@@ -25,13 +32,6 @@ var roleBuilder = {
                 //creep.say('🛏️ Rest');
                 var spawnPosition = Game.spawns['Spawn1'].pos;
                 creep.moveTo(spawnPosition.x -3, spawnPosition.y - 3, {visualizePathStyle: {stroke: '#ffffff'}});
-            }
-	    }
-	    else {
-	        //creep.say('🔄 harvest');
-	        var source = creep.pos.findClosestByRange(FIND_SOURCES_ACTIVE);
-            if(creep.harvest(source) == ERR_NOT_IN_RANGE) {
-                creep.moveTo(source, {visualizePathStyle: {stroke: '#ffaa00'}});
             }
 	    }
 	}
