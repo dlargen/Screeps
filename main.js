@@ -140,22 +140,26 @@ module.exports.loop = function () {
                 {memory: {role: 'upgrader'}});
     }
     
-    var builders = _.filter(Game.creeps, (creep) => creep.memory.role == 'builder');
-    //console.log('Builders: ' + builders.length);
-
-    if(builders.length < builderQty && !harvestersNeeded & upgraders.length >= upgraderQty) {
-        var newName = 'Builder' + Game.time;
-        var energyAvailable = Game.spawns['Spawn1'].room.energyAvailable;
-        console.log('Spawning new builder: ' + newName + ' Available NRG:' + energyAvailable);
-        //console.log('Spawning new builder: ' + newName);
-
-        if(energyAvailable >= 300 && energyAvailable < 400)
-            Game.spawns['Spawn1'].spawnCreep([WORK,CARRY,MOVE,MOVE,MOVE], newName, 
-                {memory: {role: 'builder'}});
-        else if(energyAvailable >= 400)
-            Game.spawns['Spawn1'].spawnCreep([WORK,WORK,CARRY,CARRY,MOVE,MOVE], newName, 
-                {memory: {role: 'builder'}});
-    }       
+    var constructionSites = Game.spawns['Spawn1'].room.find(FIND_MY_CONSTRUCTION_SITES);
+    if (constructionSites.length > 0)
+    {
+        var builders = _.filter(Game.creeps, (creep) => creep.memory.role == 'builder');
+        //console.log('Builders: ' + builders.length);
+    
+        if(builders.length < builderQty && !harvestersNeeded & upgraders.length >= upgraderQty) {
+            var newName = 'Builder' + Game.time;
+            var energyAvailable = Game.spawns['Spawn1'].room.energyAvailable;
+            console.log('Spawning new builder: ' + newName + ' Available NRG:' + energyAvailable);
+            //console.log('Spawning new builder: ' + newName);
+    
+            if(energyAvailable >= 300 && energyAvailable < 400)
+                Game.spawns['Spawn1'].spawnCreep([WORK,CARRY,MOVE,MOVE,MOVE], newName, 
+                    {memory: {role: 'builder'}});
+            else if(energyAvailable >= 400)
+                Game.spawns['Spawn1'].spawnCreep([WORK,WORK,CARRY,CARRY,MOVE,MOVE], newName, 
+                    {memory: {role: 'builder'}});
+        }
+    }
     
     
     if(Game.spawns['Spawn1'].spawning) { 
