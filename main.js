@@ -71,13 +71,15 @@ module.exports.loop = function () {
                 if(closestHostile) {
                     tower.attack(closestHostile);
                 }
-                
-                var closestDamagedStructure = tower.pos.findClosestByRange(FIND_STRUCTURES, {
-                filter: (structure) => structure.structureType != STRUCTURE_WALL && structure.hits < structure.hitsMax
-                //filter: (structure) => structure.hits < structure.hitsMax
-                });
-                if(closestDamagedStructure) {
-                    tower.repair(closestDamagedStructure);
+                else
+                {
+                    var closestDamagedStructure = tower.pos.findClosestByRange(FIND_STRUCTURES, {
+                    filter: (structure) => structure.structureType != STRUCTURE_WALL && structure.hits < structure.hitsMax
+                    //filter: (structure) => structure.hits < structure.hitsMax
+                    });
+                    if(closestDamagedStructure) {
+                        tower.repair(closestDamagedStructure);
+                    }
                 }
             }
         }
