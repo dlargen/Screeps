@@ -1,9 +1,9 @@
 var roleHarvester = require('role.harvester');
 var roleUpgrader = require('role.upgrader');
 var roleBuilder = require('role.builder');
-var harvesterQty = 3;
+var harvesterQty = 5;
 var builderQty = 3;
-var upgraderQty = 3;
+var upgraderQty = 5;
 
 
 module.exports.loop = function () {
@@ -73,7 +73,8 @@ module.exports.loop = function () {
                 }
                 
                 var closestDamagedStructure = tower.pos.findClosestByRange(FIND_STRUCTURES, {
-                filter: (structure) => structure.hits < structure.hitsMax
+                filter: (structure) => structure.structureType != STRUCTURE_WALL && structure.hits < structure.hitsMax
+                //filter: (structure) => structure.hits < structure.hitsMax
                 });
                 if(closestDamagedStructure) {
                     tower.repair(closestDamagedStructure);
@@ -88,6 +89,8 @@ module.exports.loop = function () {
     if(harvesters.length < harvesterQty) {
         var newName = 'Harvester' + Game.time;
         console.log('Spawning new harvester: ' + newName);
+        Game.spawns['Spawn1'].spawnCreep([WORK,WORK,CARRY,CARRY,MOVE,MOVE], newName, 
+                {memory: {role: 'harvester'}});
         
         if(extensions.length < 2)
             Game.spawns['Spawn1'].spawnCreep([WORK,WORK,CARRY,MOVE], newName, 
@@ -95,6 +98,12 @@ module.exports.loop = function () {
         else if(extensions.length < 4)
             Game.spawns['Spawn1'].spawnCreep([WORK,WORK,CARRY,CARRY,MOVE,MOVE], newName, 
                 {memory: {role: 'harvester'}});
+        else if(extensions.length >= 6)
+        {
+            //Game.spawns['Spawn1'].spawnCreep([WORK,WORK,CARRY,CARRY,CARRY,MOVE,MOVE,MOVE], newName, 
+            Game.spawns['Spawn1'].spawnCreep([WORK,WORK,CARRY,CARRY,MOVE,MOVE], newName, 
+                {memory: {role: 'harvester'}});
+        }
     }
     
     var upgraders = _.filter(Game.creeps, (creep) => creep.memory.role == 'upgrader');
