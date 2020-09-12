@@ -16,7 +16,7 @@ var roleUpgrader = {
 	        var container = creep.pos.findClosestByRange(FIND_STRUCTURES, {
 	            filter: (structure) => {
 		        return structure.structureType == STRUCTURE_CONTAINER && 
-			    structure.store[RESOURCE_ENERGY] > 500}});
+			    structure.store[RESOURCE_ENERGY] > 1000}});
 			
 			var returnValue = creep.withdraw(container,RESOURCE_ENERGY);
 			
