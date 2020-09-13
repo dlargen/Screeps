@@ -29,7 +29,7 @@ var roleHarvester = {
             var tower = creep.pos.findClosestByRange(FIND_MY_STRUCTURES, {
                     filter: (structure) => {
                         return (structure.structureType == STRUCTURE_TOWER) &&
-                            structure.store.getFreeCapacity(RESOURCE_ENERGY) > 0;
+                            structure.store.getFreeCapacity(RESOURCE_ENERGY) > 100;
                     }
             });
             var container = creep.pos.findClosestByRange(FIND_STRUCTURES, {

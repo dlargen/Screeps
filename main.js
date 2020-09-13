@@ -2,8 +2,9 @@ var roleHarvester = require('role.harvester');
 var roleUpgrader = require('role.upgrader');
 var roleBuilder = require('role.builder');
 var builderQty = 3;
-var upgraderQty = 4;
+var upgraderQty = 5;
 var harvestersNeeded = false;
+var harvestersPerSource = 4;
 
 
 module.exports.loop = function () {
@@ -96,7 +97,7 @@ module.exports.loop = function () {
         
         
         
-        if(harvesters.length < 3)
+        if(harvesters.length < harvestersPerSource)
         {
             harvestersNeeded = true;
             
@@ -135,9 +136,16 @@ module.exports.loop = function () {
                         {memory: {role: 'harvester',
                             sourceId: source.id}
                         });
-                else if(energyAvailable >= 500 && energyCapacityAvailable >= 500)
+                else if(energyAvailable >= 500 && energyCapacityAvailable < 600)
                 {
                     Game.spawns['Spawn1'].spawnCreep([WORK,WORK,CARRY,CARRY,CARRY,MOVE,MOVE,MOVE], newName, 
+                        {memory: {role: 'harvester',
+                            sourceId: source.id}
+                        });
+                }
+                else if(energyAvailable >= 600 && energyCapacityAvailable >= 600)
+                {
+                    Game.spawns['Spawn1'].spawnCreep([WORK,WORK,WORK,CARRY,CARRY,CARRY,MOVE,MOVE,MOVE], newName, 
                         {memory: {role: 'harvester',
                             sourceId: source.id}
                         });
@@ -155,12 +163,17 @@ module.exports.loop = function () {
         
         var energyAvailable = Game.spawns['Spawn1'].room.energyAvailable;
         console.log('Spawning new upgrader: ' + newName + ' Available NRG:' + energyAvailable);
+        
+        var energyCapacityAvailable = Game.spawns['Spawn1'].room.energyCapacityAvailable;
 
-        if(energyAvailable >= 300 && energyAvailable < 400)
+        if(energyAvailable >= 300 && energyCapacityAvailable < 400)
             Game.spawns['Spawn1'].spawnCreep([WORK,CARRY,MOVE,MOVE,MOVE], newName, 
                 {memory: {role: 'upgrader'}});
-        else if(energyAvailable >= 400)
+        else if(energyAvailable >= 400 && energyCapacityAvailable < 500)
             Game.spawns['Spawn1'].spawnCreep([WORK,WORK,CARRY,CARRY,MOVE,MOVE], newName, 
+                {memory: {role: 'upgrader'}});
+        else if(energyAvailable >= 500 && energyCapacityAvailable >= 500)
+            Game.spawns['Spawn1'].spawnCreep([WORK,WORK,CARRY,CARRY,MOVE,MOVE,MOVE,MOVE], newName, 
                 {memory: {role: 'upgrader'}});
     }
     
