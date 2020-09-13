@@ -93,31 +93,55 @@ module.exports.loop = function () {
         //console.log(source.id);
 
         var harvesters = _.filter(Game.creeps, i => i.memory.sourceId === source.id);
+        
+        
+        
         if(harvesters.length < 3)
         {
             harvestersNeeded = true;
-            //console.log('We need a harvester for sourceID ' + source.id);
+            
+            var allHarvestersCount = _.filter(Game.creeps, (creep) => creep.memory.role == 'harvester').length;
+            console.log('All Harvester Count: ' + allHarvestersCount);
+            
             var newName = 'Harvester' + Game.time;
             var energyAvailable = Game.spawns['Spawn1'].room.energyAvailable;
-            //console.log('Spawning new harvester: ' + newName + ' Available NRG:' + energyAvailable);
             
-    
-            if(energyAvailable >= 300 && energyAvailable < 400)
-                Game.spawns['Spawn1'].spawnCreep([WORK,WORK,CARRY,MOVE], newName, 
-                    {memory: {role: 'harvester',
-                        sourceId: source.id}
-                    });
-            else if(energyAvailable >= 400 && energyAvailable < 500)
-                Game.spawns['Spawn1'].spawnCreep([WORK,WORK,CARRY,CARRY,MOVE,MOVE], newName, 
-                    {memory: {role: 'harvester',
-                        sourceId: source.id}
-                    });
-            else if(energyAvailable >= 500)
-            {
-                Game.spawns['Spawn1'].spawnCreep([WORK,WORK,CARRY,CARRY,CARRY,MOVE,MOVE,MOVE], newName, 
-                    {memory: {role: 'harvester',
-                        sourceId: source.id}
-                    });
+            if(allHarvestersCount == 0) {
+                //Emergency Spawn at 300
+                
+                if(energyAvailable >= 300)
+                    Game.spawns['Spawn1'].spawnCreep([WORK,WORK,CARRY,MOVE], newName, 
+                        {memory: {role: 'harvester',
+                            sourceId: source.id}
+                        });
+            }
+            else {
+                //console.log('We need a harvester for sourceID ' + source.id);
+                
+                
+                var energyCapacityAvailable = Game.spawns['Spawn1'].room.energyCapacityAvailable;
+                console.log('Energy Cap: ' + energyCapacityAvailable);
+                
+                //console.log('Spawning new harvester: ' + newName + ' Available NRG:' + energyAvailable);
+                
+        
+                if(energyAvailable >= 300 && energyCapacityAvailable < 400)
+                    Game.spawns['Spawn1'].spawnCreep([WORK,WORK,CARRY,MOVE], newName, 
+                        {memory: {role: 'harvester',
+                            sourceId: source.id}
+                        });
+                else if(energyAvailable >= 400 && energyCapacityAvailable < 500)
+                    Game.spawns['Spawn1'].spawnCreep([WORK,WORK,CARRY,CARRY,MOVE,MOVE], newName, 
+                        {memory: {role: 'harvester',
+                            sourceId: source.id}
+                        });
+                else if(energyAvailable >= 500 && energyCapacityAvailable >= 500)
+                {
+                    Game.spawns['Spawn1'].spawnCreep([WORK,WORK,CARRY,CARRY,CARRY,MOVE,MOVE,MOVE], newName, 
+                        {memory: {role: 'harvester',
+                            sourceId: source.id}
+                        });
+                }
             }
         }
         

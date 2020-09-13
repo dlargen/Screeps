@@ -10,33 +10,42 @@ var roleHarvester = {
             }
         }
         else {
-            var targets = creep.room.find(FIND_MY_STRUCTURES, {
+            var coreEnergy = creep.pos.findClosestByRange(FIND_MY_STRUCTURES, {
                     filter: (structure) => {
                         return (structure.structureType == STRUCTURE_EXTENSION || 
-                            structure.structureType == STRUCTURE_SPAWN ||
-                            structure.structureType == STRUCTURE_CONTAINER ||
-                            structure.structureType == STRUCTURE_TOWER) &&
+                            structure.structureType == STRUCTURE_SPAWN) &&
                             structure.store.getFreeCapacity(RESOURCE_ENERGY) > 0;
                     }
             });
-            var containers = creep.room.find(FIND_STRUCTURES, {
+            var tower = creep.pos.findClosestByRange(FIND_MY_STRUCTURES, {
+                    filter: (structure) => {
+                        return (structure.structureType == STRUCTURE_TOWER) &&
+                            structure.store.getFreeCapacity(RESOURCE_ENERGY) > 0;
+                    }
+            });
+            var container = creep.pos.findClosestByRange(FIND_STRUCTURES, {
 	            filter: (structure) => {
 		        return structure.structureType == STRUCTURE_CONTAINER && 
-			    structure.store[RESOURCE_ENERGY] < 1950}});
+			    structure.store[RESOURCE_ENERGY] < 1999}});
             
-            if(targets.length > 0 || containers.length > 0) {
+            if(coreEnergy || tower || container)
+            {
                 var target;
-                if (containers.length > 0)
-                    target = containers[0];
-                if (targets.length > 0)
-                    target = targets[0];
-                    
+                
+                if(coreEnergy)
+                    target = coreEnergy;
+                else if(tower)
+                    target = tower;
+                else if(container)
+                    target = container;
+                
                 //creep.say('XFER');
                 var returnValue = creep.transfer(target, RESOURCE_ENERGY);
                 //creep.say(returnValue);
                 //console.log(creep.name + ' ' + targets[0].name + ' ' + targets[0].pos);
                 //creep.say(targets[0].store.getFreeCapacity(RESOURCE_ENERGY));
-                creep.moveTo(target, {visualizePathStyle: {stroke: '#ffffff'}});
+                if (returnValue == ERR_NOT_IN_RANGE)
+                    creep.moveTo(target, {visualizePathStyle: {stroke: '#ffffff'}});
                 
             }
             else
