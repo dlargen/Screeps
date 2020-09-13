@@ -2,15 +2,24 @@ var roleHarvester = {
 
     /** @param {Creep} creep **/
     run: function(creep) {
-	    if(creep.store.getFreeCapacity() > 0) {
-	        //creep.say('Harvest');
+        if(creep.memory.transfering && creep.store[RESOURCE_ENERGY] == 0) {
+            creep.memory.transfering = false;
+            creep.say('🔄 harvest');
+	    }
+	    if(!creep.memory.transfering && creep.store.getFreeCapacity() == 0) {
+	        creep.memory.transfering = true;
+	        creep.say('transfering');
+	    }
+	    
+	    if(!creep.memory.transfering) {
+            //creep.say('Harvest');
             var source = Game.getObjectById(creep.memory.sourceId);
             if(creep.harvest(source) == ERR_NOT_IN_RANGE) {
                 creep.moveTo(source, {visualizePathStyle: {stroke: '#ffaa00'}});
             }
-        }
-        else {
-            var coreEnergy = creep.pos.findClosestByRange(FIND_MY_STRUCTURES, {
+	    }
+	    else {
+	        var coreEnergy = creep.pos.findClosestByRange(FIND_MY_STRUCTURES, {
                     filter: (structure) => {
                         return (structure.structureType == STRUCTURE_EXTENSION || 
                             structure.structureType == STRUCTURE_SPAWN) &&
@@ -54,7 +63,7 @@ var roleHarvester = {
                 var spawnPosition = Game.spawns['Spawn1'].pos;
                 creep.moveTo(spawnPosition.x + 2, spawnPosition.y + 2, {visualizePathStyle: {stroke: '#ffffff'}});
             }
-        }
+	    }
 	}
 };
 
