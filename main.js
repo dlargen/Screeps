@@ -194,9 +194,12 @@ module.exports.loop = function () {
             if(energyAvailable >= 300 && energyCapacityAvailable < 400)
                 Game.spawns['Spawn1'].spawnCreep([WORK,CARRY,MOVE,MOVE,MOVE], newName, 
                     {memory: {role: 'builder'}});
-            else if(energyAvailable >= 400 && energyCapacityAvailable >= 400)
+            else if(energyAvailable >= 400 && energyCapacityAvailable < 500)
                 Game.spawns['Spawn1'].spawnCreep([WORK,WORK,CARRY,CARRY,MOVE,MOVE], newName, 
                     {memory: {role: 'builder'}});
+            else if(energyAvailable >= 500 && energyCapacityAvailable >= 500)
+                Game.spawns['Spawn1'].spawnCreep([WORK,WORK,CARRY,CARRY,CARRY,MOVE,MOVE,MOVE], newName, 
+                {memory: {role: 'upgrader'}});
         }
     }
     
