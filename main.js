@@ -188,11 +188,13 @@ module.exports.loop = function () {
             var energyAvailable = Game.spawns['Spawn1'].room.energyAvailable;
             console.log('Spawning new builder: ' + newName + ' Available NRG:' + energyAvailable);
             //console.log('Spawning new builder: ' + newName);
+            
+            var energyCapacityAvailable = Game.spawns['Spawn1'].room.energyCapacityAvailable;
     
-            if(energyAvailable >= 300 && energyAvailable < 400)
+            if(energyAvailable >= 300 && energyCapacityAvailable < 400)
                 Game.spawns['Spawn1'].spawnCreep([WORK,CARRY,MOVE,MOVE,MOVE], newName, 
                     {memory: {role: 'builder'}});
-            else if(energyAvailable >= 400)
+            else if(energyAvailable >= 400 && energyCapacityAvailable >= 400)
                 Game.spawns['Spawn1'].spawnCreep([WORK,WORK,CARRY,CARRY,MOVE,MOVE], newName, 
                     {memory: {role: 'builder'}});
         }
