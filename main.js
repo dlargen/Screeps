@@ -2,7 +2,7 @@ var roleHarvester = require('role.harvester');
 var roleUpgrader = require('role.upgrader');
 var roleBuilder = require('role.builder');
 var builderQty = 3;
-var upgraderQty = 5;
+var upgraderQty = 6;
 var harvestersNeeded = false;
 var harvestersPerSource = 4;
 
@@ -199,7 +199,7 @@ module.exports.loop = function () {
                     {memory: {role: 'builder'}});
             else if(energyAvailable >= 500 && energyCapacityAvailable >= 500)
                 Game.spawns['Spawn1'].spawnCreep([WORK,WORK,CARRY,CARRY,CARRY,MOVE,MOVE,MOVE], newName, 
-                {memory: {role: 'upgrader'}});
+                {memory: {role: 'builder'}});
         }
     }
     
