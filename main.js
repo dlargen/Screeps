@@ -1,7 +1,8 @@
 var roleHarvester = require('role.harvester');
 var roleUpgrader = require('role.upgrader');
 var roleBuilder = require('role.builder');
-var builderQty = 3;
+var roleTower = require('role.tower');
+var builderQty = 2;
 var upgraderQty = 6;
 var harvestersNeeded = false;
 var harvestersPerSource = 4;
@@ -43,49 +44,6 @@ module.exports.loop = function () {
             Game.spawns['Spawn1'].room.createConstructionSite(spawnPosition.x , spawnPosition.y + 2, STRUCTURE_EXTENSION);
         }
     }
-
-    // *** SPAWNING TOWERS *** //
-    if (Game.spawns['Spawn1'].room.controller.level > 2) {
-        var towers = Game.spawns['Spawn1'].room.find(FIND_MY_STRUCTURES, {
-            filter: { structureType: STRUCTURE_TOWER }
-        });
-        
-        //console.log('Spawn has '+towers.length+' towers.');
-        
-        var constructionTowers = Game.spawns['Spawn1'].room.find(FIND_MY_CONSTRUCTION_SITES, {
-            filter: { structureType: STRUCTURE_TOWER }
-        });
-        
-        //console.log('Spawn has '+constructionTowers.length+' construction towers.');
-        
-        if (towers.length < 1 && constructionTowers.length < 1) {
-            console.log('Spawning Tower 1');
-            var spawnPosition = Game.spawns['Spawn1'].pos;
-            Game.spawns['Spawn1'].room.createConstructionSite(spawnPosition.x - 4 , spawnPosition.y, STRUCTURE_TOWER);
-        }
-        for (var id in towers) {
-            if (id >= 0) {
-                //console.log('tower id ' +id);
-                var tower = towers[id];
-                //console.log('tower pos ' +tower.pos);
-                var closestHostile = tower.pos.findClosestByRange(FIND_HOSTILE_CREEPS);
-                if(closestHostile) {
-                    tower.attack(closestHostile);
-                }
-                else
-                {
-                    var closestDamagedStructure = tower.pos.findClosestByRange(FIND_STRUCTURES, {
-                    filter: (structure) => structure.structureType != STRUCTURE_WALL && structure.hits < structure.hitsMax
-                    //filter: (structure) => structure.hits < structure.hitsMax
-                    });
-                    if(closestDamagedStructure) {
-                        tower.repair(closestDamagedStructure);
-                    }
-                }
-            }
-        }
-    }
-    
     
     harvestersNeeded = false;
     var sources = Game.spawns['Spawn1'].room.find(FIND_SOURCES);
@@ -225,4 +183,6 @@ module.exports.loop = function () {
             roleBuilder.run(creep);
         }
     }
+    
+    roleTower.run();
 }
