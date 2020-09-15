@@ -67,6 +67,10 @@ var roleHauler = {
                     creep.moveTo(energy, {visualizePathStyle: {stroke: '#ffaa00'}});
                 }
             }
+            else
+            {
+                creep.moveTo(source);
+            }
         }
 	}
 };
