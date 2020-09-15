@@ -2,7 +2,7 @@
 // @name         Migrate room terrain
 // @namespace    https://screeps.com/
 // @version      1.0
-// @author       Nosthula
+// @author       Nosthula derived from Mark Bertels, Esryok script @ https://github.com/screepers/screeps-snippets/blob/master/src/misc/migrate%20room%20to%20sim.md
 // @match        https://screeps.com/a/#!/sim/custom
 // @run-at       context-menu
 // @grant        none
