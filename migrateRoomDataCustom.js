@@ -72,7 +72,7 @@ function migrateRoomToSimulation() {
                     //console.log(savedRoomText);
                     console.log("Room data cached");
                     let roomData = adjustRoomDataForCustomMode(JSON.parse(savedRoomText));
-                    console.log(roomData);
+                    //console.log(roomData);
                     var gameElement = angular.element($('body'));
                     var memory = gameElement.injector().get("MemoryStorage");
                     var destroyWatcher = gameElement.scope().$watch(function () { return (memory.get("gametime")); }, function (newVal, oldVal) {
