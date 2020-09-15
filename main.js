@@ -3,7 +3,7 @@ var roleUpgrader = require('role.upgrader');
 var roleBuilder = require('role.builder');
 var roleTower = require('role.tower');
 var builderQty = 2;
-var upgraderQty = 6;
+var upgraderQty = 5;
 var harvestersNeeded = false;
 var harvestersPerSource = 4;
 

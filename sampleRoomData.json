@@ -1,0 +1,3183 @@
+{
+    "terrain": [
+        {
+            "_id": "terrain",
+            "type": "terrain",
+            "terrain": "1111000000000000000000000000000000000000111111111111110000000000000000000000000000000000000000221111111110002221111120000022000000000000000000222201111111100022111111100000000000000000000000022200011111000000011100000000000000000200000011000200020111100000000110200000000000000000000011111002200201111000000200002000000000000000000000111110000020011112000002000000000000000000000000011111100000000011120000000000000000011000000000000001111000000000111000020000000000000111000000000010001110000002200111000000220000000000111000000000000000000000222001111000000000000000000110000000000000001000022222011111000001100000000000000000000001100111000222200111112000011000010222000000000000011001111002222001111022000111000112222000000010000000011110000000111110220001112001022220000001110000000011000000001111110220001110000022200000011100000200000000200011111112000011120000022000000010000000000200000000011111120000111000000220000000000000000002220000000111110000001110000000220000200000000000222000000001110000000011100000000000022220000000001100000000011000000000110000000000000020222222200111110000000112000000020000000020000000000222000001111110000011122000000000000000200000000000000000011111112011111222000000000001100000000000000000000011111110111110220000000000011000000000000000000000010011100111000000000000000000011100000000000200000000000000110000000200000000000111110000000000000000000000000100220002000000000011111110000000000000000001110001002200220111000001111111100000000000000001111100010000022211111111111111110000000000000000011110000110000220111111111111100200000000211200000111000001100000001111111111200000000000001112000200000000111000000011100000000000000000000011120000002000011100000000110000000000000000000000011200000220000011000000001100000000000000000000000110000002200000110000000011100000000000000000000220000000111000002100000000011100000000000000000000200000001111000001000000000111000000000000000000200000000011111000011100000001100000000000000000000000000000111111000111100000000000000000011100000000000000001111110001111100000000000000000010000000000020000001111022111111000000000000000000000000000020000000001110001111100000000000000110000000000000000000000001000001110000000000000011100000000000000000000000000000011100000000000001111000000000000000000000000000001110000200000000011110000000000000000011000000000211100000000000000111110000000220000000111000000000111100020111100011111111110002000011111111111100011111111111111111111111111111111111111111111111111111"
+        }
+    ],
+    "objects": [
+        {
+            "type": "source",
+            "x": 14,
+            "y": 3,
+            "energy": 66,
+            "energyCapacity": 3000,
+            "ticksToRegeneration": 300,
+            "invaderHarvested": 47220,
+            "nextRegenerationTime": 21550190,
+            "_isDisabled": false
+        },
+        {
+            "type": "source",
+            "x": 43,
+            "y": 25,
+            "energy": 2184,
+            "energyCapacity": 3000,
+            "ticksToRegeneration": 300,
+            "invaderHarvested": 49338,
+            "nextRegenerationTime": 21550348,
+            "_isDisabled": false
+        },
+        {
+            "type": "mineral",
+            "density": 4,
+            "mineralType": "O",
+            "mineralAmount": 100000,
+            "x": 9,
+            "y": 30,
+            "_isDisabled": false
+        },
+        {
+            "type": "constructedWall",
+            "x": 1,
+            "y": 24,
+            "notifyWhenAttacked": true,
+            "hits": 45601,
+            "hitsMax": 300000000,
+            "_isDisabled": false
+        },
+        {
+            "type": "constructedWall",
+            "x": 2,
+            "y": 24,
+            "notifyWhenAttacked": true,
+            "hits": 32801,
+            "hitsMax": 300000000,
+            "_isDisabled": false
+        },
+        {
+            "type": "constructedWall",
+            "x": 3,
+            "y": 24,
+            "notifyWhenAttacked": true,
+            "hits": 20401,
+            "hitsMax": 300000000,
+            "_isDisabled": false
+        },
+        {
+            "type": "constructedWall",
+            "x": 3,
+            "y": 25,
+            "notifyWhenAttacked": true,
+            "hits": 20001,
+            "hitsMax": 300000000,
+            "_isDisabled": false
+        },
+        {
+            "type": "constructedWall",
+            "x": 3,
+            "y": 26,
+            "notifyWhenAttacked": true,
+            "hits": 20001,
+            "hitsMax": 300000000,
+            "_isDisabled": false
+        },
+        {
+            "type": "constructedWall",
+            "x": 3,
+            "y": 27,
+            "notifyWhenAttacked": true,
+            "hits": 20001,
+            "hitsMax": 300000000,
+            "_isDisabled": false
+        },
+        {
+            "type": "constructedWall",
+            "x": 3,
+            "y": 28,
+            "notifyWhenAttacked": true,
+            "hits": 20001,
+            "hitsMax": 300000000,
+            "_isDisabled": false
+        },
+        {
+            "type": "constructedWall",
+            "x": 3,
+            "y": 29,
+            "notifyWhenAttacked": true,
+            "hits": 10780001,
+            "hitsMax": 300000000,
+            "_isDisabled": false
+        },
+        {
+            "type": "constructedWall",
+            "x": 2,
+            "y": 39,
+            "notifyWhenAttacked": true,
+            "hits": 20161,
+            "hitsMax": 300000000,
+            "_isDisabled": false
+        },
+        {
+            "type": "constructedWall",
+            "x": 3,
+            "y": 39,
+            "notifyWhenAttacked": true,
+            "hits": 20161,
+            "hitsMax": 300000000,
+            "_isDisabled": false
+        },
+        {
+            "type": "constructedWall",
+            "x": 3,
+            "y": 38,
+            "notifyWhenAttacked": true,
+            "hits": 20281,
+            "hitsMax": 300000000,
+            "_isDisabled": false
+        },
+        {
+            "type": "constructedWall",
+            "x": 3,
+            "y": 37,
+            "notifyWhenAttacked": true,
+            "hits": 20161,
+            "hitsMax": 300000000,
+            "_isDisabled": false
+        },
+        {
+            "type": "constructedWall",
+            "x": 3,
+            "y": 36,
+            "notifyWhenAttacked": true,
+            "hits": 20401,
+            "hitsMax": 300000000,
+            "_isDisabled": false
+        },
+        {
+            "type": "constructedWall",
+            "x": 3,
+            "y": 35,
+            "notifyWhenAttacked": true,
+            "hits": 20481,
+            "hitsMax": 300000000,
+            "_isDisabled": false
+        },
+        {
+            "type": "constructedWall",
+            "x": 3,
+            "y": 34,
+            "notifyWhenAttacked": true,
+            "hits": 20401,
+            "hitsMax": 300000000,
+            "_isDisabled": false
+        },
+        {
+            "type": "constructedWall",
+            "x": 3,
+            "y": 30,
+            "notifyWhenAttacked": true,
+            "hits": 20001,
+            "hitsMax": 300000000,
+            "_isDisabled": false
+        },
+        {
+            "type": "constructedWall",
+            "x": 3,
+            "y": 33,
+            "notifyWhenAttacked": true,
+            "hits": 20161,
+            "hitsMax": 300000000,
+            "_isDisabled": false
+        },
+        {
+            "type": "constructedWall",
+            "x": 3,
+            "y": 31,
+            "notifyWhenAttacked": true,
+            "hits": 4786901,
+            "hitsMax": 300000000,
+            "_isDisabled": false
+        },
+        {
+            "type": "constructedWall",
+            "x": 4,
+            "y": 33,
+            "notifyWhenAttacked": true,
+            "hits": 20161,
+            "hitsMax": 300000000,
+            "_isDisabled": false
+        },
+        {
+            "type": "constructedWall",
+            "x": 5,
+            "y": 33,
+            "notifyWhenAttacked": true,
+            "hits": 20161,
+            "hitsMax": 300000000,
+            "_isDisabled": false
+        },
+        {
+            "type": "constructedWall",
+            "x": 6,
+            "y": 33,
+            "notifyWhenAttacked": true,
+            "hits": 20161,
+            "hitsMax": 300000000,
+            "_isDisabled": false
+        },
+        {
+            "type": "constructedWall",
+            "x": 7,
+            "y": 33,
+            "notifyWhenAttacked": true,
+            "hits": 20161,
+            "hitsMax": 300000000,
+            "_isDisabled": false
+        },
+        {
+            "type": "constructedWall",
+            "x": 4,
+            "y": 31,
+            "notifyWhenAttacked": true,
+            "hits": 20001,
+            "hitsMax": 300000000,
+            "_isDisabled": false
+        },
+        {
+            "type": "constructedWall",
+            "x": 5,
+            "y": 31,
+            "notifyWhenAttacked": true,
+            "hits": 20001,
+            "hitsMax": 300000000,
+            "_isDisabled": false
+        },
+        {
+            "type": "constructedWall",
+            "x": 6,
+            "y": 31,
+            "notifyWhenAttacked": true,
+            "hits": 20001,
+            "hitsMax": 300000000,
+            "_isDisabled": false
+        },
+        {
+            "type": "constructedWall",
+            "x": 7,
+            "y": 29,
+            "notifyWhenAttacked": true,
+            "hits": 20001,
+            "hitsMax": 300000000,
+            "_isDisabled": false
+        },
+        {
+            "type": "constructedWall",
+            "x": 5,
+            "y": 30,
+            "notifyWhenAttacked": true,
+            "hits": 20001,
+            "hitsMax": 300000000,
+            "_isDisabled": false
+        },
+        {
+            "type": "constructedWall",
+            "x": 5,
+            "y": 29,
+            "notifyWhenAttacked": true,
+            "hits": 20001,
+            "hitsMax": 300000000,
+            "_isDisabled": false
+        },
+        {
+            "type": "constructedWall",
+            "x": 5,
+            "y": 28,
+            "notifyWhenAttacked": true,
+            "hits": 20001,
+            "hitsMax": 300000000,
+            "_isDisabled": false
+        },
+        {
+            "type": "constructedWall",
+            "x": 5,
+            "y": 27,
+            "notifyWhenAttacked": true,
+            "hits": 20201,
+            "hitsMax": 300000000,
+            "_isDisabled": false
+        },
+        {
+            "type": "constructedWall",
+            "x": 6,
+            "y": 27,
+            "notifyWhenAttacked": true,
+            "hits": 20401,
+            "hitsMax": 300000000,
+            "_isDisabled": false
+        },
+        {
+            "type": "constructedWall",
+            "x": 7,
+            "y": 27,
+            "notifyWhenAttacked": true,
+            "hits": 40201,
+            "hitsMax": 300000000,
+            "_isDisabled": false
+        },
+        {
+            "type": "constructedWall",
+            "x": 6,
+            "y": 3,
+            "notifyWhenAttacked": true,
+            "hits": 1,
+            "hitsMax": 300000000,
+            "_isDisabled": false
+        },
+        {
+            "type": "constructedWall",
+            "x": 7,
+            "y": 3,
+            "notifyWhenAttacked": true,
+            "hits": 1,
+            "hitsMax": 300000000,
+            "_isDisabled": false
+        },
+        {
+            "type": "constructedWall",
+            "x": 8,
+            "y": 3,
+            "notifyWhenAttacked": true,
+            "hits": 1634401,
+            "hitsMax": 300000000,
+            "_isDisabled": false
+        },
+        {
+            "type": "constructedWall",
+            "x": 9,
+            "y": 3,
+            "notifyWhenAttacked": true,
+            "hits": 1,
+            "hitsMax": 300000000,
+            "_isDisabled": false
+        },
+        {
+            "type": "constructedWall",
+            "x": 41,
+            "y": 1,
+            "notifyWhenAttacked": true,
+            "hits": 1,
+            "hitsMax": 300000000,
+            "_isDisabled": false
+        },
+        {
+            "type": "constructedWall",
+            "x": 41,
+            "y": 2,
+            "notifyWhenAttacked": true,
+            "hits": 1,
+            "hitsMax": 300000000,
+            "_isDisabled": false
+        },
+        {
+            "type": "constructedWall",
+            "x": 41,
+            "y": 3,
+            "notifyWhenAttacked": true,
+            "hits": 1,
+            "hitsMax": 300000000,
+            "_isDisabled": false
+        },
+        {
+            "type": "constructedWall",
+            "x": 40,
+            "y": 3,
+            "notifyWhenAttacked": true,
+            "hits": 1,
+            "hitsMax": 300000000,
+            "_isDisabled": false
+        },
+        {
+            "type": "constructedWall",
+            "x": 39,
+            "y": 3,
+            "notifyWhenAttacked": true,
+            "hits": 1,
+            "hitsMax": 300000000,
+            "_isDisabled": false
+        },
+        {
+            "type": "constructedWall",
+            "x": 37,
+            "y": 3,
+            "notifyWhenAttacked": true,
+            "hits": 1,
+            "hitsMax": 300000000,
+            "_isDisabled": false
+        },
+        {
+            "type": "constructedWall",
+            "x": 38,
+            "y": 3,
+            "notifyWhenAttacked": true,
+            "hits": 1,
+            "hitsMax": 300000000,
+            "_isDisabled": false
+        },
+        {
+            "type": "constructedWall",
+            "x": 36,
+            "y": 3,
+            "notifyWhenAttacked": true,
+            "hits": 1,
+            "hitsMax": 300000000,
+            "_isDisabled": false
+        },
+        {
+            "type": "constructedWall",
+            "x": 34,
+            "y": 3,
+            "notifyWhenAttacked": true,
+            "hits": 1,
+            "hitsMax": 300000000,
+            "_isDisabled": false
+        },
+        {
+            "type": "constructedWall",
+            "x": 35,
+            "y": 3,
+            "notifyWhenAttacked": true,
+            "hits": 1,
+            "hitsMax": 300000000,
+            "_isDisabled": false
+        },
+        {
+            "type": "constructedWall",
+            "x": 25,
+            "y": 3,
+            "notifyWhenAttacked": true,
+            "hits": 1,
+            "hitsMax": 300000000,
+            "_isDisabled": false
+        },
+        {
+            "type": "constructedWall",
+            "x": 33,
+            "y": 3,
+            "notifyWhenAttacked": true,
+            "hits": 1,
+            "hitsMax": 300000000,
+            "_isDisabled": false
+        },
+        {
+            "type": "constructedWall",
+            "x": 32,
+            "y": 3,
+            "notifyWhenAttacked": true,
+            "hits": 1,
+            "hitsMax": 300000000,
+            "_isDisabled": false
+        },
+        {
+            "type": "constructedWall",
+            "x": 31,
+            "y": 3,
+            "notifyWhenAttacked": true,
+            "hits": 1,
+            "hitsMax": 300000000,
+            "_isDisabled": false
+        },
+        {
+            "type": "constructedWall",
+            "x": 17,
+            "y": 3,
+            "notifyWhenAttacked": true,
+            "hits": 1,
+            "hitsMax": 300000000,
+            "_isDisabled": false
+        },
+        {
+            "type": "constructedWall",
+            "x": 20,
+            "y": 3,
+            "notifyWhenAttacked": true,
+            "hits": 1,
+            "hitsMax": 300000000,
+            "_isDisabled": false
+        },
+        {
+            "type": "constructedWall",
+            "x": 18,
+            "y": 3,
+            "notifyWhenAttacked": true,
+            "hits": 1,
+            "hitsMax": 300000000,
+            "_isDisabled": false
+        },
+        {
+            "type": "constructedWall",
+            "x": 19,
+            "y": 3,
+            "notifyWhenAttacked": true,
+            "hits": 1,
+            "hitsMax": 300000000,
+            "_isDisabled": false
+        },
+        {
+            "type": "constructedWall",
+            "x": 26,
+            "y": 3,
+            "notifyWhenAttacked": true,
+            "hits": 1,
+            "hitsMax": 300000000,
+            "_isDisabled": false
+        },
+        {
+            "type": "constructedWall",
+            "x": 27,
+            "y": 3,
+            "notifyWhenAttacked": true,
+            "hits": 1,
+            "hitsMax": 300000000,
+            "_isDisabled": false
+        },
+        {
+            "type": "constructedWall",
+            "x": 24,
+            "y": 3,
+            "notifyWhenAttacked": true,
+            "hits": 1,
+            "hitsMax": 300000000,
+            "_isDisabled": false
+        },
+        {
+            "type": "container",
+            "x": 40,
+            "y": 27,
+            "notifyWhenAttacked": true,
+            "store": {
+                "energy": 2000
+            },
+            "storeCapacity": 2000,
+            "hits": 250000,
+            "hitsMax": 250000,
+            "nextDecayTime": 21550378,
+            "_isDisabled": false
+        },
+        {
+            "type": "container",
+            "x": 23,
+            "y": 16,
+            "notifyWhenAttacked": true,
+            "store": {
+                "energy": 1900
+            },
+            "storeCapacity": 2000,
+            "hits": 250000,
+            "hitsMax": 250000,
+            "nextDecayTime": 21550527,
+            "_isDisabled": false
+        },
+        {
+            "type": "road",
+            "x": 40,
+            "y": 29,
+            "notifyWhenAttacked": true,
+            "hits": 5000,
+            "hitsMax": 5000,
+            "nextDecayTime": 21550796,
+            "_isDisabled": false
+        },
+        {
+            "type": "road",
+            "x": 39,
+            "y": 29,
+            "notifyWhenAttacked": true,
+            "hits": 5000,
+            "hitsMax": 5000,
+            "nextDecayTime": 21551152,
+            "_isDisabled": false
+        },
+        {
+            "type": "road",
+            "x": 38,
+            "y": 29,
+            "notifyWhenAttacked": true,
+            "hits": 5000,
+            "hitsMax": 5000,
+            "nextDecayTime": 21551086,
+            "_isDisabled": false
+        },
+        {
+            "type": "road",
+            "x": 37,
+            "y": 29,
+            "notifyWhenAttacked": true,
+            "hits": 5000,
+            "hitsMax": 5000,
+            "nextDecayTime": 21550999,
+            "_isDisabled": false
+        },
+        {
+            "type": "road",
+            "x": 36,
+            "y": 28,
+            "notifyWhenAttacked": true,
+            "hits": 5000,
+            "hitsMax": 5000,
+            "nextDecayTime": 21551007,
+            "_isDisabled": false
+        },
+        {
+            "type": "road",
+            "x": 44,
+            "y": 26,
+            "notifyWhenAttacked": true,
+            "hits": 5000,
+            "hitsMax": 5000,
+            "nextDecayTime": 21550978,
+            "_isDisabled": false
+        },
+        {
+            "type": "road",
+            "x": 43,
+            "y": 26,
+            "notifyWhenAttacked": true,
+            "hits": 5000,
+            "hitsMax": 5000,
+            "nextDecayTime": 21551041,
+            "_isDisabled": false
+        },
+        {
+            "type": "road",
+            "x": 43,
+            "y": 27,
+            "notifyWhenAttacked": true,
+            "hits": 5000,
+            "hitsMax": 5000,
+            "nextDecayTime": 21550716,
+            "_isDisabled": false
+        },
+        {
+            "type": "road",
+            "x": 42,
+            "y": 27,
+            "notifyWhenAttacked": true,
+            "hits": 5000,
+            "hitsMax": 5000,
+            "nextDecayTime": 21550732,
+            "_isDisabled": false
+        },
+        {
+            "type": "road",
+            "x": 42,
+            "y": 26,
+            "notifyWhenAttacked": true,
+            "hits": 5000,
+            "hitsMax": 5000,
+            "nextDecayTime": 21551026,
+            "_isDisabled": false
+        },
+        {
+            "type": "road",
+            "x": 44,
+            "y": 27,
+            "notifyWhenAttacked": true,
+            "hits": 5000,
+            "hitsMax": 5000,
+            "nextDecayTime": 21551041,
+            "_isDisabled": false
+        },
+        {
+            "type": "road",
+            "x": 41,
+            "y": 27,
+            "notifyWhenAttacked": true,
+            "hits": 5000,
+            "hitsMax": 5000,
+            "nextDecayTime": 21551049,
+            "_isDisabled": false
+        },
+        {
+            "type": "road",
+            "x": 42,
+            "y": 28,
+            "notifyWhenAttacked": true,
+            "hits": 5000,
+            "hitsMax": 5000,
+            "nextDecayTime": 21550257,
+            "_isDisabled": false
+        },
+        {
+            "type": "road",
+            "x": 41,
+            "y": 28,
+            "notifyWhenAttacked": true,
+            "hits": 5000,
+            "hitsMax": 5000,
+            "nextDecayTime": 21550357,
+            "_isDisabled": false
+        },
+        {
+            "type": "road",
+            "x": 41,
+            "y": 26,
+            "notifyWhenAttacked": true,
+            "hits": 5000,
+            "hitsMax": 5000,
+            "nextDecayTime": 21551022,
+            "_isDisabled": false
+        },
+        {
+            "type": "road",
+            "x": 40,
+            "y": 28,
+            "notifyWhenAttacked": true,
+            "hits": 5000,
+            "hitsMax": 5000,
+            "nextDecayTime": 21550869,
+            "_isDisabled": false
+        },
+        {
+            "type": "road",
+            "x": 40,
+            "y": 26,
+            "notifyWhenAttacked": true,
+            "hits": 5000,
+            "hitsMax": 5000,
+            "nextDecayTime": 21550618,
+            "_isDisabled": false
+        },
+        {
+            "type": "road",
+            "x": 39,
+            "y": 28,
+            "notifyWhenAttacked": true,
+            "hits": 5000,
+            "hitsMax": 5000,
+            "nextDecayTime": 21550702,
+            "_isDisabled": false
+        },
+        {
+            "type": "road",
+            "x": 39,
+            "y": 27,
+            "notifyWhenAttacked": true,
+            "hits": 5000,
+            "hitsMax": 5000,
+            "nextDecayTime": 21550416,
+            "_isDisabled": false
+        },
+        {
+            "type": "road",
+            "x": 38,
+            "y": 28,
+            "notifyWhenAttacked": true,
+            "hits": 5000,
+            "hitsMax": 5000,
+            "nextDecayTime": 21550642,
+            "_isDisabled": false
+        },
+        {
+            "type": "road",
+            "x": 38,
+            "y": 26,
+            "notifyWhenAttacked": true,
+            "hits": 5000,
+            "hitsMax": 5000,
+            "nextDecayTime": 21550790,
+            "_isDisabled": false
+        },
+        {
+            "type": "road",
+            "x": 38,
+            "y": 27,
+            "notifyWhenAttacked": true,
+            "hits": 5000,
+            "hitsMax": 5000,
+            "nextDecayTime": 21550438,
+            "_isDisabled": false
+        },
+        {
+            "type": "road",
+            "x": 37,
+            "y": 27,
+            "notifyWhenAttacked": true,
+            "hits": 5000,
+            "hitsMax": 5000,
+            "nextDecayTime": 21550477,
+            "_isDisabled": false
+        },
+        {
+            "type": "road",
+            "x": 36,
+            "y": 27,
+            "notifyWhenAttacked": true,
+            "hits": 5000,
+            "hitsMax": 5000,
+            "nextDecayTime": 21550853,
+            "_isDisabled": false
+        },
+        {
+            "type": "road",
+            "x": 36,
+            "y": 29,
+            "notifyWhenAttacked": true,
+            "hits": 5000,
+            "hitsMax": 5000,
+            "nextDecayTime": 21550703,
+            "_isDisabled": false
+        },
+        {
+            "type": "road",
+            "x": 35,
+            "y": 26,
+            "notifyWhenAttacked": true,
+            "hits": 5000,
+            "hitsMax": 5000,
+            "nextDecayTime": 21550746,
+            "_isDisabled": false
+        },
+        {
+            "type": "road",
+            "x": 35,
+            "y": 28,
+            "notifyWhenAttacked": true,
+            "hits": 5000,
+            "hitsMax": 5000,
+            "nextDecayTime": 21550662,
+            "_isDisabled": false
+        },
+        {
+            "type": "road",
+            "x": 35,
+            "y": 29,
+            "notifyWhenAttacked": true,
+            "hits": 5000,
+            "hitsMax": 5000,
+            "nextDecayTime": 21550433,
+            "_isDisabled": false
+        },
+        {
+            "type": "road",
+            "x": 34,
+            "y": 26,
+            "notifyWhenAttacked": true,
+            "hits": 5000,
+            "hitsMax": 5000,
+            "nextDecayTime": 21550869,
+            "_isDisabled": false
+        },
+        {
+            "type": "road",
+            "x": 34,
+            "y": 27,
+            "notifyWhenAttacked": true,
+            "hits": 5000,
+            "hitsMax": 5000,
+            "nextDecayTime": 21551097,
+            "_isDisabled": false
+        },
+        {
+            "type": "road",
+            "x": 33,
+            "y": 26,
+            "notifyWhenAttacked": true,
+            "hits": 25000,
+            "hitsMax": 25000,
+            "nextDecayTime": 21551062,
+            "_isDisabled": false
+        },
+        {
+            "type": "road",
+            "x": 33,
+            "y": 25,
+            "notifyWhenAttacked": true,
+            "hits": 5000,
+            "hitsMax": 5000,
+            "nextDecayTime": 21551094,
+            "_isDisabled": false
+        },
+        {
+            "type": "road",
+            "x": 32,
+            "y": 25,
+            "notifyWhenAttacked": true,
+            "hits": 5000,
+            "hitsMax": 5000,
+            "nextDecayTime": 21550651,
+            "_isDisabled": false
+        },
+        {
+            "type": "road",
+            "x": 31,
+            "y": 25,
+            "notifyWhenAttacked": true,
+            "hits": 5000,
+            "hitsMax": 5000,
+            "nextDecayTime": 21550468,
+            "_isDisabled": false
+        },
+        {
+            "type": "road",
+            "x": 30,
+            "y": 24,
+            "notifyWhenAttacked": true,
+            "hits": 5000,
+            "hitsMax": 5000,
+            "nextDecayTime": 21550865,
+            "_isDisabled": false
+        },
+        {
+            "type": "road",
+            "x": 29,
+            "y": 24,
+            "notifyWhenAttacked": true,
+            "hits": 5000,
+            "hitsMax": 5000,
+            "nextDecayTime": 21550276,
+            "_isDisabled": false
+        },
+        {
+            "type": "road",
+            "x": 28,
+            "y": 23,
+            "notifyWhenAttacked": true,
+            "hits": 5000,
+            "hitsMax": 5000,
+            "nextDecayTime": 21550413,
+            "_isDisabled": false
+        },
+        {
+            "type": "road",
+            "x": 27,
+            "y": 22,
+            "notifyWhenAttacked": true,
+            "hits": 5000,
+            "hitsMax": 5000,
+            "nextDecayTime": 21550344,
+            "_isDisabled": false
+        },
+        {
+            "type": "road",
+            "x": 26,
+            "y": 22,
+            "notifyWhenAttacked": true,
+            "hits": 5000,
+            "hitsMax": 5000,
+            "nextDecayTime": 21550428,
+            "_isDisabled": false
+        },
+        {
+            "type": "road",
+            "x": 25,
+            "y": 20,
+            "notifyWhenAttacked": true,
+            "hits": 25000,
+            "hitsMax": 25000,
+            "nextDecayTime": 21550614,
+            "_isDisabled": false
+        },
+        {
+            "type": "road",
+            "x": 25,
+            "y": 21,
+            "notifyWhenAttacked": true,
+            "hits": 5000,
+            "hitsMax": 5000,
+            "nextDecayTime": 21550887,
+            "_isDisabled": false
+        },
+        {
+            "type": "road",
+            "x": 24,
+            "y": 19,
+            "notifyWhenAttacked": true,
+            "hits": 5000,
+            "hitsMax": 5000,
+            "nextDecayTime": 21550272,
+            "_isDisabled": false
+        },
+        {
+            "type": "road",
+            "x": 24,
+            "y": 20,
+            "notifyWhenAttacked": true,
+            "hits": 5000,
+            "hitsMax": 5000,
+            "nextDecayTime": 21550534,
+            "_isDisabled": false
+        },
+        {
+            "type": "road",
+            "x": 14,
+            "y": 4,
+            "notifyWhenAttacked": true,
+            "hits": 5000,
+            "hitsMax": 5000,
+            "nextDecayTime": 21550513,
+            "_isDisabled": false
+        },
+        {
+            "type": "road",
+            "x": 14,
+            "y": 5,
+            "notifyWhenAttacked": true,
+            "hits": 5000,
+            "hitsMax": 5000,
+            "nextDecayTime": 21550779,
+            "_isDisabled": false
+        },
+        {
+            "type": "road",
+            "x": 14,
+            "y": 6,
+            "notifyWhenAttacked": true,
+            "hits": 5000,
+            "hitsMax": 5000,
+            "nextDecayTime": 21550596,
+            "_isDisabled": false
+        },
+        {
+            "type": "road",
+            "x": 14,
+            "y": 7,
+            "notifyWhenAttacked": true,
+            "hits": 5000,
+            "hitsMax": 5000,
+            "nextDecayTime": 21550565,
+            "_isDisabled": false
+        },
+        {
+            "type": "road",
+            "x": 15,
+            "y": 7,
+            "notifyWhenAttacked": true,
+            "hits": 5000,
+            "hitsMax": 5000,
+            "nextDecayTime": 21551128,
+            "_isDisabled": false
+        },
+        {
+            "type": "road",
+            "x": 14,
+            "y": 8,
+            "notifyWhenAttacked": true,
+            "hits": 5000,
+            "hitsMax": 5000,
+            "nextDecayTime": 21550459,
+            "_isDisabled": false
+        },
+        {
+            "type": "road",
+            "x": 16,
+            "y": 8,
+            "notifyWhenAttacked": true,
+            "hits": 5000,
+            "hitsMax": 5000,
+            "nextDecayTime": 21551019,
+            "_isDisabled": false
+        },
+        {
+            "type": "road",
+            "x": 24,
+            "y": 18,
+            "notifyWhenAttacked": true,
+            "hits": 5000,
+            "hitsMax": 5000,
+            "nextDecayTime": 21550250,
+            "_isDisabled": false
+        },
+        {
+            "type": "road",
+            "x": 15,
+            "y": 8,
+            "notifyWhenAttacked": true,
+            "hits": 5000,
+            "hitsMax": 5000,
+            "nextDecayTime": 21550283,
+            "_isDisabled": false
+        },
+        {
+            "type": "road",
+            "x": 14,
+            "y": 9,
+            "notifyWhenAttacked": true,
+            "hits": 5000,
+            "hitsMax": 5000,
+            "nextDecayTime": 21550328,
+            "_isDisabled": false
+        },
+        {
+            "type": "road",
+            "x": 17,
+            "y": 9,
+            "notifyWhenAttacked": true,
+            "hits": 5000,
+            "hitsMax": 5000,
+            "nextDecayTime": 21551115,
+            "_isDisabled": false
+        },
+        {
+            "type": "road",
+            "x": 16,
+            "y": 9,
+            "notifyWhenAttacked": true,
+            "hits": 5000,
+            "hitsMax": 5000,
+            "nextDecayTime": 21550673,
+            "_isDisabled": false
+        },
+        {
+            "type": "road",
+            "x": 14,
+            "y": 10,
+            "notifyWhenAttacked": true,
+            "hits": 5000,
+            "hitsMax": 5000,
+            "nextDecayTime": 21550235,
+            "_isDisabled": false
+        },
+        {
+            "type": "road",
+            "x": 18,
+            "y": 10,
+            "notifyWhenAttacked": true,
+            "hits": 5000,
+            "hitsMax": 5000,
+            "nextDecayTime": 21550539,
+            "_isDisabled": false
+        },
+        {
+            "type": "road",
+            "x": 17,
+            "y": 10,
+            "notifyWhenAttacked": true,
+            "hits": 5000,
+            "hitsMax": 5000,
+            "nextDecayTime": 21550968,
+            "_isDisabled": false
+        },
+        {
+            "type": "road",
+            "x": 14,
+            "y": 11,
+            "notifyWhenAttacked": true,
+            "hits": 5000,
+            "hitsMax": 5000,
+            "nextDecayTime": 21550996,
+            "_isDisabled": false
+        },
+        {
+            "type": "road",
+            "x": 18,
+            "y": 11,
+            "notifyWhenAttacked": true,
+            "hits": 5000,
+            "hitsMax": 5000,
+            "nextDecayTime": 21550587,
+            "_isDisabled": false
+        },
+        {
+            "type": "road",
+            "x": 14,
+            "y": 12,
+            "notifyWhenAttacked": true,
+            "hits": 5000,
+            "hitsMax": 5000,
+            "nextDecayTime": 21550177,
+            "_isDisabled": false
+        },
+        {
+            "type": "road",
+            "x": 20,
+            "y": 12,
+            "notifyWhenAttacked": true,
+            "hits": 5000,
+            "hitsMax": 5000,
+            "nextDecayTime": 21550395,
+            "_isDisabled": false
+        },
+        {
+            "type": "road",
+            "x": 19,
+            "y": 12,
+            "notifyWhenAttacked": true,
+            "hits": 5000,
+            "hitsMax": 5000,
+            "nextDecayTime": 21550208,
+            "_isDisabled": false
+        },
+        {
+            "type": "road",
+            "x": 14,
+            "y": 13,
+            "notifyWhenAttacked": true,
+            "hits": 5000,
+            "hitsMax": 5000,
+            "nextDecayTime": 21550223,
+            "_isDisabled": false
+        },
+        {
+            "type": "road",
+            "x": 20,
+            "y": 13,
+            "notifyWhenAttacked": true,
+            "hits": 5000,
+            "hitsMax": 5000,
+            "nextDecayTime": 21550368,
+            "_isDisabled": false
+        },
+        {
+            "type": "road",
+            "x": 21,
+            "y": 13,
+            "notifyWhenAttacked": true,
+            "hits": 5000,
+            "hitsMax": 5000,
+            "nextDecayTime": 21550292,
+            "_isDisabled": false
+        },
+        {
+            "type": "road",
+            "x": 14,
+            "y": 14,
+            "notifyWhenAttacked": true,
+            "hits": 5000,
+            "hitsMax": 5000,
+            "nextDecayTime": 21550693,
+            "_isDisabled": false
+        },
+        {
+            "type": "road",
+            "x": 21,
+            "y": 14,
+            "notifyWhenAttacked": true,
+            "hits": 5000,
+            "hitsMax": 5000,
+            "nextDecayTime": 21550786,
+            "_isDisabled": false
+        },
+        {
+            "type": "road",
+            "x": 14,
+            "y": 15,
+            "notifyWhenAttacked": true,
+            "hits": 5000,
+            "hitsMax": 5000,
+            "nextDecayTime": 21550656,
+            "_isDisabled": false
+        },
+        {
+            "type": "road",
+            "x": 22,
+            "y": 15,
+            "notifyWhenAttacked": true,
+            "hits": 5000,
+            "hitsMax": 5000,
+            "nextDecayTime": 21551018,
+            "_isDisabled": false
+        },
+        {
+            "type": "road",
+            "x": 14,
+            "y": 16,
+            "notifyWhenAttacked": true,
+            "hits": 5000,
+            "hitsMax": 5000,
+            "nextDecayTime": 21550934,
+            "_isDisabled": false
+        },
+        {
+            "type": "road",
+            "x": 21,
+            "y": 16,
+            "notifyWhenAttacked": true,
+            "hits": 5000,
+            "hitsMax": 5000,
+            "nextDecayTime": 21550885,
+            "_isDisabled": false
+        },
+        {
+            "type": "road",
+            "x": 22,
+            "y": 16,
+            "notifyWhenAttacked": true,
+            "hits": 5000,
+            "hitsMax": 5000,
+            "nextDecayTime": 21550162,
+            "_isDisabled": false
+        },
+        {
+            "type": "road",
+            "x": 14,
+            "y": 17,
+            "notifyWhenAttacked": true,
+            "hits": 5000,
+            "hitsMax": 5000,
+            "nextDecayTime": 21550960,
+            "_isDisabled": false
+        },
+        {
+            "type": "road",
+            "x": 23,
+            "y": 17,
+            "notifyWhenAttacked": true,
+            "hits": 5000,
+            "hitsMax": 5000,
+            "nextDecayTime": 21550741,
+            "_isDisabled": false
+        },
+        {
+            "type": "road",
+            "x": 22,
+            "y": 17,
+            "notifyWhenAttacked": true,
+            "hits": 5000,
+            "hitsMax": 5000,
+            "nextDecayTime": 21550325,
+            "_isDisabled": false
+        },
+        {
+            "type": "road",
+            "x": 14,
+            "y": 18,
+            "notifyWhenAttacked": true,
+            "hits": 5000,
+            "hitsMax": 5000,
+            "nextDecayTime": 21550644,
+            "_isDisabled": false
+        },
+        {
+            "type": "road",
+            "x": 14,
+            "y": 19,
+            "notifyWhenAttacked": true,
+            "hits": 5000,
+            "hitsMax": 5000,
+            "nextDecayTime": 21550875,
+            "_isDisabled": false
+        },
+        {
+            "type": "road",
+            "x": 14,
+            "y": 20,
+            "notifyWhenAttacked": true,
+            "hits": 5000,
+            "hitsMax": 5000,
+            "nextDecayTime": 21550655,
+            "_isDisabled": false
+        },
+        {
+            "type": "road",
+            "x": 14,
+            "y": 21,
+            "notifyWhenAttacked": true,
+            "hits": 5000,
+            "hitsMax": 5000,
+            "nextDecayTime": 21550769,
+            "_isDisabled": false
+        },
+        {
+            "type": "road",
+            "x": 15,
+            "y": 21,
+            "notifyWhenAttacked": true,
+            "hits": 5000,
+            "hitsMax": 5000,
+            "nextDecayTime": 21550335,
+            "_isDisabled": false
+        },
+        {
+            "type": "road",
+            "x": 14,
+            "y": 22,
+            "notifyWhenAttacked": true,
+            "hits": 5000,
+            "hitsMax": 5000,
+            "nextDecayTime": 21550404,
+            "_isDisabled": false
+        },
+        {
+            "type": "road",
+            "x": 15,
+            "y": 23,
+            "notifyWhenAttacked": true,
+            "hits": 5000,
+            "hitsMax": 5000,
+            "nextDecayTime": 21550349,
+            "_isDisabled": false
+        },
+        {
+            "type": "road",
+            "x": 14,
+            "y": 23,
+            "notifyWhenAttacked": true,
+            "hits": 5000,
+            "hitsMax": 5000,
+            "nextDecayTime": 21550384,
+            "_isDisabled": false
+        },
+        {
+            "type": "road",
+            "x": 28,
+            "y": 24,
+            "notifyWhenAttacked": true,
+            "hits": 5000,
+            "hitsMax": 5000,
+            "nextDecayTime": 21550175,
+            "_isDisabled": false
+        },
+        {
+            "type": "road",
+            "x": 27,
+            "y": 24,
+            "notifyWhenAttacked": true,
+            "hits": 5000,
+            "hitsMax": 5000,
+            "nextDecayTime": 21550520,
+            "_isDisabled": false
+        },
+        {
+            "type": "road",
+            "x": 26,
+            "y": 24,
+            "notifyWhenAttacked": true,
+            "hits": 5000,
+            "hitsMax": 5000,
+            "nextDecayTime": 21551026,
+            "_isDisabled": false
+        },
+        {
+            "type": "road",
+            "x": 25,
+            "y": 22,
+            "notifyWhenAttacked": true,
+            "hits": 5000,
+            "hitsMax": 5000,
+            "nextDecayTime": 21550843,
+            "_isDisabled": false
+        },
+        {
+            "type": "road",
+            "x": 25,
+            "y": 24,
+            "notifyWhenAttacked": true,
+            "hits": 5000,
+            "hitsMax": 5000,
+            "nextDecayTime": 21550218,
+            "_isDisabled": false
+        },
+        {
+            "type": "road",
+            "x": 24,
+            "y": 21,
+            "notifyWhenAttacked": true,
+            "hits": 5000,
+            "hitsMax": 5000,
+            "nextDecayTime": 21550216,
+            "_isDisabled": false
+        },
+        {
+            "type": "road",
+            "x": 24,
+            "y": 22,
+            "notifyWhenAttacked": true,
+            "hits": 5000,
+            "hitsMax": 5000,
+            "nextDecayTime": 21550846,
+            "_isDisabled": false
+        },
+        {
+            "type": "road",
+            "x": 24,
+            "y": 24,
+            "notifyWhenAttacked": true,
+            "hits": 5000,
+            "hitsMax": 5000,
+            "nextDecayTime": 21550420,
+            "_isDisabled": false
+        },
+        {
+            "type": "road",
+            "x": 23,
+            "y": 21,
+            "notifyWhenAttacked": true,
+            "hits": 5000,
+            "hitsMax": 5000,
+            "nextDecayTime": 21550167,
+            "_isDisabled": false
+        },
+        {
+            "type": "road",
+            "x": 23,
+            "y": 22,
+            "notifyWhenAttacked": true,
+            "hits": 5000,
+            "hitsMax": 5000,
+            "nextDecayTime": 21550404,
+            "_isDisabled": false
+        },
+        {
+            "type": "road",
+            "x": 23,
+            "y": 24,
+            "notifyWhenAttacked": true,
+            "hits": 5000,
+            "hitsMax": 5000,
+            "nextDecayTime": 21550780,
+            "_isDisabled": false
+        },
+        {
+            "type": "road",
+            "x": 22,
+            "y": 22,
+            "notifyWhenAttacked": true,
+            "hits": 5000,
+            "hitsMax": 5000,
+            "nextDecayTime": 21550787,
+            "_isDisabled": false
+        },
+        {
+            "type": "road",
+            "x": 22,
+            "y": 24,
+            "notifyWhenAttacked": true,
+            "hits": 5000,
+            "hitsMax": 5000,
+            "nextDecayTime": 21551003,
+            "_isDisabled": false
+        },
+        {
+            "type": "road",
+            "x": 21,
+            "y": 22,
+            "notifyWhenAttacked": true,
+            "hits": 5000,
+            "hitsMax": 5000,
+            "nextDecayTime": 21550342,
+            "_isDisabled": false
+        },
+        {
+            "type": "road",
+            "x": 21,
+            "y": 24,
+            "notifyWhenAttacked": true,
+            "hits": 5000,
+            "hitsMax": 5000,
+            "nextDecayTime": 21551025,
+            "_isDisabled": false
+        },
+        {
+            "type": "road",
+            "x": 20,
+            "y": 23,
+            "notifyWhenAttacked": true,
+            "hits": 5000,
+            "hitsMax": 5000,
+            "nextDecayTime": 21550546,
+            "_isDisabled": false
+        },
+        {
+            "type": "road",
+            "x": 20,
+            "y": 24,
+            "notifyWhenAttacked": true,
+            "hits": 5000,
+            "hitsMax": 5000,
+            "nextDecayTime": 21550762,
+            "_isDisabled": false
+        },
+        {
+            "type": "road",
+            "x": 19,
+            "y": 24,
+            "notifyWhenAttacked": true,
+            "hits": 5000,
+            "hitsMax": 5000,
+            "nextDecayTime": 21551075,
+            "_isDisabled": false
+        },
+        {
+            "type": "road",
+            "x": 17,
+            "y": 23,
+            "notifyWhenAttacked": true,
+            "hits": 5000,
+            "hitsMax": 5000,
+            "nextDecayTime": 21550646,
+            "_isDisabled": false
+        },
+        {
+            "type": "road",
+            "x": 18,
+            "y": 24,
+            "notifyWhenAttacked": true,
+            "hits": 5000,
+            "hitsMax": 5000,
+            "nextDecayTime": 21550917,
+            "_isDisabled": false
+        },
+        {
+            "type": "road",
+            "x": 17,
+            "y": 24,
+            "notifyWhenAttacked": true,
+            "hits": 5000,
+            "hitsMax": 5000,
+            "nextDecayTime": 21550706,
+            "_isDisabled": false
+        },
+        {
+            "type": "road",
+            "x": 16,
+            "y": 23,
+            "notifyWhenAttacked": true,
+            "hits": 5000,
+            "hitsMax": 5000,
+            "nextDecayTime": 21550800,
+            "_isDisabled": false
+        },
+        {
+            "type": "road",
+            "x": 21,
+            "y": 17,
+            "notifyWhenAttacked": true,
+            "hits": 5000,
+            "hitsMax": 5000,
+            "nextDecayTime": 21551029,
+            "_isDisabled": false
+        },
+        {
+            "type": "road",
+            "x": 20,
+            "y": 18,
+            "notifyWhenAttacked": true,
+            "hits": 25000,
+            "hitsMax": 25000,
+            "nextDecayTime": 21550197,
+            "_isDisabled": false
+        },
+        {
+            "type": "road",
+            "x": 19,
+            "y": 19,
+            "notifyWhenAttacked": true,
+            "hits": 5000,
+            "hitsMax": 5000,
+            "nextDecayTime": 21550982,
+            "_isDisabled": false
+        },
+        {
+            "type": "road",
+            "x": 18,
+            "y": 20,
+            "notifyWhenAttacked": true,
+            "hits": 5000,
+            "hitsMax": 5000,
+            "nextDecayTime": 21550963,
+            "_isDisabled": false
+        },
+        {
+            "type": "road",
+            "x": 17,
+            "y": 21,
+            "notifyWhenAttacked": true,
+            "hits": 5000,
+            "hitsMax": 5000,
+            "nextDecayTime": 21550569,
+            "_isDisabled": false
+        },
+        {
+            "type": "road",
+            "x": 16,
+            "y": 22,
+            "notifyWhenAttacked": true,
+            "hits": 5000,
+            "hitsMax": 5000,
+            "nextDecayTime": 21550977,
+            "_isDisabled": false
+        },
+        {
+            "type": "road",
+            "x": 32,
+            "y": 24,
+            "notifyWhenAttacked": true,
+            "hits": 5000,
+            "hitsMax": 5000,
+            "nextDecayTime": 21550930,
+            "_isDisabled": false
+        },
+        {
+            "type": "road",
+            "x": 31,
+            "y": 23,
+            "notifyWhenAttacked": true,
+            "hits": 5000,
+            "hitsMax": 5000,
+            "nextDecayTime": 21550344,
+            "_isDisabled": false
+        },
+        {
+            "type": "road",
+            "x": 24,
+            "y": 16,
+            "notifyWhenAttacked": true,
+            "hits": 5000,
+            "hitsMax": 5000,
+            "nextDecayTime": 21551154,
+            "_isDisabled": false
+        },
+        {
+            "type": "road",
+            "x": 23,
+            "y": 15,
+            "notifyWhenAttacked": true,
+            "hits": 5000,
+            "hitsMax": 5000,
+            "nextDecayTime": 21550956,
+            "_isDisabled": false
+        },
+        {
+            "type": "road",
+            "x": 25,
+            "y": 17,
+            "notifyWhenAttacked": true,
+            "hits": 5000,
+            "hitsMax": 5000,
+            "nextDecayTime": 21550917,
+            "_isDisabled": false
+        },
+        {
+            "type": "road",
+            "x": 30,
+            "y": 22,
+            "notifyWhenAttacked": true,
+            "hits": 25000,
+            "hitsMax": 25000,
+            "nextDecayTime": 21550177,
+            "_isDisabled": false
+        },
+        {
+            "type": "road",
+            "x": 22,
+            "y": 14,
+            "notifyWhenAttacked": true,
+            "hits": 5000,
+            "hitsMax": 5000,
+            "nextDecayTime": 21550959,
+            "_isDisabled": false
+        },
+        {
+            "type": "road",
+            "x": 26,
+            "y": 18,
+            "notifyWhenAttacked": true,
+            "hits": 5000,
+            "hitsMax": 5000,
+            "nextDecayTime": 21550364,
+            "_isDisabled": false
+        },
+        {
+            "type": "road",
+            "x": 27,
+            "y": 19,
+            "notifyWhenAttacked": true,
+            "hits": 5000,
+            "hitsMax": 5000,
+            "nextDecayTime": 21550907,
+            "_isDisabled": false
+        },
+        {
+            "type": "road",
+            "x": 19,
+            "y": 11,
+            "notifyWhenAttacked": true,
+            "hits": 5000,
+            "hitsMax": 5000,
+            "nextDecayTime": 21550385,
+            "_isDisabled": false
+        },
+        {
+            "type": "road",
+            "x": 29,
+            "y": 21,
+            "notifyWhenAttacked": true,
+            "hits": 25000,
+            "hitsMax": 25000,
+            "nextDecayTime": 21550830,
+            "_isDisabled": false
+        },
+        {
+            "type": "road",
+            "x": 28,
+            "y": 20,
+            "notifyWhenAttacked": true,
+            "hits": 25000,
+            "hitsMax": 25000,
+            "nextDecayTime": 21551028,
+            "_isDisabled": false
+        },
+        {
+            "type": "road",
+            "x": 35,
+            "y": 27,
+            "notifyWhenAttacked": true,
+            "hits": 5000,
+            "hitsMax": 5000,
+            "nextDecayTime": 21550918,
+            "_isDisabled": false
+        },
+        {
+            "type": "road",
+            "x": 31,
+            "y": 24,
+            "notifyWhenAttacked": true,
+            "hits": 5000,
+            "hitsMax": 5000,
+            "nextDecayTime": 21550437,
+            "_isDisabled": false
+        },
+        {
+            "type": "road",
+            "x": 30,
+            "y": 23,
+            "notifyWhenAttacked": true,
+            "hits": 5000,
+            "hitsMax": 5000,
+            "nextDecayTime": 21550782,
+            "_isDisabled": false
+        },
+        {
+            "type": "road",
+            "x": 24,
+            "y": 17,
+            "notifyWhenAttacked": true,
+            "hits": 5000,
+            "hitsMax": 5000,
+            "nextDecayTime": 21550634,
+            "_isDisabled": false
+        },
+        {
+            "type": "road",
+            "x": 25,
+            "y": 18,
+            "notifyWhenAttacked": true,
+            "hits": 5000,
+            "hitsMax": 5000,
+            "nextDecayTime": 21551125,
+            "_isDisabled": false
+        },
+        {
+            "type": "road",
+            "x": 29,
+            "y": 22,
+            "notifyWhenAttacked": true,
+            "hits": 25000,
+            "hitsMax": 25000,
+            "nextDecayTime": 21550674,
+            "_isDisabled": false
+        },
+        {
+            "type": "road",
+            "x": 26,
+            "y": 19,
+            "notifyWhenAttacked": true,
+            "hits": 25000,
+            "hitsMax": 25000,
+            "nextDecayTime": 21550743,
+            "_isDisabled": false
+        },
+        {
+            "type": "road",
+            "x": 28,
+            "y": 21,
+            "notifyWhenAttacked": true,
+            "hits": 25000,
+            "hitsMax": 25000,
+            "nextDecayTime": 21550980,
+            "_isDisabled": false
+        },
+        {
+            "type": "road",
+            "x": 27,
+            "y": 20,
+            "notifyWhenAttacked": true,
+            "hits": 25000,
+            "hitsMax": 25000,
+            "nextDecayTime": 21550572,
+            "_isDisabled": false
+        },
+        {
+            "type": "road",
+            "x": 40,
+            "y": 27,
+            "notifyWhenAttacked": true,
+            "hits": 5000,
+            "hitsMax": 5000,
+            "nextDecayTime": 21551062,
+            "_isDisabled": false
+        },
+        {
+            "type": "road",
+            "x": 39,
+            "y": 26,
+            "notifyWhenAttacked": true,
+            "hits": 5000,
+            "hitsMax": 5000,
+            "nextDecayTime": 21550221,
+            "_isDisabled": false
+        },
+        {
+            "type": "road",
+            "x": 37,
+            "y": 26,
+            "notifyWhenAttacked": true,
+            "hits": 5000,
+            "hitsMax": 5000,
+            "nextDecayTime": 21550672,
+            "_isDisabled": false
+        },
+        {
+            "type": "road",
+            "x": 36,
+            "y": 26,
+            "notifyWhenAttacked": true,
+            "hits": 5000,
+            "hitsMax": 5000,
+            "nextDecayTime": 21550587,
+            "_isDisabled": false
+        },
+        {
+            "type": "road",
+            "x": 23,
+            "y": 16,
+            "notifyWhenAttacked": true,
+            "hits": 5000,
+            "hitsMax": 5000,
+            "nextDecayTime": 21550655,
+            "_isDisabled": false
+        },
+        {
+            "type": "road",
+            "x": 21,
+            "y": 18,
+            "notifyWhenAttacked": true,
+            "hits": 5000,
+            "hitsMax": 5000,
+            "nextDecayTime": 21550237,
+            "_isDisabled": false
+        },
+        {
+            "type": "road",
+            "x": 20,
+            "y": 19,
+            "notifyWhenAttacked": true,
+            "hits": 25000,
+            "hitsMax": 25000,
+            "nextDecayTime": 21551117,
+            "_isDisabled": false
+        },
+        {
+            "type": "road",
+            "x": 19,
+            "y": 20,
+            "notifyWhenAttacked": true,
+            "hits": 5000,
+            "hitsMax": 5000,
+            "nextDecayTime": 21550882,
+            "_isDisabled": false
+        },
+        {
+            "type": "road",
+            "x": 18,
+            "y": 21,
+            "notifyWhenAttacked": true,
+            "hits": 5000,
+            "hitsMax": 5000,
+            "nextDecayTime": 21550948,
+            "_isDisabled": false
+        },
+        {
+            "type": "road",
+            "x": 17,
+            "y": 22,
+            "notifyWhenAttacked": true,
+            "hits": 5000,
+            "hitsMax": 5000,
+            "nextDecayTime": 21550912,
+            "_isDisabled": false
+        },
+        {
+            "type": "road",
+            "x": 18,
+            "y": 22,
+            "notifyWhenAttacked": true,
+            "hits": 25000,
+            "hitsMax": 25000,
+            "nextDecayTime": 21550943,
+            "_isDisabled": false
+        },
+        {
+            "type": "road",
+            "x": 16,
+            "y": 21,
+            "notifyWhenAttacked": true,
+            "hits": 5000,
+            "hitsMax": 5000,
+            "nextDecayTime": 21550413,
+            "_isDisabled": false
+        },
+        {
+            "type": "road",
+            "x": 18,
+            "y": 23,
+            "notifyWhenAttacked": true,
+            "hits": 25000,
+            "hitsMax": 25000,
+            "nextDecayTime": 21550538,
+            "_isDisabled": false
+        },
+        {
+            "type": "controller",
+            "x": 15,
+            "y": 24,
+            "level": 5,
+            "user": "5f57ad7f703361b81e4686a2",
+            "progress": 163812,
+            "downgradeTime": 21630158,
+            "safeMode": 21457967,
+            "safeModeAvailable": 3,
+            "upgradeBlocked": null,
+            "safeModeCooldown": null,
+            "hits": 0,
+            "hitsMax": 0,
+            "progressTotal": 0,
+            "isPowerEnabled": false,
+            "reservation": null,
+            "effects": null,
+            "_isDisabled": false
+        },
+        {
+            "type": "spawn",
+            "x": 37,
+            "y": 28,
+            "name": "Spawn1",
+            "user": "5f57ad7f703361b81e4686a2",
+            "store": {
+                "energy": 300
+            },
+            "storeCapacityResource": {
+                "energy": 300
+            },
+            "hits": 5000,
+            "hitsMax": 5000,
+            "spawning": null,
+            "notifyWhenAttacked": true,
+            "off": false,
+            "_isDisabled": false
+        },
+        {
+            "type": "extension",
+            "x": 35,
+            "y": 30,
+            "notifyWhenAttacked": true,
+            "user": "5f57ad7f703361b81e4686a2",
+            "store": {
+                "energy": 50
+            },
+            "storeCapacityResource": {
+                "energy": 50
+            },
+            "hits": 1000,
+            "hitsMax": 1000,
+            "off": false,
+            "_isDisabled": false
+        },
+        {
+            "type": "extension",
+            "x": 37,
+            "y": 30,
+            "notifyWhenAttacked": true,
+            "user": "5f57ad7f703361b81e4686a2",
+            "store": {
+                "energy": 50
+            },
+            "storeCapacityResource": {
+                "energy": 50
+            },
+            "hits": 1000,
+            "hitsMax": 1000,
+            "off": false,
+            "_isDisabled": false
+        },
+        {
+            "type": "extension",
+            "x": 36,
+            "y": 30,
+            "notifyWhenAttacked": true,
+            "user": "5f57ad7f703361b81e4686a2",
+            "store": {
+                "energy": 50
+            },
+            "storeCapacityResource": {
+                "energy": 50
+            },
+            "hits": 1000,
+            "hitsMax": 1000,
+            "off": false,
+            "_isDisabled": false
+        },
+        {
+            "type": "tower",
+            "x": 33,
+            "y": 28,
+            "notifyWhenAttacked": true,
+            "user": "5f57ad7f703361b81e4686a2",
+            "store": {
+                "energy": 910
+            },
+            "storeCapacityResource": {
+                "energy": 1000
+            },
+            "hits": 3000,
+            "hitsMax": 3000,
+            "actionLog": {
+                "attack": null,
+                "heal": null,
+                "repair": null
+            },
+            "_isDisabled": false
+        },
+        {
+            "type": "extension",
+            "x": 38,
+            "y": 30,
+            "notifyWhenAttacked": true,
+            "user": "5f57ad7f703361b81e4686a2",
+            "store": {
+                "energy": 50
+            },
+            "storeCapacityResource": {
+                "energy": 50
+            },
+            "hits": 1000,
+            "hitsMax": 1000,
+            "off": false,
+            "_isDisabled": false
+        },
+        {
+            "type": "extension",
+            "x": 13,
+            "y": 6,
+            "notifyWhenAttacked": true,
+            "user": "5f57ad7f703361b81e4686a2",
+            "store": {
+                "energy": 50
+            },
+            "storeCapacityResource": {
+                "energy": 50
+            },
+            "hits": 1000,
+            "hitsMax": 1000,
+            "off": false,
+            "_isDisabled": false
+        },
+        {
+            "type": "extension",
+            "x": 15,
+            "y": 6,
+            "notifyWhenAttacked": true,
+            "user": "5f57ad7f703361b81e4686a2",
+            "store": {
+                "energy": 50
+            },
+            "storeCapacityResource": {
+                "energy": 50
+            },
+            "hits": 1000,
+            "hitsMax": 1000,
+            "off": false,
+            "_isDisabled": false
+        },
+        {
+            "type": "extension",
+            "x": 16,
+            "y": 6,
+            "notifyWhenAttacked": true,
+            "user": "5f57ad7f703361b81e4686a2",
+            "store": {
+                "energy": 50
+            },
+            "storeCapacityResource": {
+                "energy": 50
+            },
+            "hits": 1000,
+            "hitsMax": 1000,
+            "off": false,
+            "_isDisabled": false
+        },
+        {
+            "type": "extension",
+            "x": 12,
+            "y": 6,
+            "notifyWhenAttacked": true,
+            "user": "5f57ad7f703361b81e4686a2",
+            "store": {
+                "energy": 50
+            },
+            "storeCapacityResource": {
+                "energy": 50
+            },
+            "hits": 1000,
+            "hitsMax": 1000,
+            "off": false,
+            "_isDisabled": false
+        },
+        {
+            "name": "Upgrader21548674",
+            "x": 16,
+            "y": 21,
+            "body": {
+                "0": {
+                    "type": "work",
+                    "hits": 100
+                },
+                "1": {
+                    "type": "work",
+                    "hits": 100
+                },
+                "2": {
+                    "type": "work",
+                    "hits": 100
+                },
+                "3": {
+                    "type": "carry",
+                    "hits": 100
+                },
+                "4": {
+                    "type": "carry",
+                    "hits": 100
+                },
+                "5": {
+                    "type": "move",
+                    "hits": 100
+                },
+                "6": {
+                    "type": "move",
+                    "hits": 100
+                },
+                "7": {
+                    "type": "move",
+                    "hits": 100
+                },
+                "8": {
+                    "type": "move",
+                    "hits": 100
+                }
+            },
+            "store": {
+                "energy": 64
+            },
+            "storeCapacity": 100,
+            "type": "creep",
+            "user": "5f57ad7f703361b81e4686a2",
+            "hits": 900,
+            "hitsMax": 900,
+            "spawning": false,
+            "fatigue": 0,
+            "notifyWhenAttacked": true,
+            "actionLog": {
+                "attacked": null,
+                "healed": null,
+                "attack": null,
+                "rangedAttack": null,
+                "rangedMassAttack": null,
+                "rangedHeal": null,
+                "harvest": null,
+                "heal": null,
+                "repair": null,
+                "build": null,
+                "say": null,
+                "upgradeController": {
+                    "x": 15,
+                    "y": 24
+                },
+                "reserveController": null
+            },
+            "ageTime": 21550200,
+            "_isDisabled": false
+        },
+        {
+            "name": "Harvester21548835",
+            "x": 31,
+            "y": 23,
+            "body": {
+                "0": {
+                    "type": "work",
+                    "hits": 100
+                },
+                "1": {
+                    "type": "work",
+                    "hits": 100
+                },
+                "2": {
+                    "type": "work",
+                    "hits": 100
+                },
+                "3": {
+                    "type": "carry",
+                    "hits": 100
+                },
+                "4": {
+                    "type": "carry",
+                    "hits": 100
+                },
+                "5": {
+                    "type": "carry",
+                    "hits": 100
+                },
+                "6": {
+                    "type": "move",
+                    "hits": 100
+                },
+                "7": {
+                    "type": "move",
+                    "hits": 100
+                },
+                "8": {
+                    "type": "move",
+                    "hits": 100
+                }
+            },
+            "store": {
+                "energy": 115
+            },
+            "storeCapacity": 150,
+            "type": "creep",
+            "user": "5f57ad7f703361b81e4686a2",
+            "hits": 900,
+            "hitsMax": 900,
+            "spawning": false,
+            "fatigue": 0,
+            "notifyWhenAttacked": true,
+            "actionLog": {
+                "attacked": null,
+                "healed": null,
+                "attack": null,
+                "rangedAttack": null,
+                "rangedMassAttack": null,
+                "rangedHeal": null,
+                "harvest": null,
+                "heal": null,
+                "repair": null,
+                "build": null,
+                "say": null,
+                "upgradeController": null,
+                "reserveController": null
+            },
+            "ageTime": 21550361,
+            "_isDisabled": false
+        },
+        {
+            "name": "Upgrader21548903",
+            "x": 18,
+            "y": 21,
+            "body": {
+                "0": {
+                    "type": "work",
+                    "hits": 100
+                },
+                "1": {
+                    "type": "work",
+                    "hits": 100
+                },
+                "2": {
+                    "type": "work",
+                    "hits": 100
+                },
+                "3": {
+                    "type": "carry",
+                    "hits": 100
+                },
+                "4": {
+                    "type": "carry",
+                    "hits": 100
+                },
+                "5": {
+                    "type": "move",
+                    "hits": 100
+                },
+                "6": {
+                    "type": "move",
+                    "hits": 100
+                },
+                "7": {
+                    "type": "move",
+                    "hits": 100
+                },
+                "8": {
+                    "type": "move",
+                    "hits": 100
+                }
+            },
+            "store": {
+                "energy": 85
+            },
+            "storeCapacity": 100,
+            "type": "creep",
+            "user": "5f57ad7f703361b81e4686a2",
+            "hits": 900,
+            "hitsMax": 900,
+            "spawning": false,
+            "fatigue": 0,
+            "notifyWhenAttacked": true,
+            "actionLog": {
+                "attacked": null,
+                "healed": null,
+                "attack": null,
+                "rangedAttack": null,
+                "rangedMassAttack": null,
+                "rangedHeal": null,
+                "harvest": null,
+                "heal": null,
+                "repair": null,
+                "build": null,
+                "say": null,
+                "upgradeController": {
+                    "x": 15,
+                    "y": 24
+                },
+                "reserveController": null
+            },
+            "ageTime": 21550429,
+            "_isDisabled": false
+        },
+        {
+            "name": "Harvester21549127",
+            "x": 31,
+            "y": 24,
+            "body": {
+                "0": {
+                    "type": "work",
+                    "hits": 100
+                },
+                "1": {
+                    "type": "work",
+                    "hits": 100
+                },
+                "2": {
+                    "type": "work",
+                    "hits": 100
+                },
+                "3": {
+                    "type": "carry",
+                    "hits": 100
+                },
+                "4": {
+                    "type": "carry",
+                    "hits": 100
+                },
+                "5": {
+                    "type": "carry",
+                    "hits": 100
+                },
+                "6": {
+                    "type": "move",
+                    "hits": 100
+                },
+                "7": {
+                    "type": "move",
+                    "hits": 100
+                },
+                "8": {
+                    "type": "move",
+                    "hits": 100
+                }
+            },
+            "store": {
+                "energy": 30
+            },
+            "storeCapacity": 150,
+            "type": "creep",
+            "user": "5f57ad7f703361b81e4686a2",
+            "hits": 900,
+            "hitsMax": 900,
+            "spawning": false,
+            "fatigue": 0,
+            "notifyWhenAttacked": true,
+            "actionLog": {
+                "attacked": null,
+                "healed": null,
+                "attack": null,
+                "rangedAttack": null,
+                "rangedMassAttack": null,
+                "rangedHeal": null,
+                "harvest": null,
+                "heal": null,
+                "repair": null,
+                "build": null,
+                "say": null,
+                "upgradeController": null,
+                "reserveController": null
+            },
+            "ageTime": 21550653,
+            "_isDisabled": false
+        },
+        {
+            "name": "Harvester21549263",
+            "x": 28,
+            "y": 19,
+            "body": {
+                "0": {
+                    "type": "work",
+                    "hits": 100
+                },
+                "1": {
+                    "type": "work",
+                    "hits": 100
+                },
+                "2": {
+                    "type": "work",
+                    "hits": 100
+                },
+                "3": {
+                    "type": "carry",
+                    "hits": 100
+                },
+                "4": {
+                    "type": "carry",
+                    "hits": 100
+                },
+                "5": {
+                    "type": "carry",
+                    "hits": 100
+                },
+                "6": {
+                    "type": "move",
+                    "hits": 100
+                },
+                "7": {
+                    "type": "move",
+                    "hits": 100
+                },
+                "8": {
+                    "type": "move",
+                    "hits": 100
+                }
+            },
+            "store": {
+                "energy": 50
+            },
+            "storeCapacity": 150,
+            "type": "creep",
+            "user": "5f57ad7f703361b81e4686a2",
+            "hits": 900,
+            "hitsMax": 900,
+            "spawning": false,
+            "fatigue": 0,
+            "notifyWhenAttacked": true,
+            "actionLog": {
+                "attacked": null,
+                "healed": null,
+                "attack": null,
+                "rangedAttack": null,
+                "rangedMassAttack": null,
+                "rangedHeal": null,
+                "harvest": null,
+                "heal": null,
+                "repair": null,
+                "build": null,
+                "say": null,
+                "upgradeController": null,
+                "reserveController": null
+            },
+            "ageTime": 21550789,
+            "_isDisabled": false
+        },
+        {
+            "name": "Harvester21549348",
+            "x": 15,
+            "y": 4,
+            "body": {
+                "0": {
+                    "type": "work",
+                    "hits": 100
+                },
+                "1": {
+                    "type": "work",
+                    "hits": 100
+                },
+                "2": {
+                    "type": "work",
+                    "hits": 100
+                },
+                "3": {
+                    "type": "carry",
+                    "hits": 100
+                },
+                "4": {
+                    "type": "carry",
+                    "hits": 100
+                },
+                "5": {
+                    "type": "carry",
+                    "hits": 100
+                },
+                "6": {
+                    "type": "move",
+                    "hits": 100
+                },
+                "7": {
+                    "type": "move",
+                    "hits": 100
+                },
+                "8": {
+                    "type": "move",
+                    "hits": 100
+                }
+            },
+            "store": {
+                "energy": 30
+            },
+            "storeCapacity": 150,
+            "type": "creep",
+            "user": "5f57ad7f703361b81e4686a2",
+            "hits": 900,
+            "hitsMax": 900,
+            "spawning": false,
+            "fatigue": 0,
+            "notifyWhenAttacked": true,
+            "actionLog": {
+                "attacked": null,
+                "healed": null,
+                "attack": null,
+                "rangedAttack": null,
+                "rangedMassAttack": null,
+                "rangedHeal": null,
+                "harvest": {
+                    "x": 14,
+                    "y": 3
+                },
+                "heal": null,
+                "repair": null,
+                "build": null,
+                "say": null,
+                "upgradeController": null,
+                "reserveController": null
+            },
+            "ageTime": 21550874,
+            "_isDisabled": false
+        },
+        {
+            "name": "Harvester21549392",
+            "x": 18,
+            "y": 10,
+            "body": {
+                "0": {
+                    "type": "work",
+                    "hits": 100
+                },
+                "1": {
+                    "type": "work",
+                    "hits": 100
+                },
+                "2": {
+                    "type": "work",
+                    "hits": 100
+                },
+                "3": {
+                    "type": "carry",
+                    "hits": 100
+                },
+                "4": {
+                    "type": "carry",
+                    "hits": 100
+                },
+                "5": {
+                    "type": "carry",
+                    "hits": 100
+                },
+                "6": {
+                    "type": "move",
+                    "hits": 100
+                },
+                "7": {
+                    "type": "move",
+                    "hits": 100
+                },
+                "8": {
+                    "type": "move",
+                    "hits": 100
+                }
+            },
+            "store": {
+                "energy": 150
+            },
+            "storeCapacity": 150,
+            "type": "creep",
+            "user": "5f57ad7f703361b81e4686a2",
+            "hits": 900,
+            "hitsMax": 900,
+            "spawning": false,
+            "fatigue": 0,
+            "notifyWhenAttacked": true,
+            "actionLog": {
+                "attacked": null,
+                "healed": null,
+                "attack": null,
+                "rangedAttack": null,
+                "rangedMassAttack": null,
+                "rangedHeal": null,
+                "harvest": null,
+                "heal": null,
+                "repair": null,
+                "build": null,
+                "say": null,
+                "upgradeController": null,
+                "reserveController": null
+            },
+            "ageTime": 21550918,
+            "_isDisabled": false
+        },
+        {
+            "name": "Harvester21549503",
+            "x": 14,
+            "y": 4,
+            "body": {
+                "0": {
+                    "type": "work",
+                    "hits": 100
+                },
+                "1": {
+                    "type": "work",
+                    "hits": 100
+                },
+                "2": {
+                    "type": "work",
+                    "hits": 100
+                },
+                "3": {
+                    "type": "carry",
+                    "hits": 100
+                },
+                "4": {
+                    "type": "carry",
+                    "hits": 100
+                },
+                "5": {
+                    "type": "carry",
+                    "hits": 100
+                },
+                "6": {
+                    "type": "move",
+                    "hits": 100
+                },
+                "7": {
+                    "type": "move",
+                    "hits": 100
+                },
+                "8": {
+                    "type": "move",
+                    "hits": 100
+                }
+            },
+            "store": {
+                "energy": 54
+            },
+            "storeCapacity": 150,
+            "type": "creep",
+            "user": "5f57ad7f703361b81e4686a2",
+            "hits": 900,
+            "hitsMax": 900,
+            "spawning": false,
+            "fatigue": 0,
+            "notifyWhenAttacked": true,
+            "actionLog": {
+                "attacked": null,
+                "healed": null,
+                "attack": null,
+                "rangedAttack": null,
+                "rangedMassAttack": null,
+                "rangedHeal": null,
+                "harvest": {
+                    "x": 14,
+                    "y": 3
+                },
+                "heal": null,
+                "repair": null,
+                "build": null,
+                "say": null,
+                "upgradeController": null,
+                "reserveController": null
+            },
+            "ageTime": 21551029,
+            "_isDisabled": false
+        },
+        {
+            "name": "Harvester21549560",
+            "x": 35,
+            "y": 27,
+            "body": {
+                "0": {
+                    "type": "work",
+                    "hits": 100
+                },
+                "1": {
+                    "type": "work",
+                    "hits": 100
+                },
+                "2": {
+                    "type": "work",
+                    "hits": 100
+                },
+                "3": {
+                    "type": "carry",
+                    "hits": 100
+                },
+                "4": {
+                    "type": "carry",
+                    "hits": 100
+                },
+                "5": {
+                    "type": "carry",
+                    "hits": 100
+                },
+                "6": {
+                    "type": "move",
+                    "hits": 100
+                },
+                "7": {
+                    "type": "move",
+                    "hits": 100
+                },
+                "8": {
+                    "type": "move",
+                    "hits": 100
+                }
+            },
+            "store": {
+                "energy": 150
+            },
+            "storeCapacity": 150,
+            "type": "creep",
+            "user": "5f57ad7f703361b81e4686a2",
+            "hits": 900,
+            "hitsMax": 900,
+            "spawning": false,
+            "fatigue": 0,
+            "notifyWhenAttacked": true,
+            "actionLog": {
+                "attacked": null,
+                "healed": null,
+                "attack": null,
+                "rangedAttack": null,
+                "rangedMassAttack": null,
+                "rangedHeal": null,
+                "harvest": null,
+                "heal": null,
+                "repair": null,
+                "build": null,
+                "say": null,
+                "upgradeController": null,
+                "reserveController": null
+            },
+            "ageTime": 21551086,
+            "_isDisabled": false
+        },
+        {
+            "name": "Harvester21549633",
+            "x": 39,
+            "y": 30,
+            "body": {
+                "0": {
+                    "type": "work",
+                    "hits": 100
+                },
+                "1": {
+                    "type": "work",
+                    "hits": 100
+                },
+                "2": {
+                    "type": "work",
+                    "hits": 100
+                },
+                "3": {
+                    "type": "carry",
+                    "hits": 100
+                },
+                "4": {
+                    "type": "carry",
+                    "hits": 100
+                },
+                "5": {
+                    "type": "carry",
+                    "hits": 100
+                },
+                "6": {
+                    "type": "move",
+                    "hits": 100
+                },
+                "7": {
+                    "type": "move",
+                    "hits": 100
+                },
+                "8": {
+                    "type": "move",
+                    "hits": 100
+                }
+            },
+            "store": {
+                "energy": 150
+            },
+            "storeCapacity": 150,
+            "type": "creep",
+            "user": "5f57ad7f703361b81e4686a2",
+            "hits": 900,
+            "hitsMax": 900,
+            "spawning": false,
+            "fatigue": 0,
+            "notifyWhenAttacked": true,
+            "_isDisabled": false,
+            "actionLog": {
+                "attacked": null,
+                "healed": null,
+                "attack": null,
+                "rangedAttack": null,
+                "rangedMassAttack": null,
+                "rangedHeal": null,
+                "harvest": null,
+                "heal": null,
+                "repair": null,
+                "build": null,
+                "say": null,
+                "upgradeController": null,
+                "reserveController": null
+            },
+            "ageTime": 21551159
+        },
+        {
+            "name": "Upgrader21549680",
+            "x": 18,
+            "y": 23,
+            "body": {
+                "0": {
+                    "type": "work",
+                    "hits": 100
+                },
+                "1": {
+                    "type": "work",
+                    "hits": 100
+                },
+                "2": {
+                    "type": "work",
+                    "hits": 100
+                },
+                "3": {
+                    "type": "carry",
+                    "hits": 100
+                },
+                "4": {
+                    "type": "carry",
+                    "hits": 100
+                },
+                "5": {
+                    "type": "move",
+                    "hits": 100
+                },
+                "6": {
+                    "type": "move",
+                    "hits": 100
+                },
+                "7": {
+                    "type": "move",
+                    "hits": 100
+                },
+                "8": {
+                    "type": "move",
+                    "hits": 100
+                }
+            },
+            "store": {
+                "energy": 34
+            },
+            "storeCapacity": 100,
+            "type": "creep",
+            "user": "5f57ad7f703361b81e4686a2",
+            "hits": 900,
+            "hitsMax": 900,
+            "spawning": false,
+            "fatigue": 0,
+            "notifyWhenAttacked": true,
+            "_isDisabled": false,
+            "actionLog": {
+                "attacked": null,
+                "healed": null,
+                "attack": null,
+                "rangedAttack": null,
+                "rangedMassAttack": null,
+                "rangedHeal": null,
+                "harvest": null,
+                "heal": null,
+                "repair": null,
+                "build": null,
+                "say": null,
+                "upgradeController": {
+                    "x": 15,
+                    "y": 24
+                },
+                "reserveController": null
+            },
+            "ageTime": 21551206
+        },
+        {
+            "name": "Upgrader21549789",
+            "x": 18,
+            "y": 22,
+            "body": {
+                "0": {
+                    "type": "work",
+                    "hits": 100
+                },
+                "1": {
+                    "type": "work",
+                    "hits": 100
+                },
+                "2": {
+                    "type": "work",
+                    "hits": 100
+                },
+                "3": {
+                    "type": "carry",
+                    "hits": 100
+                },
+                "4": {
+                    "type": "carry",
+                    "hits": 100
+                },
+                "5": {
+                    "type": "move",
+                    "hits": 100
+                },
+                "6": {
+                    "type": "move",
+                    "hits": 100
+                },
+                "7": {
+                    "type": "move",
+                    "hits": 100
+                },
+                "8": {
+                    "type": "move",
+                    "hits": 100
+                }
+            },
+            "store": {
+                "energy": 43
+            },
+            "storeCapacity": 100,
+            "type": "creep",
+            "user": "5f57ad7f703361b81e4686a2",
+            "hits": 900,
+            "hitsMax": 900,
+            "spawning": false,
+            "fatigue": 0,
+            "notifyWhenAttacked": true,
+            "_isDisabled": false,
+            "actionLog": {
+                "attacked": null,
+                "healed": null,
+                "attack": null,
+                "rangedAttack": null,
+                "rangedMassAttack": null,
+                "rangedHeal": null,
+                "harvest": null,
+                "heal": null,
+                "repair": null,
+                "build": null,
+                "say": null,
+                "upgradeController": {
+                    "x": 15,
+                    "y": 24
+                },
+                "reserveController": null
+            },
+            "ageTime": 21551315
+        },
+        {
+            "name": "Upgrader21549835",
+            "x": 21,
+            "y": 18,
+            "body": {
+                "0": {
+                    "type": "work",
+                    "hits": 100
+                },
+                "1": {
+                    "type": "work",
+                    "hits": 100
+                },
+                "2": {
+                    "type": "work",
+                    "hits": 100
+                },
+                "3": {
+                    "type": "carry",
+                    "hits": 100
+                },
+                "4": {
+                    "type": "carry",
+                    "hits": 100
+                },
+                "5": {
+                    "type": "move",
+                    "hits": 100
+                },
+                "6": {
+                    "type": "move",
+                    "hits": 100
+                },
+                "7": {
+                    "type": "move",
+                    "hits": 100
+                },
+                "8": {
+                    "type": "move",
+                    "hits": 100
+                }
+            },
+            "store": {
+                "energy": 100
+            },
+            "storeCapacity": 100,
+            "type": "creep",
+            "user": "5f57ad7f703361b81e4686a2",
+            "hits": 900,
+            "hitsMax": 900,
+            "spawning": false,
+            "fatigue": 0,
+            "notifyWhenAttacked": true,
+            "_isDisabled": false,
+            "actionLog": {
+                "attacked": null,
+                "healed": null,
+                "attack": null,
+                "rangedAttack": null,
+                "rangedMassAttack": null,
+                "rangedHeal": null,
+                "harvest": null,
+                "heal": null,
+                "repair": null,
+                "build": null,
+                "say": {
+                    "message": "🚧 upgrade",
+                    "isPublic": false
+                },
+                "upgradeController": null,
+                "reserveController": null
+            },
+            "ageTime": 21551361
+        }
+    ]
+}
