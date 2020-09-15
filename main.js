@@ -5,8 +5,8 @@ var roleTower = require('role.tower');
 var roleMiner = require('role.miner');
 var roleHauler = require('role.hauler');
 
-var builderQty = 3;
-var upgraderQty = 3;
+var builderQty = 2;
+var upgraderQty = 4;
 
 var minersNeeded = false;
 var minersPerSource = 1;
