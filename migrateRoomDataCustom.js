@@ -57,10 +57,6 @@ function adjustRoomDataForCustomMode(roomData) {
         if (object.type == "creep") {
             roomData.objects.splice(index,1);
         }
-
-        if (object.type == "road") {
-            roomData.objects.splice(index,1);
-        }
     }
 
     return roomData;
