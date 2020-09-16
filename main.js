@@ -6,7 +6,7 @@ var roleMiner = require('role.miner');
 var roleHauler = require('role.hauler');
 
 var builderQty = 3;
-var upgraderQty = 4;
+var upgraderQty = 5;
 
 var minersNeeded = false;
 var minersPerSource = 1;
@@ -72,12 +72,10 @@ module.exports.loop = function () {
                             sourceId: source.id}
                         });
                 else if(energyAvailable >= 500 && energyCapacityAvailable >= 500)
-                {
                     Game.spawns['Spawn1'].spawnCreep([CARRY,CARRY,CARRY,CARRY,CARRY,MOVE,MOVE,MOVE,MOVE,MOVE], newName, 
                         {memory: {role: 'hauler',
                             sourceId: source.id}
                         });
-                }
             }
         }
         
@@ -136,8 +134,19 @@ module.exports.loop = function () {
                         {memory: {role: 'miner',
                             sourceId: source.id}
                         });
-                else if(energyAvailable >= 600 && energyCapacityAvailable >= 600)
+                else if(energyAvailable >= 600 && energyCapacityAvailable < 700)
                     Game.spawns['Spawn1'].spawnCreep([WORK,WORK,WORK,WORK,WORK,CARRY,MOVE], newName, 
+                        {memory: {role: 'miner',
+                            sourceId: source.id}
+                        });
+                //else if(energyAvailable >= 700 && energyCapacityAvailable >= 700)
+                else if(energyAvailable >= 700 && energyCapacityAvailable < 800)
+                    Game.spawns['Spawn1'].spawnCreep([WORK,WORK,WORK,WORK,WORK,WORK,CARRY,MOVE], newName, 
+                        {memory: {role: 'miner',
+                            sourceId: source.id}
+                        });
+                else if(energyAvailable >= 800 && energyCapacityAvailable >= 800)
+                    Game.spawns['Spawn1'].spawnCreep([WORK,WORK,WORK,WORK,WORK,WORK,CARRY,MOVE,MOVE,MOVE], newName, 
                         {memory: {role: 'miner',
                             sourceId: source.id}
                         });
@@ -146,55 +155,86 @@ module.exports.loop = function () {
         
     }
     
-    var constructionSites = Game.spawns['Spawn1'].room.find(FIND_MY_CONSTRUCTION_SITES);
-    if (constructionSites.length > 0)
-    {
-        var builders = _.filter(Game.creeps, (creep) => creep.memory.role == 'builder');
+    var upgraders = _.filter(Game.creeps, (creep) => creep.memory.role == 'upgrader');
+    //console.log('Upgraders: ' + upgraders.length);
+    var builders = _.filter(Game.creeps, (creep) => creep.memory.role == 'builder');
         //console.log('Builders: ' + builders.length);
     
+    var constructionSites = Game.spawns['Spawn1'].room.find(FIND_MY_CONSTRUCTION_SITES);
+    
+    if (constructionSites.length > 0)
+    {
+
         if(builders.length < builderQty && !haulersNeeded && !minersNeeded) {
             var newName = 'Builder' + Game.time;
-            var energyAvailable = Game.spawns['Spawn1'].room.energyAvailable;
-            console.log('Spawning new builder: ' + newName + ' Available NRG:' + energyAvailable);
-            //console.log('Spawning new builder: ' + newName);
-            
-            var energyCapacityAvailable = Game.spawns['Spawn1'].room.energyCapacityAvailable;
-    
-            if(energyAvailable >= 300 && energyCapacityAvailable < 400)
-                Game.spawns['Spawn1'].spawnCreep([WORK,CARRY,MOVE,MOVE,MOVE], newName, 
+            if(upgraders.length > 0) {
+                for (var id in upgraders) {
+                    if (id >= 0) {
+                        //console.log('tower id ' +id);
+                        var upgrader = upgraders[id];
+                        //upgrader.name = newName;
+                        upgrader.memory.role = 'builder';
+                    }
+                }
+            }
+            else {
+                //var newName = 'Builder' + Game.time;
+                var energyAvailable = Game.spawns['Spawn1'].room.energyAvailable;
+                console.log('Spawning new builder: ' + newName + ' Available NRG:' + energyAvailable);
+                //console.log('Spawning new builder: ' + newName);
+                
+                var energyCapacityAvailable = Game.spawns['Spawn1'].room.energyCapacityAvailable;
+        
+                if(energyAvailable >= 300 && energyCapacityAvailable < 400)
+                    Game.spawns['Spawn1'].spawnCreep([WORK,CARRY,MOVE,MOVE,MOVE], newName, 
+                        {memory: {role: 'builder'}});
+                else if(energyAvailable >= 400 && energyCapacityAvailable < 500)
+                    Game.spawns['Spawn1'].spawnCreep([WORK,WORK,CARRY,CARRY,MOVE,MOVE], newName, 
+                        {memory: {role: 'builder'}});
+                else if(energyAvailable >= 500 && energyCapacityAvailable >= 500)
+                    Game.spawns['Spawn1'].spawnCreep([WORK,WORK,CARRY,CARRY,CARRY,MOVE,MOVE,MOVE], newName, 
                     {memory: {role: 'builder'}});
-            else if(energyAvailable >= 400 && energyCapacityAvailable < 500)
-                Game.spawns['Spawn1'].spawnCreep([WORK,WORK,CARRY,CARRY,MOVE,MOVE], newName, 
-                    {memory: {role: 'builder'}});
-            else if(energyAvailable >= 500 && energyCapacityAvailable >= 500)
-                Game.spawns['Spawn1'].spawnCreep([WORK,WORK,CARRY,CARRY,CARRY,MOVE,MOVE,MOVE], newName, 
-                {memory: {role: 'builder'}});
+                    
+            }
         }
     }
 
-    var upgraders = _.filter(Game.creeps, (creep) => creep.memory.role == 'upgrader');
     //console.log('Upgraders: ' + upgraders.length);
-
-    if(upgraders.length < upgraderQty && !haulersNeeded && !minersNeeded && constructionSites.length == 0) {
-        var newName = 'Upgrader' + Game.time;
+    //console.log(constructionSites.length);
+    if (constructionSites.length == 0) {
+        if(upgraders.length < upgraderQty && !haulersNeeded && !minersNeeded) {
+            var newName = 'Upgrader' + Game.time;
+            
+            if(builders.length > 0) {
+                for (var id in builders) {
+                    if (id >= 0) {
+                        //console.log('tower id ' +id);
+                        var builder = builders[id];
+                        //upgrader.name = newName;
+                        builder.memory.role = 'upgrader';
+                    }
+                }
+            }
+            else {
+                var energyAvailable = Game.spawns['Spawn1'].room.energyAvailable;
+                console.log('Spawning new upgrader: ' + newName + ' Available NRG:' + energyAvailable);
+                
+                var energyCapacityAvailable = Game.spawns['Spawn1'].room.energyCapacityAvailable;
         
-        var energyAvailable = Game.spawns['Spawn1'].room.energyAvailable;
-        console.log('Spawning new upgrader: ' + newName + ' Available NRG:' + energyAvailable);
-        
-        var energyCapacityAvailable = Game.spawns['Spawn1'].room.energyCapacityAvailable;
-
-        if(energyAvailable >= 300 && energyCapacityAvailable < 400)
-            Game.spawns['Spawn1'].spawnCreep([WORK,CARRY,MOVE,MOVE,MOVE], newName, 
-                {memory: {role: 'upgrader'}});
-        else if(energyAvailable >= 400 && energyCapacityAvailable < 500)
-            Game.spawns['Spawn1'].spawnCreep([WORK,WORK,CARRY,CARRY,MOVE,MOVE], newName, 
-                {memory: {role: 'upgrader'}});
-        else if(energyAvailable >= 500 && energyCapacityAvailable < 600)
-            Game.spawns['Spawn1'].spawnCreep([WORK,WORK,CARRY,CARRY,MOVE,MOVE,MOVE,MOVE], newName, 
-                {memory: {role: 'upgrader'}});
-        else if(energyAvailable >= 600 && energyCapacityAvailable >= 600)
-            Game.spawns['Spawn1'].spawnCreep([WORK,WORK,WORK,CARRY,CARRY,MOVE,MOVE,MOVE,MOVE], newName, 
-                {memory: {role: 'upgrader'}});
+                if(energyAvailable >= 300 && energyCapacityAvailable < 400)
+                    Game.spawns['Spawn1'].spawnCreep([WORK,CARRY,MOVE,MOVE,MOVE], newName, 
+                        {memory: {role: 'upgrader'}});
+                else if(energyAvailable >= 400 && energyCapacityAvailable < 500)
+                    Game.spawns['Spawn1'].spawnCreep([WORK,WORK,CARRY,CARRY,MOVE,MOVE], newName, 
+                        {memory: {role: 'upgrader'}});
+                else if(energyAvailable >= 500 && energyCapacityAvailable < 600)
+                    Game.spawns['Spawn1'].spawnCreep([WORK,WORK,CARRY,CARRY,MOVE,MOVE,MOVE,MOVE], newName, 
+                        {memory: {role: 'upgrader'}});
+                else if(energyAvailable >= 600 && energyCapacityAvailable >= 600)
+                    Game.spawns['Spawn1'].spawnCreep([WORK,WORK,WORK,CARRY,CARRY,MOVE,MOVE,MOVE,MOVE], newName, 
+                        {memory: {role: 'upgrader'}});
+            }
+        }
     }
     
     
