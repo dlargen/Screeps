@@ -5,7 +5,7 @@ var roleTower = require('role.tower');
 var roleMiner = require('role.miner');
 var roleHauler = require('role.hauler');
 
-var builderQty = 3;
+var builderQty = 5;
 var upgraderQty = 5;
 
 var minersNeeded = false;
@@ -185,15 +185,18 @@ module.exports.loop = function () {
                 
                 var energyCapacityAvailable = Game.spawns['Spawn1'].room.energyCapacityAvailable;
         
-                if(energyAvailable >= 300 && energyCapacityAvailable < 400)
-                    Game.spawns['Spawn1'].spawnCreep([WORK,CARRY,MOVE,MOVE,MOVE], newName, 
+                if(energyAvailable >= 250 && energyCapacityAvailable < 400)
+                    Game.spawns['Spawn1'].spawnCreep([WORK,CARRY,MOVE,MOVE], newName, 
                         {memory: {role: 'builder'}});
                 else if(energyAvailable >= 400 && energyCapacityAvailable < 500)
                     Game.spawns['Spawn1'].spawnCreep([WORK,WORK,CARRY,CARRY,MOVE,MOVE], newName, 
                         {memory: {role: 'builder'}});
-                else if(energyAvailable >= 500 && energyCapacityAvailable >= 500)
-                    Game.spawns['Spawn1'].spawnCreep([WORK,WORK,CARRY,CARRY,CARRY,MOVE,MOVE,MOVE], newName, 
-                    {memory: {role: 'builder'}});
+                else if(energyAvailable >= 500 && energyCapacityAvailable < 600)
+                    Game.spawns['Spawn1'].spawnCreep([WORK,WORK,CARRY,CARRY,MOVE,MOVE,MOVE,MOVE], newName, 
+                        {memory: {role: 'builder'}});
+                else if(energyAvailable >= 650 && energyCapacityAvailable >= 650)
+                    Game.spawns['Spawn1'].spawnCreep([WORK,WORK,WORK,CARRY,CARRY,MOVE,MOVE,MOVE,MOVE,MOVE], newName, 
+                        {memory: {role: 'builder'}});
                     
             }
         }
@@ -221,8 +224,8 @@ module.exports.loop = function () {
                 
                 var energyCapacityAvailable = Game.spawns['Spawn1'].room.energyCapacityAvailable;
         
-                if(energyAvailable >= 300 && energyCapacityAvailable < 400)
-                    Game.spawns['Spawn1'].spawnCreep([WORK,CARRY,MOVE,MOVE,MOVE], newName, 
+                if(energyAvailable >= 250 && energyCapacityAvailable < 400)
+                    Game.spawns['Spawn1'].spawnCreep([WORK,CARRY,MOVE,MOVE], newName, 
                         {memory: {role: 'upgrader'}});
                 else if(energyAvailable >= 400 && energyCapacityAvailable < 500)
                     Game.spawns['Spawn1'].spawnCreep([WORK,WORK,CARRY,CARRY,MOVE,MOVE], newName, 
@@ -230,8 +233,8 @@ module.exports.loop = function () {
                 else if(energyAvailable >= 500 && energyCapacityAvailable < 600)
                     Game.spawns['Spawn1'].spawnCreep([WORK,WORK,CARRY,CARRY,MOVE,MOVE,MOVE,MOVE], newName, 
                         {memory: {role: 'upgrader'}});
-                else if(energyAvailable >= 600 && energyCapacityAvailable >= 600)
-                    Game.spawns['Spawn1'].spawnCreep([WORK,WORK,WORK,CARRY,CARRY,MOVE,MOVE,MOVE,MOVE], newName, 
+                else if(energyAvailable >= 650 && energyCapacityAvailable >= 650)
+                    Game.spawns['Spawn1'].spawnCreep([WORK,WORK,WORK,CARRY,CARRY,MOVE,MOVE,MOVE,MOVE,MOVE], newName, 
                         {memory: {role: 'upgrader'}});
             }
         }
