@@ -95,7 +95,9 @@ var roleHauler = {
                 {
                     haulersNeeded = true;
                     
-                    var allhaulersCount = _.filter(Game.creeps, (creep) => creep.memory.role == 'hauler').length;
+                    var allhaulersCount = _.filter(Game.creeps, (creep) => creep.memory.role == 'hauler' &&
+                        creep.memory.roomName == room.name).length;
+
                     //console.log('All hauler Count: ' + allhaulersCount);
                     
                     var newName = 'hauler' + Game.time;
@@ -107,7 +109,8 @@ var roleHauler = {
                         if(energyAvailable >= 100)
                             spawn.spawnCreep([CARRY,MOVE], newName, 
                                 {memory: {role: 'hauler',
-                                    sourceId: source.id}
+                                    sourceId: source.id,
+                                    roomName: room.name}
                                 });
                     }
                     else {
@@ -128,16 +131,19 @@ var roleHauler = {
                             spawn.spawnCreep([CARRY,CARRY,CARRY,MOVE,MOVE,MOVE], newName, 
                                 {memory: {role: 'hauler',
                                     sourceId: source.id,
+                                    roomName: room.name,
                                     ignoreTowers: ignoreTowers}});
                         else if(energyAvailable >= 400 && energyCapacityAvailable < 500)
                             spawn.spawnCreep([CARRY,CARRY,CARRY,CARRY,MOVE,MOVE,MOVE,MOVE], newName, 
                                 {memory: {role: 'hauler',
                                     sourceId: source.id,
+                                    roomName: room.name,
                                     ignoreTowers: ignoreTowers}});
                         else if(energyAvailable >= 500 && energyCapacityAvailable >= 500)
                             spawn.spawnCreep([CARRY,CARRY,CARRY,CARRY,CARRY,MOVE,MOVE,MOVE,MOVE,MOVE], newName, 
                                 {memory: {role: 'hauler',
                                     sourceId: source.id,
+                                    roomName: room.name,
                                     ignoreTowers: ignoreTowers}});
                     }
                 }

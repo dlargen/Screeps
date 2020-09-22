@@ -43,7 +43,9 @@ var roleMiner = {
                 minersNeeded = true;
                 //console.log('miners needed');
                 
-                var allminersCount = _.filter(Game.creeps, (creep) => creep.memory.role == 'miner').length;
+                var allminersCount = _.filter(Game.creeps, (creep) => creep.memory.role == 'miner' &&
+                    creep.memory.roomName == room.name).length;
+
                 //console.log('All miner Count: ' + allminersCount);
                 
                 var newName = 'miner' + Game.time;
@@ -56,7 +58,8 @@ var roleMiner = {
                     if(energyAvailable >= 200)
                         spawn.spawnCreep([WORK,CARRY,MOVE], newName, 
                             {memory: {role: 'miner',
-                                sourceId: source.id}
+                                sourceId: source.id,
+                                roomName: room.name}
                             });
                 }
                 else {
@@ -73,33 +76,39 @@ var roleMiner = {
                     if(energyAvailable >= 300 && energyCapacityAvailable < 400)
                         spawn.spawnCreep([WORK,WORK,CARRY,MOVE], newName, 
                             {memory: {role: 'miner',
-                                sourceId: source.id}
+                                sourceId: source.id,
+                                roomName: room.name}
                             });
                     else if(energyAvailable >= 400 && energyCapacityAvailable < 500)
                         spawn.spawnCreep([WORK,WORK,WORK,CARRY,MOVE], newName, 
                             {memory: {role: 'miner',
-                                sourceId: source.id}
+                                sourceId: source.id,
+                                roomName: room.name}
                             });
                     else if(energyAvailable >= 500 && energyCapacityAvailable < 600)
                         spawn.spawnCreep([WORK,WORK,WORK,WORK,CARRY,MOVE], newName, 
                             {memory: {role: 'miner',
-                                sourceId: source.id}
+                                sourceId: source.id,
+                                roomName: room.name}
                             });
                     else if(energyAvailable >= 600 && energyCapacityAvailable < 700)
                         spawn.spawnCreep([WORK,WORK,WORK,WORK,WORK,CARRY,MOVE], newName, 
                             {memory: {role: 'miner',
-                                sourceId: source.id}
+                                sourceId: source.id,
+                                roomName: room.name}
                             });
                     //else if(energyAvailable >= 700 && energyCapacityAvailable >= 700)
                     else if(energyAvailable >= 700 && energyCapacityAvailable < 800)
                         spawn.spawnCreep([WORK,WORK,WORK,WORK,WORK,WORK,CARRY,MOVE], newName, 
                             {memory: {role: 'miner',
-                                sourceId: source.id}
+                                sourceId: source.id,
+                                roomName: room.name}
                             });
                     else if(energyAvailable >= 800 && energyCapacityAvailable >= 800)
                         spawn.spawnCreep([WORK,WORK,WORK,WORK,WORK,WORK,CARRY,MOVE,MOVE,MOVE], newName, 
                             {memory: {role: 'miner',
-                                sourceId: source.id}
+                                sourceId: source.id,
+                                roomName: room.name}
                             });
                 }
             }
