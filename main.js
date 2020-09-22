@@ -2,6 +2,7 @@ var roleTower = require('role.tower');
 var roleMiner = require('role.miner');
 var roleHauler = require('role.hauler');
 var roleWorker = require('role.worker');
+var roleDalek = require('role.dalek');
 
 module.exports.loop = function () {
         
@@ -14,11 +15,15 @@ module.exports.loop = function () {
     
     Game.myRooms = _.filter(Game.rooms, r => r.controller && r.controller.level > 0 && r.controller.my);
    
-   
    for (var id in Game.myRooms)
     {
         //console.log(Game.myRooms[id]);
         var room = Game.myRooms[id];
+        
+        //if(Game.time % 5 == 0)
+        //        console.log('EnergyCap' + room.energyCapacityAvailable);
+        
+        roleDalek.spawn(room);      
         roleWorker.spawn(room);
         roleMiner.spawn(room);
         roleHauler.spawn(room);
@@ -43,6 +48,9 @@ module.exports.loop = function () {
         }
         if(creep.memory.role == 'worker') {
             roleWorker.run(creep);
+        }
+        if(creep.memory.role == 'dalek') {
+            roleDalek.run(creep);
         }
     }
     
