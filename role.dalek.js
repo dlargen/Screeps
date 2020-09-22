@@ -68,8 +68,8 @@ var roleDalek = {
 
         if(alldaleksCount < daleksPerFlag && dalekNeeded)
         {
-            if(Game.time % 5 == 0)
-                console.log('spawn dalek');
+            //if(Game.time % 5 == 0)
+            //    console.log('spawn dalek');
             //console.log('All dalek Count: ' + alldaleksCount);
             
             var newName = 'dalek' + Game.time;
@@ -79,7 +79,8 @@ var roleDalek = {
                 var energyCapacityAvailable = room.energyCapacityAvailable;
                 //console.log('Energy Cap: ' + energyCapacityAvailable);
                 
-                //console.log('Spawning new dalek: ' + newName + ' Available NRG:' + energyAvailable);
+                if(Game.time % 5 == 0)
+                    console.log('Spawning new dalek: ' + newName + ' Available NRG:' + energyAvailable);
                 
         
                 if(energyAvailable >= 1000 && energyCapacityAvailable >= 1000)

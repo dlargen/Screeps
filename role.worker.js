@@ -104,7 +104,9 @@ var roleWorker = {
             var newName = 'Worker' + Game.time;
             //var newName = 'Worker' + Game.time;
             var energyAvailable = room.energyAvailable;
-            console.log('Spawning new worker: ' + newName + ' Available NRG:' + energyAvailable);
+            
+            if(Game.time % 5 == 0)
+                console.log('Spawning new worker: ' + newName + ' Available NRG:' + energyAvailable);
 
             var energyCapacityAvailable = room.energyCapacityAvailable;
             let spawn = room.find(FIND_MY_SPAWNS)[0];

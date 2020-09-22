@@ -120,7 +120,8 @@ var roleHauler = {
                         var energyCapacityAvailable = spawn.room.energyCapacityAvailable;
                         //console.log('Energy Cap: ' + energyCapacityAvailable);
                         
-                        //console.log('Spawning new hauler: ' + newName + ' Available NRG:' + energyAvailable);
+                        if(Game.time % 5 == 0)
+                            console.log('Spawning new hauler: ' + newName + ' Available NRG:' + energyAvailable);
                         
                         
                         if(energyAvailable >= 300 && energyCapacityAvailable < 400)

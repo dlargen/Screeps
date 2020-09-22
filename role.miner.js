@@ -66,7 +66,8 @@ var roleMiner = {
                     var energyCapacityAvailable = room.energyCapacityAvailable;
                     //console.log('Energy Cap: ' + energyCapacityAvailable);
                     
-                    //console.log('Spawning new miner: ' + newName + ' Available NRG:' + energyAvailable);
+                    if(Game.time % 5 == 0)
+                        console.log('Spawning new miner: ' + newName + ' Available NRG:' + energyAvailable);
                     
             
                     if(energyAvailable >= 300 && energyCapacityAvailable < 400)

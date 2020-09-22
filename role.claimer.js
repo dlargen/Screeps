@@ -58,8 +58,8 @@ var roleClaimer = {
 
         if(allclaimersCount < claimersPerFlag && claimerNeeded)
         {
-            if(Game.time % 5 == 0)
-                console.log('spawn claimer');
+            //if(Game.time % 5 == 0)
+            //    console.log('spawn claimer');
             //console.log('All claimer Count: ' + allclaimersCount);
             
             var newName = 'claimer' + Game.time;
@@ -69,7 +69,8 @@ var roleClaimer = {
                 var energyCapacityAvailable = room.energyCapacityAvailable;
                 //console.log('Energy Cap: ' + energyCapacityAvailable);
                 
-                //console.log('Spawning new claimer: ' + newName + ' Available NRG:' + energyAvailable);
+                if(Game.time % 5 == 0)
+                    console.log('Spawning new claimer: ' + newName + ' Available NRG:' + energyAvailable);
                 
         
                 if(energyAvailable >= 850 && energyCapacityAvailable >= 850)
