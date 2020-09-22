@@ -41,14 +41,14 @@ var roleMiner = {
             if(miners.length < minersPerSource)
             {
                 minersNeeded = true;
-                console.log('miners needed');
+                //console.log('miners needed');
                 
                 var allminersCount = _.filter(Game.creeps, (creep) => creep.memory.role == 'miner').length;
                 //console.log('All miner Count: ' + allminersCount);
                 
                 var newName = 'miner' + Game.time;
                 var energyAvailable = room.energyAvailable;
-                console.log('room.energyAvailable' + energyAvailable);
+                //console.log('room.energyAvailable' + energyAvailable);
                 
                 if(allminersCount == 0) {
                     //Emergency Spawn at 200
@@ -60,11 +60,11 @@ var roleMiner = {
                             });
                 }
                 else {
-                    console.log('We need a miner for sourceID ' + source.id);
+                    //console.log('We need a miner for sourceID ' + source.id);
                     
                     
                     var energyCapacityAvailable = room.energyCapacityAvailable;
-                    console.log('Energy Cap: ' + energyCapacityAvailable);
+                    //console.log('Energy Cap: ' + energyCapacityAvailable);
                     
                     //console.log('Spawning new miner: ' + newName + ' Available NRG:' + energyAvailable);
                     

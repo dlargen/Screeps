@@ -79,68 +79,69 @@ var roleHauler = {
 	{
         var haulersNeeded = false;
         var haulersPerSource = 1;
-        var sources = Game.spawns['Spawn1'].room.find(FIND_SOURCES);
+        var sources = room.find(FIND_SOURCES);
         for(var sourceIndex in sources){
             var source = sources[sourceIndex];
             //console.log(source.id);
     
-            var haulers = _.filter(Game.creeps, i => i.memory.sourceId === source.id && i.memory.role == 'hauler');
-    
-            if(haulers.length < haulersPerSource)
-            {
-                haulersNeeded = true;
-                
-                var allhaulersCount = _.filter(Game.creeps, (creep) => creep.memory.role == 'hauler').length;
-                //console.log('All hauler Count: ' + allhaulersCount);
-                
-                var newName = 'hauler' + Game.time;
-                var energyAvailable = Game.spawns['Spawn1'].room.energyAvailable;
-                
-                if(allhaulersCount == 0) {
-                    //Emergency Spawn at 100
+            var miners = _.filter(Game.creeps, i => i.memory.sourceId === source.id && i.memory.role == 'miner');
+            //console.log('SourceID ' + source.id + ' minersCount ' + miners.length);
+            
+            if (miners.length > 0) {
+                let spawn = room.find(FIND_MY_SPAWNS)[0];
+                var haulers = _.filter(Game.creeps, i => i.memory.sourceId === source.id && i.memory.role == 'hauler');
+        
+                if(haulers.length < haulersPerSource)
+                {
+                    haulersNeeded = true;
                     
-                    if(energyAvailable >= 100)
-                        Game.spawns['Spawn1'].spawnCreep([CARRY,MOVE], newName, 
-                            {memory: {role: 'hauler',
-                                sourceId: source.id}
-                            });
-                }
-                else {
-                    //console.log('We need a hauler for sourceID ' + source.id);
+                    var allhaulersCount = _.filter(Game.creeps, (creep) => creep.memory.role == 'hauler').length;
+                    //console.log('All hauler Count: ' + allhaulersCount);
                     
-                    var ignoreTowers = false;
-                    if(haulers.length > 1)
-                        ignoreTowers = true;
+                    var newName = 'hauler' + Game.time;
+                    var energyAvailable = spawn.room.energyAvailable;
+                    
+                    if(allhaulersCount == 0) {
+                        //Emergency Spawn at 100
                         
-                    var energyCapacityAvailable = Game.spawns['Spawn1'].room.energyCapacityAvailable;
-                    //console.log('Energy Cap: ' + energyCapacityAvailable);
-                    
-                    //console.log('Spawning new hauler: ' + newName + ' Available NRG:' + energyAvailable);
-                    
-                    
-                    if(energyAvailable >= 300 && energyCapacityAvailable < 400)
-                        Game.spawns['Spawn1'].spawnCreep([CARRY,CARRY,CARRY,MOVE,MOVE,MOVE], newName, 
-                            {memory: {role: 'hauler',
-                                sourceId: source.id,
-                                ignoreTowers: ignoreTowers
-                                }   
-                            });
-                    else if(energyAvailable >= 400 && energyCapacityAvailable < 500)
-                        Game.spawns['Spawn1'].spawnCreep([CARRY,CARRY,CARRY,CARRY,MOVE,MOVE,MOVE,MOVE], newName, 
-                            {memory: {role: 'hauler',
-                                sourceId: source.id,
-                                ignoreTowers: ignoreTowers
-                                }   
-                            });
-                    else if(energyAvailable >= 500 && energyCapacityAvailable >= 500)
-                        Game.spawns['Spawn1'].spawnCreep([CARRY,CARRY,CARRY,CARRY,CARRY,MOVE,MOVE,MOVE,MOVE,MOVE], newName, 
-                            {memory: {role: 'hauler',
-                                sourceId: source.id,
-                                ignoreTowers: ignoreTowers
-                                }   
-                            });
+                        if(energyAvailable >= 100)
+                            spawn.spawnCreep([CARRY,MOVE], newName, 
+                                {memory: {role: 'hauler',
+                                    sourceId: source.id}
+                                });
+                    }
+                    else {
+                        //console.log('We need a hauler for sourceID ' + source.id);
+                        
+                        var ignoreTowers = false;
+                        if(haulers.length > 1)
+                            ignoreTowers = true;
+                            
+                        var energyCapacityAvailable = spawn.room.energyCapacityAvailable;
+                        //console.log('Energy Cap: ' + energyCapacityAvailable);
+                        
+                        //console.log('Spawning new hauler: ' + newName + ' Available NRG:' + energyAvailable);
+                        
+                        
+                        if(energyAvailable >= 300 && energyCapacityAvailable < 400)
+                            spawn.spawnCreep([CARRY,CARRY,CARRY,MOVE,MOVE,MOVE], newName, 
+                                {memory: {role: 'hauler',
+                                    sourceId: source.id,
+                                    ignoreTowers: ignoreTowers}});
+                        else if(energyAvailable >= 400 && energyCapacityAvailable < 500)
+                            spawn.spawnCreep([CARRY,CARRY,CARRY,CARRY,MOVE,MOVE,MOVE,MOVE], newName, 
+                                {memory: {role: 'hauler',
+                                    sourceId: source.id,
+                                    ignoreTowers: ignoreTowers}});
+                        else if(energyAvailable >= 500 && energyCapacityAvailable >= 500)
+                            spawn.spawnCreep([CARRY,CARRY,CARRY,CARRY,CARRY,MOVE,MOVE,MOVE,MOVE,MOVE], newName, 
+                                {memory: {role: 'hauler',
+                                    sourceId: source.id,
+                                    ignoreTowers: ignoreTowers}});
+                    }
                 }
             }
+
             
         }
 	}
