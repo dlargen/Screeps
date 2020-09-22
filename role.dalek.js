@@ -9,8 +9,15 @@ var roleDalek = {
             //console.log(flag.name);
             
             let spawns = flag.room.find(FIND_HOSTILE_SPAWNS);
-            let structures = flag.room.find(FIND_HOSTILE_STRUCTURES);
+        
+            //let structures = flag.room.find(FIND_HOSTILE_STRUCTURES);
+            
+            let closestStructure = creep.pos.findClosestByRange(FIND_HOSTILE_STRUCTURES, {
+                filter: (structure) => structure.structureType != STRUCTURE_CONTROLLER
+            });
+            
             let creeps = flag.room.find(FIND_HOSTILE_CREEPS);
+            
             if (spawns.length > 0) {
                 if(Game.time % 5 == 0)
                     console.log('Exterminate');
@@ -30,19 +37,17 @@ var roleDalek = {
                     }
                 }
             }
-            else if (structures.length > 0) {
+            else if (closestStructure) {
                 if(Game.time % 5 == 0)
                     console.log('Exterminate');
-                const target = creep.pos.findClosestByRange(FIND_HOSTILE_CREEPS);
-                if(target) {
-                    if(creep.attack(target) == ERR_NOT_IN_RANGE) {
-                        creep.moveTo(target);
-                    }
+                //const target = creep.pos.findClosestByRange(FIND_HOSTILE_STRUCTURES);
+                if(closestStructure) {
+                    if(creep.attack(closestStructure) == ERR_NOT_IN_RANGE) {
+                            creep.moveTo(closestStructure);
+                        }
                 }
             }
         }
-        
-        
 	},
 	// Spawn Code
 	spawn: function(room) {
