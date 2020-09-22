@@ -9,15 +9,39 @@ var roleClaimer = {
             //console.log(flag.color);
             if(flag.room != undefined)
             {
-                let controllers = flag.room.find(FIND_HOSTILE_STRUCTURES, {
+                let hostileControllers = flag.room.find(FIND_HOSTILE_STRUCTURES, {
                     filter: (structure) => structure.structureType == STRUCTURE_CONTROLLER
                 });
+
+                let controllers = flag.room.find(FIND_STRUCTURES, {
+                    filter: (structure) => structure.structureType == STRUCTURE_CONTROLLER
+                });
+
+                console.log(controllers.length);
                 
-                if (controllers.length > 0) {
-                    var controller = controllers[0];
+                if (hostileControllers.length > 0) {
+                    let controller = hostileControllers[0];
                     
                     if(Game.time % 5 == 0)
                         console.log('Exterminate ' + controller);
+                    
+                    var returnVal = creep.attackController(controller); 
+                    
+                    if(Game.time % 5 == 0)
+                        console.log(returnVal);
+                    
+                    if(returnVal == ERR_INVALID_TARGET || returnVal == ERR_NOT_IN_RANGE) {
+                        if(Game.time % 5 == 0)
+                            console.log('Move to Controller');
+                        creep.moveTo(controller);
+                    }
+                }
+                
+                if (controllers.length > 0) {
+                    let controller = controllers[0];
+                    
+                    if(Game.time % 5 == 0)
+                        console.log('Claim ' + controller);
                     
                     var returnVal = creep.attackController(controller); 
                     
