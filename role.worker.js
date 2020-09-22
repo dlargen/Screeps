@@ -43,7 +43,7 @@ var roleWorker = {
         }
         else
         {
-            console.log('we need to build');
+            //console.log('we need to build');
             if(creep.memory.building && creep.store[RESOURCE_ENERGY] == 0) {
                 creep.memory.building = false;
                 creep.say('🔄 harvest');
@@ -95,7 +95,7 @@ var roleWorker = {
 	// Spawn Code
 	spawn: function(room)
 	{
-	    var workersNeeded = 2;
+	    var workersNeeded = 5;
         var workers = _.filter(Game.creeps, (creep) => creep.memory.role == 'worker' &&
             creep.memory.roomName == room.name);
         //console.log('Workers: ' + workers.length);
@@ -104,9 +104,8 @@ var roleWorker = {
             var newName = 'Worker' + Game.time;
             //var newName = 'Worker' + Game.time;
             var energyAvailable = room.energyAvailable;
-            console.log('Spawning new builder: ' + newName + ' Available NRG:' + energyAvailable);
-            //console.log('Spawning new builder: ' + newName);
-            
+            console.log('Spawning new worker: ' + newName + ' Available NRG:' + energyAvailable);
+
             var energyCapacityAvailable = room.energyCapacityAvailable;
             let spawn = room.find(FIND_MY_SPAWNS)[0];
             
