@@ -1,3 +1,5 @@
+var haulersPerSource = 2;
+
 var roleHauler = {
 
     /** @param {Creep} creep **/
@@ -78,7 +80,6 @@ var roleHauler = {
 	spawn: function(room)
 	{
         var haulersNeeded = false;
-        var haulersPerSource = 2;
         var sources = room.find(FIND_SOURCES);
         for(var sourceIndex in sources){
             var source = sources[sourceIndex];

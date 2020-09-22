@@ -1,3 +1,5 @@
+var minersPerSource = 1;
+
 var roleMiner = {
 
     /** @param {Creep} creep **/
@@ -28,7 +30,6 @@ var roleMiner = {
 	spawn: function(room)
 	{
     	var minersNeeded = false;
-    	var minersPerSource = 1;
         var sources = room.find(FIND_SOURCES);
 
         for(var sourceIndex in sources){

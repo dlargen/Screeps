@@ -167,15 +167,20 @@ var roleWorker = {
         }
 	},
 	
-	
 	// Spawn Code
 	spawn: function(room)
 	{
+	    let allminersCount = _.filter(Game.creeps, (creep) => creep.memory.role == 'miner' &&
+            creep.memory.roomName == room.name).length;
+        
+        let allhaulersCount = _.filter(Game.creeps, (creep) => creep.memory.role == 'hauler' &&
+            creep.memory.roomName == room.name).length;
+        
         let workers = _.filter(Game.creeps, (creep) => creep.memory.role == 'worker' &&
             creep.memory.roomName == room.name);
         //console.log('Workers: ' + workers.length);
         
-        if(workers.length < workersNeeded) {
+        if(workers.length < workersNeeded && allminersCount > 1 && allhaulersCount > 1) {
             var newName = 'Worker' + Game.time;
             //var newName = 'Worker' + Game.time;
             var energyAvailable = room.energyAvailable;
@@ -185,7 +190,6 @@ var roleWorker = {
 
             var energyCapacityAvailable = room.energyCapacityAvailable;
             let spawn = room.find(FIND_MY_SPAWNS)[0];
-            
             
             if(energyAvailable >= 250 && energyCapacityAvailable < 400)
                 spawn.spawnCreep([WORK,CARRY,MOVE,MOVE], newName, 
