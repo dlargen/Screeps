@@ -17,7 +17,7 @@ var roleClaimer = {
                     filter: (structure) => structure.structureType == STRUCTURE_CONTROLLER
                 });
 
-                console.log(controllers.length);
+                //console.log(controllers.length);
                 
                 if (hostileControllers.length > 0) {
                     let controller = hostileControllers[0];
@@ -25,9 +25,9 @@ var roleClaimer = {
                     if(Game.time % 5 == 0)
                         console.log('Exterminate ' + controller);
                     
-                    var returnVal = creep.attackController(controller); 
+                    let returnVal = creep.attackController(controller); 
                     
-                    if(Game.time % 5 == 0)
+                    //if(Game.time % 5 == 0)
                         console.log(returnVal);
                     
                     if(returnVal == ERR_INVALID_TARGET || returnVal == ERR_NOT_IN_RANGE) {
@@ -40,12 +40,12 @@ var roleClaimer = {
                 if (controllers.length > 0) {
                     let controller = controllers[0];
                     
-                    if(Game.time % 5 == 0)
+                    //if(Game.time % 5 == 0)
                         console.log('Claim ' + controller);
                     
-                    var returnVal = creep.attackController(controller); 
+                    let returnVal = creep.claimController(controller); 
                     
-                    if(Game.time % 5 == 0)
+                    //if(Game.time % 5 == 0)
                         console.log(returnVal);
                     
                     if(returnVal == ERR_INVALID_TARGET || returnVal == ERR_NOT_IN_RANGE) {
@@ -57,7 +57,7 @@ var roleClaimer = {
             }
             else
             {
-                if(Game.time % 5 == 0)
+                //if(Game.time % 5 == 0)
                     console.log('move to flag');
                 creep.moveTo(flag);
             }

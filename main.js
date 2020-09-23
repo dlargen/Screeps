@@ -23,9 +23,12 @@ module.exports.loop = function () {
         //if(Game.time % 5 == 0)
         //        console.log('EnergyCap' + room.energyCapacityAvailable);
         
-        roleClaimer.spawn(room);
-        roleDalek.spawn(room);      
-        roleWorker.spawn(room);
+        if(Game.time % 5 == 0)
+            roleClaimer.spawn(room);
+        if(Game.time % 5 == 0)
+            roleDalek.spawn(room);      
+        if(Game.time % 5 == 0)
+            roleWorker.spawn(room);
         roleMiner.spawn(room);
         roleHauler.spawn(room);
     }
