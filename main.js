@@ -31,6 +31,7 @@ module.exports.loop = function () {
             roleWorker.spawn(room);
         roleMiner.spawn(room);
         roleHauler.spawn(room);
+        roleTower.run(room);
         
         let spawn = room.find(FIND_MY_SPAWNS)[0];
         if(spawn.spawning) { 
@@ -61,6 +62,4 @@ module.exports.loop = function () {
             roleClaimer.run(creep);
         }
     }
-    
-    roleTower.run(room);
 }

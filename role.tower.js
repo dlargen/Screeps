@@ -6,23 +6,6 @@ var roleTower = {
                 filter: { structureType: STRUCTURE_TOWER }
             });
             
-            //console.log('Spawn has '+towers.length+' towers.');
-            
-            /* *** Spawn Code - Disabled *** */
-            /*
-            var constructionTowers = Game.spawns['Spawn1'].room.find(FIND_MY_CONSTRUCTION_SITES, {
-                filter: { structureType: STRUCTURE_TOWER }
-            });
-            
-            //console.log('Spawn has '+constructionTowers.length+' construction towers.');
-            
-            if (towers.length < 1 && constructionTowers.length < 1) {
-                console.log('Spawning Tower 1');
-                var spawnPosition = Game.spawns['Spawn1'].pos;
-                Game.spawns['Spawn1'].room.createConstructionSite(spawnPosition.x - 4 , spawnPosition.y, STRUCTURE_TOWER);
-            }
-            */
-            
             for (var id in towers) {
                 if (id >= 0) {
                     //console.log('tower id ' +id);
