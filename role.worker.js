@@ -8,13 +8,7 @@ var roleWorker = {
         var constructionSites = creep.room.find(FIND_MY_CONSTRUCTION_SITES);
         var constructionSpawns;
         
-        /*
-        var constructionSites = room.find(FIND_MY_CONSTRUCTION_SITES, {
-            filter: (structure) => {structure.structureType == STRUCTURE_SPAWN}
-        });
-        */
         for (var id in Game.myRooms) {
-            //console.log(Game.myRooms[id]);
             let room = Game.myRooms[id];
             constructionSpawns = room.find(FIND_MY_CONSTRUCTION_SITES, {
                 filter: { structureType: STRUCTURE_SPAWN }
@@ -38,7 +32,6 @@ var roleWorker = {
                 creep.memory.roomName =constructionSpawn.room.name;
             }
             
-            console.log('we need to build');
             if(creep.memory.building && creep.store[RESOURCE_ENERGY] == 0) {
                 creep.memory.building = false;
                 creep.say('🔄 harvest');
@@ -49,42 +42,11 @@ var roleWorker = {
     	    }
     
     	    if(!creep.memory.building) {
-    	        console.log('picup energy');
-    	        //creep.say('🔄 harvest');
-    	        var container = creep.pos.findClosestByRange(FIND_STRUCTURES, {
-    	            filter: (structure) => {
-    		        return structure.structureType == STRUCTURE_CONTAINER && 
-    			    structure.store[RESOURCE_ENERGY] > 50}});
-    			    
-    			let closestEnergy = creep.pos.findClosestByRange(FIND_DROPPED_RESOURCES);
-    			//console.log(closestEnergy);
-    			
-    			if(container)
-    			{
-        			var returnValue = creep.withdraw(container,RESOURCE_ENERGY);
-        			
-        			if (returnValue == ERR_NOT_IN_RANGE)
-        			    creep.moveTo(container, {visualizePathStyle: {stroke: '#ffaa00'}});
-    			}
-    			else if(closestEnergy)
-    			{
-    			    if(creep.pickup(closestEnergy) == ERR_NOT_IN_RANGE)
-                        creep.moveTo(closestEnergy, {visualizePathStyle: {stroke: '#ffaa00'}});
-    			}
-    			else {
-                    var source = creep.pos.findClosestByRange(FIND_SOURCES_ACTIVE);
-                    
-                    if(creep.harvest(source) == ERR_NOT_IN_RANGE) {
-                        creep.moveTo(source, {visualizePathStyle: {stroke: '#ffaa00'}});
-                    }
-    			}
+                module.exports.harvest(creep);
     	    }
     	    else {
                 creep.say('🚧 build');
-                //var returnVal = creep.moveTo(constructionSpawn);
-                //var returnVal = creep.build(constructionSpawn);
-                //console.log(returnVal);
-                
+
                 if(creep.build(constructionSpawn) == ERR_NOT_IN_RANGE) {
                     creep.moveTo(constructionSpawn, {visualizePathStyle: {stroke: '#ffffff'}});
                 }
@@ -102,34 +64,7 @@ var roleWorker = {
         	    }
         	    
         	    if(!creep.memory.upgrading) {
-        	        
-        	        var container = creep.pos.findClosestByRange(FIND_STRUCTURES, {
-        	            filter: (structure) => {
-        		        return structure.structureType == STRUCTURE_CONTAINER && 
-        			    structure.store[RESOURCE_ENERGY] > 50}});
-        			
-        			let closestEnergy = creep.pos.findClosestByRange(FIND_DROPPED_RESOURCES);
-        			//console.log(closestEnergy);
-        			
-        			if(container)
-        			{
-            			var returnValue = creep.withdraw(container,RESOURCE_ENERGY);
-            			
-            			if (returnValue == ERR_NOT_IN_RANGE)
-            			    creep.moveTo(container, {visualizePathStyle: {stroke: '#ffaa00'}});
-        			}
-        			else if(closestEnergy)
-        			{
-        			    if(creep.pickup(closestEnergy) == ERR_NOT_IN_RANGE)
-                            creep.moveTo(closestEnergy, {visualizePathStyle: {stroke: '#ffaa00'}});
-        			}
-        			else {
-                        var source = creep.pos.findClosestByRange(FIND_SOURCES_ACTIVE);
-                        
-                        if(creep.harvest(source) == ERR_NOT_IN_RANGE) {
-                            creep.moveTo(source, {visualizePathStyle: {stroke: '#ffaa00'}});
-                        }
-        			}
+        	        module.exports.harvest(creep);
                 }
                 else {
                     if(creep.upgradeController(creep.room.controller) == ERR_NOT_IN_RANGE) {
@@ -139,7 +74,6 @@ var roleWorker = {
             }
             else
             {
-                //console.log('we need to build');
                 if(creep.memory.building && creep.store[RESOURCE_ENERGY] == 0) {
                     creep.memory.building = false;
                     creep.say('🔄 harvest');
@@ -150,34 +84,7 @@ var roleWorker = {
         	    }
         
         	    if(!creep.memory.building) {
-        	        //creep.say('🔄 harvest');
-        	        var container = creep.pos.findClosestByRange(FIND_STRUCTURES, {
-        	            filter: (structure) => {
-        		        return structure.structureType == STRUCTURE_CONTAINER && 
-        			    structure.store[RESOURCE_ENERGY] > 50}});
-        			
-        			let closestEnergy = creep.pos.findClosestByRange(FIND_DROPPED_RESOURCES);
-        			//console.log(closestEnergy);
-        			
-        			if(container)
-        			{
-            			var returnValue = creep.withdraw(container,RESOURCE_ENERGY);
-            			
-            			if (returnValue == ERR_NOT_IN_RANGE)
-            			    creep.moveTo(container, {visualizePathStyle: {stroke: '#ffaa00'}});
-        			}
-        			else if(closestEnergy)
-        			{
-        			    if(creep.pickup(closestEnergy) == ERR_NOT_IN_RANGE)
-                            creep.moveTo(closestEnergy, {visualizePathStyle: {stroke: '#ffaa00'}});
-        			}
-        			else {
-                        var source = creep.pos.findClosestByRange(FIND_SOURCES_ACTIVE);
-                        
-                        if(creep.harvest(source) == ERR_NOT_IN_RANGE) {
-                            creep.moveTo(source, {visualizePathStyle: {stroke: '#ffaa00'}});
-                        }
-        			}
+        	        module.exports.harvest(creep);
         	    }
         	    else {
         	        var target = creep.pos.findClosestByRange(FIND_CONSTRUCTION_SITES);
@@ -196,7 +103,39 @@ var roleWorker = {
         	    }
             }
         }
-	},
+    },
+    
+    harvest: function(creep) {
+        //creep.say('🔄 harvest');
+        //console.log('picup energy');
+        var container = creep.pos.findClosestByRange(FIND_STRUCTURES, {
+            filter: (structure) => {
+            return structure.structureType == STRUCTURE_CONTAINER && 
+            structure.store[RESOURCE_ENERGY] > 50}});
+            
+        let closestEnergy = creep.pos.findClosestByRange(FIND_DROPPED_RESOURCES);
+        //console.log(closestEnergy);
+        
+        if(container)
+        {
+            var returnValue = creep.withdraw(container,RESOURCE_ENERGY);
+            
+            if (returnValue == ERR_NOT_IN_RANGE)
+                creep.moveTo(container, {visualizePathStyle: {stroke: '#ffaa00'}});
+        }
+        else if(closestEnergy)
+        {
+            if(creep.pickup(closestEnergy) == ERR_NOT_IN_RANGE)
+                creep.moveTo(closestEnergy, {visualizePathStyle: {stroke: '#ffaa00'}});
+        }
+        else {
+            var source = creep.pos.findClosestByRange(FIND_SOURCES_ACTIVE);
+            
+            if(creep.harvest(source) == ERR_NOT_IN_RANGE) {
+                creep.moveTo(source, {visualizePathStyle: {stroke: '#ffaa00'}});
+            }
+        }
+    },
 	
 	// Spawn Code
 	spawn: function(room)
