@@ -47,6 +47,9 @@ function adjustRoomDataForCustomMode(roomData) {
         if (object.nextDecayTime)
             object.nextDecayTime = Math.max(1, object.nextDecayTime - currentTime);
 
+        if (object.upgradeBlocked)
+            object.upgradeBlocked = null;
+
         if (object.ageTime)
             object.ageTime = Math.max(1, object.ageTime - currentTime);
             console.log(object.name, object.ageTime);
@@ -96,6 +99,7 @@ function migrateRoomToSimulation() {
                     });
 
                     location.href = "https://screeps.com/a/#!/sim/custom";
+                    //javascript:window.open("https://screeps.com/a/#!/sim/custom");
                 }
             }
         };

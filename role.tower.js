@@ -1,8 +1,8 @@
 var roleTower = {
 
-    run: function() {
-        if (Game.spawns['Spawn1'].room.controller.level > 2) {
-            var towers = Game.spawns['Spawn1'].room.find(FIND_MY_STRUCTURES, {
+    run: function(room) {
+        if (room.controller.level > 2) {
+            var towers = room.find(FIND_MY_STRUCTURES, {
                 filter: { structureType: STRUCTURE_TOWER }
             });
             

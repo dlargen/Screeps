@@ -66,12 +66,25 @@ var roleHauler = {
                 var energy = source.pos.findClosestByRange(FIND_DROPPED_RESOURCES);
                 //console.log(energy);
                 if(creep.pickup(energy) == ERR_NOT_IN_RANGE) {
-                    creep.moveTo(energy, {visualizePathStyle: {stroke: '#ffaa00'}});
+                        var path = creep.pos.findPathTo(energy, {
+                            range: 1
+                    });
+                    if( path.length ) {
+                        creep.move(path[0].direction);
+                    }
+                    
                 }
             }
             else
             {
-                creep.moveTo(source);
+                //if (Game.time % 5 == 0)
+                //    console.log('moving to standby');
+                var path = creep.pos.findPathTo(source, {
+                    range: 2
+                });
+                if( path.length ) {
+                    creep.move(path[0].direction);
+                }
             }
         }
 	},

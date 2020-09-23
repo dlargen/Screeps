@@ -31,15 +31,16 @@ module.exports.loop = function () {
             roleWorker.spawn(room);
         roleMiner.spawn(room);
         roleHauler.spawn(room);
-    }
-    
-    if(Game.spawns['Spawn1'].spawning) { 
-        var spawningCreep = Game.creeps[Game.spawns['Spawn1'].spawning.name];
-        Game.spawns['Spawn1'].room.visual.text(
-            '🛠️' + spawningCreep.memory.role,
-            Game.spawns['Spawn1'].pos.x + 1, 
-            Game.spawns['Spawn1'].pos.y, 
-            {align: 'left', opacity: 0.8});
+        
+        let spawn = room.find(FIND_MY_SPAWNS)[0];
+        if(spawn.spawning) { 
+            var spawningCreep = Game.creeps[spawn.spawning.name];
+            spawn.room.visual.text(
+                '🛠️' + spawningCreep.memory.role,
+                spawn.pos.x + 1, 
+                spawn.pos.y, 
+                {align: 'left', opacity: 0.8});
+        } 
     }
 
     for(var name in Game.creeps) {
@@ -61,5 +62,5 @@ module.exports.loop = function () {
         }
     }
     
-    roleTower.run();
+    roleTower.run(room);
 }
