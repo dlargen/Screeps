@@ -169,7 +169,7 @@ var roleWorker = {
                 spawn.spawnCreep([WORK,WORK,CARRY,MOVE,MOVE,MOVE], newName,
                     {memory: {role: 'worker',
                         roomName: room.name}});
-            else if(energyAvailable >= 500 && energyCapacityAvailable < 600)
+            else if(energyAvailable >= 500 && energyCapacityAvailable < 650)
                 spawn.spawnCreep([WORK,WORK,CARRY,CARRY,MOVE,MOVE,MOVE,MOVE], newName,
                     {memory: {role: 'worker',
                         roomName: room.name}});
