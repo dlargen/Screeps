@@ -20,7 +20,7 @@ var roleDalek = {
             
             if (spawns.length > 0) {
                 if(Game.time % 5 == 0)
-                    console.log('Exterminate');
+                    console.log('Move to flag');
                 let spawn = flag.room.find(FIND_HOSTILE_SPAWNS)[0];
                 //console.log(spawn.name);
                 var returnVal = creep.attack(spawn);
@@ -29,8 +29,9 @@ var roleDalek = {
             }
             else if (creeps.length > 0) {
                 if(Game.time % 5 == 0)
-                    console.log('Exterminate');
-                const target = creep.pos.findClosestByRange(FIND_HOSTILE_CREEPS);
+                    console.log('Exterminate creep');
+                const target = creeps[0];
+                console.log(target);
                 if(target) {
                     if(creep.attack(target) == ERR_NOT_IN_RANGE) {
                         creep.moveTo(target);
@@ -39,7 +40,7 @@ var roleDalek = {
             }
             else if (closestStructure) {
                 if(Game.time % 5 == 0)
-                    console.log('Exterminate');
+                    console.log('Exterminate structure');
                 //const target = creep.pos.findClosestByRange(FIND_HOSTILE_STRUCTURES);
                 if(closestStructure) {
                     if(creep.attack(closestStructure) == ERR_NOT_IN_RANGE) {
