@@ -49,18 +49,29 @@ var roleWorker = {
     	    }
     
     	    if(!creep.memory.building) {
+    	        console.log('picup energy');
     	        //creep.say('🔄 harvest');
     	        var container = creep.pos.findClosestByRange(FIND_STRUCTURES, {
     	            filter: (structure) => {
     		        return structure.structureType == STRUCTURE_CONTAINER && 
     			    structure.store[RESOURCE_ENERGY] > 50}});
+    			    
+    			let closestEnergy = creep.pos.findClosestByRange(FIND_DROPPED_RESOURCES);
+    			//console.log(closestEnergy);
     			
-    			var returnValue = creep.withdraw(container,RESOURCE_ENERGY);
-    			
-    			if (returnValue == ERR_NOT_IN_RANGE)
-    			    creep.moveTo(container, {visualizePathStyle: {stroke: '#ffaa00'}});
-    			else if(returnValue < 0)
+    			if(container)
     			{
+        			var returnValue = creep.withdraw(container,RESOURCE_ENERGY);
+        			
+        			if (returnValue == ERR_NOT_IN_RANGE)
+        			    creep.moveTo(container, {visualizePathStyle: {stroke: '#ffaa00'}});
+    			}
+    			else if(closestEnergy)
+    			{
+    			    if(creep.pickup(closestEnergy) == ERR_NOT_IN_RANGE)
+                        creep.moveTo(closestEnergy, {visualizePathStyle: {stroke: '#ffaa00'}});
+    			}
+    			else {
                     var source = creep.pos.findClosestByRange(FIND_SOURCES_ACTIVE);
                     
                     if(creep.harvest(source) == ERR_NOT_IN_RANGE) {
@@ -95,14 +106,24 @@ var roleWorker = {
         	        var container = creep.pos.findClosestByRange(FIND_STRUCTURES, {
         	            filter: (structure) => {
         		        return structure.structureType == STRUCTURE_CONTAINER && 
-        			    structure.store[RESOURCE_ENERGY] > 500}});
+        			    structure.store[RESOURCE_ENERGY] > 50}});
         			
-        			var returnValue = creep.withdraw(container,RESOURCE_ENERGY);
+        			let closestEnergy = creep.pos.findClosestByRange(FIND_DROPPED_RESOURCES);
+        			//console.log(closestEnergy);
         			
-        			if (returnValue == ERR_NOT_IN_RANGE)
-        			    creep.moveTo(container, {visualizePathStyle: {stroke: '#ffaa00'}});
-        			else if(returnValue < 0)
+        			if(container)
         			{
+            			var returnValue = creep.withdraw(container,RESOURCE_ENERGY);
+            			
+            			if (returnValue == ERR_NOT_IN_RANGE)
+            			    creep.moveTo(container, {visualizePathStyle: {stroke: '#ffaa00'}});
+        			}
+        			else if(closestEnergy)
+        			{
+        			    if(creep.pickup(closestEnergy) == ERR_NOT_IN_RANGE)
+                            creep.moveTo(closestEnergy, {visualizePathStyle: {stroke: '#ffaa00'}});
+        			}
+        			else {
                         var source = creep.pos.findClosestByRange(FIND_SOURCES_ACTIVE);
                         
                         if(creep.harvest(source) == ERR_NOT_IN_RANGE) {
@@ -135,12 +156,22 @@ var roleWorker = {
         		        return structure.structureType == STRUCTURE_CONTAINER && 
         			    structure.store[RESOURCE_ENERGY] > 50}});
         			
-        			var returnValue = creep.withdraw(container,RESOURCE_ENERGY);
+        			let closestEnergy = creep.pos.findClosestByRange(FIND_DROPPED_RESOURCES);
+        			//console.log(closestEnergy);
         			
-        			if (returnValue == ERR_NOT_IN_RANGE)
-        			    creep.moveTo(container, {visualizePathStyle: {stroke: '#ffaa00'}});
-        			else if(returnValue < 0)
+        			if(container)
         			{
+            			var returnValue = creep.withdraw(container,RESOURCE_ENERGY);
+            			
+            			if (returnValue == ERR_NOT_IN_RANGE)
+            			    creep.moveTo(container, {visualizePathStyle: {stroke: '#ffaa00'}});
+        			}
+        			else if(closestEnergy)
+        			{
+        			    if(creep.pickup(closestEnergy) == ERR_NOT_IN_RANGE)
+                            creep.moveTo(closestEnergy, {visualizePathStyle: {stroke: '#ffaa00'}});
+        			}
+        			else {
                         var source = creep.pos.findClosestByRange(FIND_SOURCES_ACTIVE);
                         
                         if(creep.harvest(source) == ERR_NOT_IN_RANGE) {
