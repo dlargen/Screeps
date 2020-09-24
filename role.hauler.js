@@ -45,29 +45,21 @@ var roleHauler = {
                 else if(container)
                     target = container;
                 
-                //creep.say('XFER');
                 var returnValue = creep.transfer(target, RESOURCE_ENERGY);
-                //creep.say(returnValue);
-                //console.log(creep.name + ' ' + targets[0].name + ' ' + targets[0].pos);
-                //creep.say(targets[0].store.getFreeCapacity(RESOURCE_ENERGY));
                 if (returnValue == ERR_NOT_IN_RANGE)
                     creep.moveTo(target, {visualizePathStyle: {stroke: '#ffffff'}});
-                
             } 
         }
         else {
-            //creep.say('Harvest');
-            
             var source = Game.getObjectById(creep.memory.sourceId);
             var energiesInRange = source.pos.findInRange(FIND_DROPPED_RESOURCES,2);
             if(energiesInRange.length > 0)
             {
                 
                 var energy = source.pos.findClosestByRange(FIND_DROPPED_RESOURCES);
-                //console.log(energy);
                 if(creep.pickup(energy) == ERR_NOT_IN_RANGE) {
-                        var path = creep.pos.findPathTo(energy, {
-                            range: 1
+                    var path = creep.pos.findPathTo(energy, {
+                        range: 1
                     });
                     if( path.length ) {
                         creep.move(path[0].direction);
@@ -77,8 +69,6 @@ var roleHauler = {
             }
             else
             {
-                //if (Game.time % 5 == 0)
-                //    console.log('moving to standby');
                 var path = creep.pos.findPathTo(source, {
                     range: 2
                 });
@@ -96,10 +86,8 @@ var roleHauler = {
         var sources = room.find(FIND_SOURCES);
         for(var sourceIndex in sources){
             var source = sources[sourceIndex];
-            //console.log(source.id);
     
             var miners = _.filter(Game.creeps, i => i.memory.sourceId === source.id && i.memory.role == 'miner');
-            //console.log('SourceID ' + source.id + ' minersCount ' + miners.length);
             
             if (miners.length > 0) {
                 let spawn = room.find(FIND_MY_SPAWNS)[0];
@@ -112,14 +100,10 @@ var roleHauler = {
                     var allhaulersCount = _.filter(Game.creeps, (creep) => creep.memory.role == 'hauler' &&
                         creep.memory.roomName == room.name).length;
 
-                    //console.log('All hauler Count: ' + allhaulersCount);
-                    
                     var newName = 'hauler' + Game.time;
                     var energyAvailable = spawn.room.energyAvailable;
                     
                     if(allhaulersCount == 0) {
-                        //Emergency Spawn at 100
-                        
                         if(energyAvailable >= 100)
                             spawn.spawnCreep([CARRY,MOVE], newName, 
                                 {memory: {role: 'hauler',
@@ -128,18 +112,15 @@ var roleHauler = {
                                 });
                     }
                     else {
-                        //console.log('We need a hauler for sourceID ' + source.id);
                         
                         var ignoreTowers = false;
                         if(haulers.length > 1)
                             ignoreTowers = true;
                             
                         var energyCapacityAvailable = spawn.room.energyCapacityAvailable;
-                        //console.log('Energy Cap: ' + energyCapacityAvailable);
                         
                         if(Game.time % 5 == 0)
                             console.log('Spawning new hauler: ' + newName + ' Available NRG:' + energyAvailable);
-                        
                         
                         if(energyAvailable >= 300 && energyCapacityAvailable < 400)
                             spawn.spawnCreep([CARRY,CARRY,CARRY,MOVE,MOVE,MOVE], newName, 
@@ -162,8 +143,6 @@ var roleHauler = {
                     }
                 }
             }
-
-            
         }
 	}
 };
