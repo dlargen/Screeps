@@ -34,7 +34,7 @@ module.exports.loop = function () {
         roleTower.run(room);
         
         let spawn = room.find(FIND_MY_SPAWNS)[0];
-        if(spawn.spawning) { 
+        if(spawn && spawn.spawning) { 
             var spawningCreep = Game.creeps[spawn.spawning.name];
             spawn.room.visual.text(
                 '🛠️' + spawningCreep.memory.role,

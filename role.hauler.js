@@ -52,7 +52,7 @@ var roleHauler = {
         }
         else {
             var source = Game.getObjectById(creep.memory.sourceId);
-            var energiesInRange = source.pos.findInRange(FIND_DROPPED_RESOURCES,2);
+            var energiesInRange = source.pos.findInRange(FIND_DROPPED_RESOURCES,4);
             if(energiesInRange.length > 0)
             {
                 
