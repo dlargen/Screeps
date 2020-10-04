@@ -110,8 +110,9 @@ var roleWorker = {
         //console.log('picup energy');
         var container = creep.pos.findClosestByRange(FIND_STRUCTURES, {
             filter: (structure) => {
-            return structure.structureType == STRUCTURE_CONTAINER && 
-            structure.store[RESOURCE_ENERGY] > 50}});
+            return ((structure.structureType == STRUCTURE_CONTAINER ||
+            structure.structureType == STRUCTURE_LINK) && 
+            structure.store[RESOURCE_ENERGY] > 50)}});
             
         let closestEnergy = creep.pos.findClosestByRange(FIND_DROPPED_RESOURCES);
         
