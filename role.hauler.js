@@ -27,7 +27,9 @@ var roleHauler = {
                             structure.store.getFreeCapacity(RESOURCE_ENERGY) > 100;
                     }
             });
-            var container = creep.pos.findClosestByRange(FIND_STRUCTURES, {
+            
+            //var container = creep.pos.findClosestByRange(FIND_STRUCTURES, {
+            var container = creep.room.controller.pos.findClosestByRange(FIND_STRUCTURES, {
 	            filter: (structure) => {
 		        return structure.structureType == STRUCTURE_CONTAINER && 
 			    structure.store[RESOURCE_ENERGY] < 1999
