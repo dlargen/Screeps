@@ -12,7 +12,8 @@ var roleHauler = {
 	        creep.memory.hauling = true;
 	        creep.say('hauling');
 	    }
-	    
+        var source = Game.getObjectById(creep.memory.sourceId);
+        
         if(creep.memory.hauling) {
             var coreEnergy = creep.pos.findClosestByRange(FIND_MY_STRUCTURES, {
                     filter: (structure) => {
@@ -21,6 +22,16 @@ var roleHauler = {
                             structure.store.getFreeCapacity(RESOURCE_ENERGY) > 0;
                     }
             });
+
+            var links = source.pos.findInRange(FIND_MY_STRUCTURES, 2, {
+                filter: (structure) => {
+                    return (structure.structureType == STRUCTURE_LINK &&
+                        structure.store.getFreeCapacity(RESOURCE_ENERGY) > 0);
+            }});
+            //console.log(links.length);
+            var link = links[0];
+
+
             var tower = creep.pos.findClosestByRange(FIND_MY_STRUCTURES, {
                     filter: (structure) => {
                         return (structure.structureType == STRUCTURE_TOWER) &&
@@ -42,6 +53,8 @@ var roleHauler = {
                 
                 if(coreEnergy)
                     target = coreEnergy;
+                else if(link)
+                    target = link;
                 else if(tower)
                     target = tower;
                 else if(container)
@@ -53,7 +66,6 @@ var roleHauler = {
             } 
         }
         else {
-            var source = Game.getObjectById(creep.memory.sourceId);
             var energiesInRange = source.pos.findInRange(FIND_DROPPED_RESOURCES,4);
             if(energiesInRange.length > 0)
             {
