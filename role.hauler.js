@@ -133,8 +133,8 @@ var roleHauler = {
                             
                         var energyCapacityAvailable = spawn.room.energyCapacityAvailable;
                         
-                        if(Game.time % 5 == 0)
-                            console.log('Spawning new hauler: ' + newName + ' Available NRG:' + energyAvailable);
+                        //if(Game.time % 5 == 0)
+                        //    console.log('Spawning new hauler: ' + newName + ' Available NRG:' + energyAvailable);
                         
                         if(energyAvailable >= 300 && energyCapacityAvailable < 400)
                             spawn.spawnCreep([CARRY,CARRY,CARRY,MOVE,MOVE,MOVE], newName, 

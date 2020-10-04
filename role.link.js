@@ -23,11 +23,11 @@ var roleLink = {
                                 structure.store.getFreeCapacity(RESOURCE_ENERGY) == 0);
                     }});
                     if(sourceLinks.length > 0) {
-                        console.log('SourceLinks '+ sourceLinks.length);
+                        //console.log('SourceLinks '+ sourceLinks.length);
 
                         for(var sourceLinksIndex in sourceLinks) {
                             var sourceLink = sourceLinks[sourceLinksIndex];
-                            console.log('sourceLink Pos ' + sourceLink.pos);
+                            //console.log('sourceLink Pos ' + sourceLink.pos);
                             sourceLink.transferEnergy(targetLink);
                         }
                     }
