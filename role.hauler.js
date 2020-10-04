@@ -1,164 +1,164 @@
-var haulersPerSource = 2;
+var minersPerSource = 1;
 
-var roleHauler = {
+var roleMiner = {
 
     /** @param {Creep} creep **/
     run: function(creep) {
-        if(creep.memory.hauling && creep.store[RESOURCE_ENERGY] == 0) {
-            creep.memory.hauling = false;
-            creep.say('🔄 pickup');
-	    }
-	    if(!creep.memory.hauling && creep.store.getFreeCapacity() == 0) {
-	        creep.memory.hauling = true;
-	        creep.say('hauling');
-	    }
         var source = Game.getObjectById(creep.memory.sourceId);
-        
-        if(creep.memory.hauling) {
-            var coreEnergy = creep.pos.findClosestByRange(FIND_MY_STRUCTURES, {
+        if(creep.memory.transfering && creep.store[RESOURCE_ENERGY] == 0) {
+            creep.memory.transfering = false;
+            creep.say('🔄 harvest');
+	    }
+	    if(!creep.memory.transfering && creep.store.getFreeCapacity() == 0) {
+	        creep.memory.transfering = true;
+	        creep.say('transfering');
+	    }
+	    
+        if(creep.memory.transfering) {
+            var dropEnergy = true;
+            var link = null;
+            if (creep.room.controller.level >= 5) {
+                var links = source.pos.findInRange(FIND_MY_STRUCTURES, 2, {
                     filter: (structure) => {
-                        return (structure.structureType == STRUCTURE_EXTENSION || 
-                            structure.structureType == STRUCTURE_SPAWN) &&
-                            structure.store.getFreeCapacity(RESOURCE_ENERGY) > 0;
-                    }
-            });
-
-            var links = source.pos.findInRange(FIND_MY_STRUCTURES, 2, {
-                filter: (structure) => {
-                    return (structure.structureType == STRUCTURE_LINK &&
-                        structure.store.getFreeCapacity(RESOURCE_ENERGY) > 0);
-            }});
-            //console.log(links.length);
-            var link = links[0];
-
-
-            var tower = creep.pos.findClosestByRange(FIND_MY_STRUCTURES, {
-                    filter: (structure) => {
-                        return (structure.structureType == STRUCTURE_TOWER) &&
-                            structure.store.getFreeCapacity(RESOURCE_ENERGY) > 100;
-                    }
-            });
-            
-            //var container = creep.pos.findClosestByRange(FIND_STRUCTURES, {
-            var container = creep.room.controller.pos.findClosestByRange(FIND_STRUCTURES, {
-	            filter: (structure) => {
-		        return structure.structureType == STRUCTURE_CONTAINER && 
-			    structure.store[RESOURCE_ENERGY] < 1999
-	            }
-            });
-            
-            if(coreEnergy || tower || container)
-            {
-                var target;
-                
-                if(coreEnergy)
-                    target = coreEnergy;
-                else if(link)
-                    target = link;
-                else if(tower)
-                    target = tower;
-                else if(container)
-                    target = container;
-                
-                var returnValue = creep.transfer(target, RESOURCE_ENERGY);
-                if (returnValue == ERR_NOT_IN_RANGE)
-                    creep.moveTo(target, {visualizePathStyle: {stroke: '#ffffff'}});
-            } 
-        }
-        else {
-            var energiesInRange = source.pos.findInRange(FIND_DROPPED_RESOURCES,4);
-            if(energiesInRange.length > 0)
-            {
-                
-                var energy = source.pos.findClosestByRange(FIND_DROPPED_RESOURCES);
-                if(creep.pickup(energy) == ERR_NOT_IN_RANGE) {
-                    var path = creep.pos.findPathTo(energy, {
-                        range: 1
-                    });
-                    if( path.length ) {
-                        creep.move(path[0].direction);
-                    }
+                        return (structure.structureType == STRUCTURE_LINK &&
+                            structure.store.getFreeCapacity(RESOURCE_ENERGY) > 0)}});
+                //console.log(links.length);
+                if(links.length > 0)
+                {
+                    link = links[0];
+                    //console.log(link.pos);
+                    var coreEnergy = creep.pos.findClosestByRange(FIND_MY_STRUCTURES, {
+                        filter: (structure) => {
+                            return ((structure.structureType == STRUCTURE_EXTENSION || 
+                                structure.structureType == STRUCTURE_SPAWN) &&
+                                structure.store.getFreeCapacity(RESOURCE_ENERGY) > 0)}});
+                    var tower = creep.pos.findClosestByRange(FIND_MY_STRUCTURES, {
+                        filter: (structure) => {
+                            return (structure.structureType == STRUCTURE_TOWER &&
+                                structure.store.getFreeCapacity(RESOURCE_ENERGY) > 100)}});
                     
+                    if(coreEnergy)
+                        dropEnergy = true;
+                    else if(tower)
+                        dropEnergy = true;
+                    else {
+                        //console.log('Nothing needs');
+                        dropEnergy = false;
+                    }
                 }
             }
-            else
-            {
-                var path = creep.pos.findPathTo(source, {
-                    range: 2
-                });
-                if( path.length ) {
-                    creep.move(path[0].direction);
-                }
+            if(dropEnergy) {
+                creep.say('drop');
+                //creep.say('drop');
+                creep.drop(RESOURCE_ENERGY);
+                creep.memory.transfering = false;
+            }
+            else {
+                creep.say('link');
+                var returnValue = creep.transfer(link, RESOURCE_ENERGY);
+                if (returnValue == ERR_NOT_IN_RANGE)
+                    creep.moveTo(link, {visualizePathStyle: {stroke: '#ffffff'}});
+            }
+            
+            
+        } 
+        else {
+            //creep.say('Harvest');
+            if(creep.harvest(source) == ERR_NOT_IN_RANGE) {
+                creep.moveTo(source, {visualizePathStyle: {stroke: '#ffaa00'}});
             }
         }
 	},
-	
 	// Spawn Code
 	spawn: function(room)
 	{
-        var haulersNeeded = false;
+    	var minersNeeded = false;
         var sources = room.find(FIND_SOURCES);
+
         for(var sourceIndex in sources){
             var source = sources[sourceIndex];
+            //console.log(source.id);
     
             var miners = _.filter(Game.creeps, i => i.memory.sourceId === source.id && i.memory.role == 'miner');
-            
-            if (miners.length > 0) {
-                let spawn = room.find(FIND_MY_SPAWNS)[0];
-                var haulers = _.filter(Game.creeps, i => i.memory.sourceId === source.id && i.memory.role == 'hauler');
-        
-                if(haulers.length < haulersPerSource)
-                {
-                    haulersNeeded = true;
-                    
-                    var allhaulersCount = _.filter(Game.creeps, (creep) => creep.memory.role == 'hauler' &&
-                        creep.memory.roomName == room.name).length;
+            let spawn = room.find(FIND_MY_SPAWNS)[0];
 
-                    var newName = 'hauler' + Game.time;
-                    var energyAvailable = spawn.room.energyAvailable;
+            if(miners.length < minersPerSource)
+            {
+                minersNeeded = true;
+                //console.log('miners needed');
+                
+                var allminersCount = _.filter(Game.creeps, (creep) => creep.memory.role == 'miner' &&
+                    creep.memory.roomName == room.name).length;
+
+                //console.log('All miner Count: ' + allminersCount);
+                
+                var newName = 'miner' + Game.time;
+                var energyAvailable = room.energyAvailable;
+                //console.log('room.energyAvailable' + energyAvailable);
+                
+                if(allminersCount == 0) {
+                    //Emergency Spawn at 200
                     
-                    if(allhaulersCount == 0) {
-                        if(energyAvailable >= 100)
-                            spawn.spawnCreep([CARRY,MOVE], newName, 
-                                {memory: {role: 'hauler',
-                                    sourceId: source.id,
-                                    roomName: room.name}
-                                });
-                    }
-                    else {
-                        
-                        var ignoreTowers = false;
-                        if(haulers.length > 1)
-                            ignoreTowers = true;
-                            
-                        var energyCapacityAvailable = spawn.room.energyCapacityAvailable;
-                        
-                        //if(Game.time % 5 == 0)
-                        //    console.log('Spawning new hauler: ' + newName + ' Available NRG:' + energyAvailable);
-                        
-                        if(energyAvailable >= 300 && energyCapacityAvailable < 400)
-                            spawn.spawnCreep([CARRY,CARRY,CARRY,MOVE,MOVE,MOVE], newName, 
-                                {memory: {role: 'hauler',
-                                    sourceId: source.id,
-                                    roomName: room.name,
-                                    ignoreTowers: ignoreTowers}});
-                        else if(energyAvailable >= 400 && energyCapacityAvailable < 500)
-                            spawn.spawnCreep([CARRY,CARRY,CARRY,CARRY,MOVE,MOVE,MOVE,MOVE], newName, 
-                                {memory: {role: 'hauler',
-                                    sourceId: source.id,
-                                    roomName: room.name,
-                                    ignoreTowers: ignoreTowers}});
-                        else if(energyAvailable >= 500 && energyCapacityAvailable >= 500)
-                            spawn.spawnCreep([CARRY,CARRY,CARRY,CARRY,CARRY,MOVE,MOVE,MOVE,MOVE,MOVE], newName, 
-                                {memory: {role: 'hauler',
-                                    sourceId: source.id,
-                                    roomName: room.name,
-                                    ignoreTowers: ignoreTowers}});
-                    }
+                    if(energyAvailable >= 200)
+                        spawn.spawnCreep([WORK,CARRY,MOVE], newName, 
+                            {memory: {role: 'miner',
+                                sourceId: source.id,
+                                roomName: room.name}
+                            });
+                }
+                else {
+                    //console.log('We need a miner for sourceID ' + source.id);
+                    
+                    
+                    var energyCapacityAvailable = room.energyCapacityAvailable;
+                    //console.log('Energy Cap: ' + energyCapacityAvailable);
+                    
+                    //if(Game.time % 5 == 0)
+                    //  console.log('Spawning new miner: ' + newName + ' Available NRG:' + energyAvailable);
+                    
+            
+                    if(energyAvailable >= 300 && energyCapacityAvailable < 400)
+                        spawn.spawnCreep([WORK,WORK,CARRY,MOVE], newName, 
+                            {memory: {role: 'miner',
+                                sourceId: source.id,
+                                roomName: room.name}
+                            });
+                    else if(energyAvailable >= 400 && energyCapacityAvailable < 500)
+                        spawn.spawnCreep([WORK,WORK,WORK,CARRY,MOVE], newName, 
+                            {memory: {role: 'miner',
+                                sourceId: source.id,
+                                roomName: room.name}
+                            });
+                    else if(energyAvailable >= 500 && energyCapacityAvailable < 600)
+                        spawn.spawnCreep([WORK,WORK,WORK,WORK,CARRY,MOVE], newName, 
+                            {memory: {role: 'miner',
+                                sourceId: source.id,
+                                roomName: room.name}
+                            });
+                    else if(energyAvailable >= 600 && energyCapacityAvailable < 700)
+                        spawn.spawnCreep([WORK,WORK,WORK,WORK,WORK,CARRY,MOVE], newName, 
+                            {memory: {role: 'miner',
+                                sourceId: source.id,
+                                roomName: room.name}
+                            });
+                    //else if(energyAvailable >= 700 && energyCapacityAvailable >= 700)
+                    else if(energyAvailable >= 700 && energyCapacityAvailable < 800)
+                        spawn.spawnCreep([WORK,WORK,WORK,WORK,WORK,WORK,CARRY,MOVE], newName, 
+                            {memory: {role: 'miner',
+                                sourceId: source.id,
+                                roomName: room.name}
+                            });
+                    else if(energyAvailable >= 800 && energyCapacityAvailable >= 800)
+                        spawn.spawnCreep([WORK,WORK,WORK,WORK,WORK,WORK,CARRY,MOVE,MOVE,MOVE], newName, 
+                            {memory: {role: 'miner',
+                                sourceId: source.id,
+                                roomName: room.name}
+                            });
                 }
             }
+            
         }
 	}
 };
 
-module.exports = roleHauler;
+module.exports = roleMiner;
