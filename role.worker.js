@@ -114,9 +114,20 @@ var roleWorker = {
             structure.store[RESOURCE_ENERGY] > 50}});
             
         let closestEnergy = creep.pos.findClosestByRange(FIND_DROPPED_RESOURCES);
-        //console.log(closestEnergy);
         
-        if(container)
+        var links = creep.pos.findInRange(FIND_MY_STRUCTURES, 5, {
+                filter: (structure) => {
+                    return (structure.structureType == STRUCTURE_LINK &&
+                        structure.store[RESOURCE_ENERGY] > 50);
+            }});
+            
+        if (links.length > 0) {
+            //console.log('links in range');
+            var link = links[0];
+            if(creep.withdraw(link,RESOURCE_ENERGY) == ERR_NOT_IN_RANGE)
+                creep.moveTo(link, {visualizePathStyle: {stroke: '#ffaa00'}});
+        }
+        else if(container)
         {
             var returnValue = creep.withdraw(container,RESOURCE_ENERGY);
             

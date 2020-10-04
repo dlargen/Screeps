@@ -4,6 +4,7 @@ var roleHauler = require('role.hauler');
 var roleWorker = require('role.worker');
 var roleDalek = require('role.dalek');
 var roleClaimer = require('role.claimer');
+var roleLink = require('role.link');
 
 module.exports.loop = function () {
         
@@ -32,6 +33,7 @@ module.exports.loop = function () {
         roleMiner.spawn(room);
         roleHauler.spawn(room);
         roleTower.run(room);
+        roleLink.run(room);
         
         let spawn = room.find(FIND_MY_SPAWNS)[0];
         if(spawn && spawn.spawning) { 
