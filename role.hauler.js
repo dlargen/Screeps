@@ -35,15 +35,14 @@ var roleHauler = {
                             structure.store.getFreeCapacity(RESOURCE_ENERGY) > 100;
                     }
             });
-            
-            //var container = creep.pos.findClosestByRange(FIND_STRUCTURES, {
-            var container = creep.room.controller.pos.findClosestByRange(FIND_STRUCTURES, {
-	            filter: (structure) => {
-		        return structure.structureType == STRUCTURE_CONTAINER && 
-			    structure.store[RESOURCE_ENERGY] < 1999
-	            }
-            });
-            
+
+            var container = creep.pos.findClosestByRange(FIND_STRUCTURES, {
+                        filter: (structure) => {
+                            return ((structure.structureType == STRUCTURE_LINK || 
+                                structure.structureType == STRUCTURE_STORAGE || 
+                                structure.structureType == STRUCTURE_CONTAINER) &&
+                                structure.store.getFreeCapacity(RESOURCE_ENERGY) > 0)}});
+                                
             if(coreEnergy || tower || container)
             {
                 var target;
