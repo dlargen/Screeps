@@ -108,11 +108,13 @@ var roleWorker = {
     harvest: function(creep) {
         //creep.say('🔄 harvest');
         //console.log('picup energy');
+
         var container = creep.pos.findClosestByRange(FIND_STRUCTURES, {
-            filter: (structure) => {
-            return ((structure.structureType == STRUCTURE_CONTAINER ||
-            structure.structureType == STRUCTURE_LINK) && 
-            structure.store[RESOURCE_ENERGY] > 50)}});
+                        filter: (structure) => {
+                            return ((structure.structureType == STRUCTURE_LINK || 
+                                structure.structureType == STRUCTURE_STORAGE || 
+                                structure.structureType == STRUCTURE_CONTAINER) &&
+                                structure.store[RESOURCE_ENERGY] > 50)}});
             
         let closestEnergy = creep.pos.findClosestByRange(FIND_DROPPED_RESOURCES);
         
