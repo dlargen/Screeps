@@ -28,8 +28,8 @@ var roleRemoteMiner = {
             }
             else {
                 creep.say('DropIt');
-                //console.log('DropIt');
-                var storage = creep.pos.findClosestByRange(FIND_MY_STRUCTURES, {
+
+                var storage = creep.pos.findClosestByRange(FIND_STRUCTURES, {
                         filter: (structure) => {
                             return ((structure.structureType == STRUCTURE_LINK || 
                                 structure.structureType == STRUCTURE_STORAGE || 
