@@ -5,6 +5,7 @@ var roleWorker = require('role.worker');
 var roleDalek = require('role.dalek');
 var roleClaimer = require('role.claimer');
 var roleLink = require('role.link');
+var roleRemoteMiner = require('role.remoteMiner');
 
 module.exports.loop = function () {
         
@@ -16,13 +17,11 @@ module.exports.loop = function () {
     }
     
     Game.myRooms = _.filter(Game.rooms, r => r.controller && r.controller.level > 0 && r.controller.my);
-   
+    
+
     for (var id in Game.myRooms) {
         //console.log(Game.myRooms[id]);
         var room = Game.myRooms[id];
-        
-        //if(Game.time % 5 == 0)
-        //        console.log('EnergyCap' + room.energyCapacityAvailable);
         
         if(Game.time % 5 == 0)
             roleClaimer.spawn(room);
@@ -34,6 +33,18 @@ module.exports.loop = function () {
         roleHauler.spawn(room);
         roleTower.run(room);
         roleLink.run(room);
+        
+        
+        if(Game.time % 5 == 0) {
+            var flagsYellow = _.filter(Game.flags, (flag) => flag.color == COLOR_YELLOW);
+            for(var flagYellow in flagsYellow) {
+                var flag = Game.flags[flagsYellow[flagYellow].name];
+                if(Game.map.findRoute(flag.pos.roomName, room).length == 1) {
+                    //console.log('closest room is', room);
+                    roleRemoteMiner.spawn(room,flag.pos.roomName);
+                }
+            }
+        }
         
         let spawn = room.find(FIND_MY_SPAWNS)[0];
         if(spawn && spawn.spawning) { 
@@ -62,6 +73,9 @@ module.exports.loop = function () {
         }
         if(creep.memory.role == 'claimer') {
             roleClaimer.run(creep);
+        }
+        if(creep.memory.role == 'remoteMiner') {
+            roleRemoteMiner.run(creep);
         }
     }
 }
